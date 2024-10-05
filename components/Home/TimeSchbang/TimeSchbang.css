@@ -1,0 +1,16 @@
+@keyframes marquee {
+    100% {
+        transform: translateX(0);
+        /* Start from the left */
+    }
+
+    0% {
+        transform: translateX(-500%);
+        /* Move to the right */
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    animation: marquee 150s linear infinite;
+}

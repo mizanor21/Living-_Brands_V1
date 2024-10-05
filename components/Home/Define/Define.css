@@ -1,0 +1,13 @@
+.bgDefine {
+    background-image: url(../../../public/assets/define/about-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Media query for small devices (e.g., screens smaller than 640px) */
+@media (max-width: 640px) {
+    .bgDefine {
+        background-image: none;
+    }
+}
