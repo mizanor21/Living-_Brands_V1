@@ -12,6 +12,49 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
 
 const Nav = () => {
+  const [hoveredId, setHoveredId] = useState(null); // To track the hovered card
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event, id) => {
+    // Get the mouse position relative to the viewport
+    const offsetX = event.clientX;
+    const offsetY = event.clientY;
+
+    setPosition({
+      x: offsetX,
+      y: offsetY,
+    });
+
+    setHoveredId(id); // Show the View Case div when hovering
+  };
+
+  const handleMouseLeave = () => {
+    // Hide the small div when the mouse leaves the blue div
+    setHoveredId(null);
+  };
+
+  const scrollAnimation = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 3s linear infinite",
+  };
+
+  const scrollAnimation2 = {
+    position: "absolute",
+    // whiteSpace: "nowrap",
+    animation: "scroll .6s linear infinite",
+  };
+
+  const keyframes = `
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
   // State declarations
   const [on, setOn] = useState(false);
   const [solutions, setSolutions] = useState(false);
@@ -42,27 +85,33 @@ const Nav = () => {
   // Card data
   const solutionsData = [
     {
+      id: 1,
       src: "https://i.postimg.cc/8PDs8ccw/kgrit-U3-IYXE-HD-1.jpg",
     },
     {
+      id: 2,
       src: "https://i.postimg.cc/K88zzWnM/1.jpg",
     },
   ];
 
   const AboutData = [
     {
+      id: 1,
       src: "https://i.postimg.cc/7hyZJDrZ/about1.png",
     },
     {
+      id: 2,
       src: "https://i.postimg.cc/J0c4bgRc/about2.jpg",
     },
   ];
 
   const ResourcesData = [
     {
+      id: 1,
       src: "https://i.postimg.cc/1t3S7tTc/dt-BSuy7-OJd8-HD.jpg",
     },
     {
+      id: 2,
       src: "https://i.postimg.cc/XNg2MVb3/ey-SLf-CX2-Vsk-HD.jpg",
     },
   ];
@@ -480,7 +529,9 @@ const Nav = () => {
                 <Link
                   href={"/work"}
                   key={index}
-                  className="card cursor-pointer "
+                  className="relative card cursor-pointer"
+                  onMouseMove={(e) => handleMouseMove(e, item?.id)}
+                  onMouseLeave={handleMouseLeave}
                   onClick={() => isHoveredSolutions(false)}
                 >
                   <div className="card_image">
@@ -492,6 +543,26 @@ const Nav = () => {
                       height={500}
                     />
                   </div>
+                  <style>{keyframes}</style>
+
+                  {hoveredId === item?.id && ( // Show the small div only if hoveredId matches the card id
+                    <div
+                      className="w-44 h-10 fixed z-[100]"
+                      style={{
+                        top: `${position.y}px`,
+                        left: `${position.x}px`,
+                        pointerEvents: "none",
+                        transform: "translate(-50%, -50%)", // Center under the mouse
+                      }}
+                    >
+                      <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                        <p style={scrollAnimation}>Read now Read now</p>
+                        <p style={scrollAnimation2} className="opacity-60">
+                          Read now
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </Link>
               ))}
             </React.Fragment>
@@ -597,7 +668,9 @@ const Nav = () => {
                 <Link
                   href={"/work"}
                   key={index}
-                  className="card cursor-pointer "
+                  className="relative card cursor-pointer"
+                  onMouseMove={(e) => handleMouseMove(e, item?.id)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <div className="card_image ">
                     <Image
@@ -608,6 +681,26 @@ const Nav = () => {
                       height={300}
                     />
                   </div>
+                  <style>{keyframes}</style>
+
+                  {hoveredId === item?.id && ( // Show the small div only if hoveredId matches the card id
+                    <div
+                      className="w-44 h-10 fixed z-[100]"
+                      style={{
+                        top: `${position.y}px`,
+                        left: `${position.x}px`,
+                        pointerEvents: "none",
+                        transform: "translate(-50%, -50%)", // Center under the mouse
+                      }}
+                    >
+                      <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                        <p style={scrollAnimation}>Read now Read now</p>
+                        <p style={scrollAnimation2} className="opacity-60">
+                          Read now
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </Link>
               ))}
             </React.Fragment>
@@ -653,7 +746,13 @@ const Nav = () => {
               </h2>
             </div>
             {ResourcesData.map((item, index) => (
-              <Link href={"/blogs"} key={index} className="card cursor-pointer">
+              <Link
+                href={"/blogs"}
+                key={index}
+                className="relative card cursor-pointer"
+                onMouseMove={(e) => handleMouseMove(e, item?.id)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="card_image">
                   <Image
                     className="rounded-2xl "
@@ -664,6 +763,26 @@ const Nav = () => {
                     onClick={() => setIsHoveredResources(false)}
                   />
                 </div>
+                <style>{keyframes}</style>
+
+                {hoveredId === item?.id && ( // Show the small div only if hoveredId matches the card id
+                  <div
+                    className="w-44 h-10 fixed z-[100]"
+                    style={{
+                      top: `${position.y}px`,
+                      left: `${position.x}px`,
+                      pointerEvents: "none",
+                      transform: "translate(-50%, -50%)", // Center under the mouse
+                    }}
+                  >
+                    <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                      <p style={scrollAnimation}>Read now Read now</p>
+                      <p style={scrollAnimation2} className="opacity-60">
+                        Read now
+                      </p>
+                    </div>
+                  </div>
+                )}
               </Link>
             ))}
           </div>
