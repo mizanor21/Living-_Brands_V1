@@ -33,19 +33,19 @@ const ButtonEffect = ({ children }) => {
     const span = e.currentTarget.querySelector("span");
     span.style.width = "225%";
     span.style.height = "562.5px";
-    span.style.transition = "width 0.6s ease, height 0.6s ease"; // Smooth expansion
+    span.style.transition = "width 0.8s ease, height 0.8s ease"; // Smooth expansion
   };
 
   const handleMouseLeave = (e) => {
     const span = e.currentTarget.querySelector("span");
     span.style.width = "0";
     span.style.height = "0";
-    span.style.transition = "width 0.6s ease, height 0.6s ease"; // Smooth shrinking
+    span.style.transition = "width 0.8s ease, height 0.8s ease"; // Smooth shrinking
   };
 
   return (
     <div
-      className="btn-posnawr relative flex justify-center items-center gap-2 rounded-full py-3 px-8 text-center text-lg text-white border-2 border-transparent hover:border-[#115c5c] bg-[#115c5c] hover:text-[#115c5c] z-[20] overflow-hidden transition-colors duration-300 ease-in-out"
+      className="btn-posnawr relative flex justify-center items-center gap-2 rounded-full py-4 px-8 text-center text-lg text-white border-2 border-transparent hover:border-[#115c5c] bg-[#115c5c] hover:text-[#115c5c] z-[20] overflow-hidden transition-colors duration-1000 ease-in-out"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

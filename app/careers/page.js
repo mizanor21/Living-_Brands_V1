@@ -87,7 +87,7 @@ const Card = ({ card }) => {
     <div>
       <div
         key={card.id}
-        className=" relative  w-[450px] h-[750px] overflow-hidden border hover:-translate-y-5 duration-300 mt-5 shadow-lg bg-white  hover:bg-neutral-50"
+        className=" relative  w-[450px] h-[750px] overflow-hidden border hover:-translate-y-5 duration-300 mt-5 shadow-lg bg-white  hover:bg-neutral-100"
       >
         <div>
           <Image

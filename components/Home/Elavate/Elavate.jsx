@@ -43,14 +43,14 @@ const Elevate = () => {
     const span = e.currentTarget.querySelector("span");
     span.style.width = "225%";
     span.style.height = "562.5px";
-    span.style.transition = "width 0.6s ease, height 0.6s ease"; // Smooth expansion
+    span.style.transition = "width 0.8s ease, height 0.8s ease"; // Smooth expansion
   };
 
   const handleMouseLeave = (e) => {
     const span = e.currentTarget.querySelector("span");
     span.style.width = "0";
     span.style.height = "0";
-    span.style.transition = "width 0.6s ease, height 0.6s ease"; // Smooth shrinking
+    span.style.transition = "width 0.8s ease, height 0.8s ease"; // Smooth shrinking
   };
   return (
     <div className="bg-white relative z-[110] pt-10 lg:pt-20 font-sora">
@@ -76,7 +76,7 @@ const Elevate = () => {
                   target="_blank"
                 >
                   <div
-                    className="btn-posnawr max-w-[250px] relative flex justify-center items-center gap-2 rounded-full py-[10px] px-8 text-center text-lg text-[#115c5c] border-2 border-transparent hover:border-white bg-white hover:text-white z-[20] overflow-hidden transition-colors duration-300 ease-in-out"
+                    className="btn-posnawr max-w-[250px] relative flex justify-center items-center gap-2 rounded-full py-4 px-8 text-center text-lg text-[#115c5c] border-2 border-transparent hover:border-white bg-white hover:text-white z-[20] overflow-hidden transition-colors duration-300 ease-in-out"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >

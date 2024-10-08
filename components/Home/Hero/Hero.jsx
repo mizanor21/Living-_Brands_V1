@@ -7,36 +7,8 @@ import ButtonEffect from "@/app/button/page";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const Hero = () => {
-  const [isSticky, setIsSticky] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
-
-      // Toggle sticky class based on scroll position
-      if (scrollY > viewportHeight * 0.7) {
-        setIsSticky(false);
-      } else {
-        setIsSticky(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <div
-      className={`${
-        isSticky
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-5 opacity-0 pointer-events-none"
-      } transition-all duration-500 ease-in-out sticky top-0 z-[110] bg-white font-sora`}
-    >
+    <div className={"relative z-[110] bg-white font-sora"}>
       <div className="lg:container lg:mx-auto px-[5%] py-[4%]">
         <div className="px-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row">

@@ -69,7 +69,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="navber cursor-pointer pd px-[5%] lg:pt-2">
+    <div className="navber cursor-pointer pd px-[5%] lg:pt-2 sticky top-0 z-[200] bg-white">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
