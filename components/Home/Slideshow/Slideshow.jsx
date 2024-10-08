@@ -1,15 +1,42 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./slideshow.css";
+import Link from "next/link";
 
 const Slideshow = () => {
+  const [position, setPosition] = useState({ x: null, y: null });
   const sliderLeftRef = useRef(null);
   const sliderRightRef = useRef(null);
   const sliderRef = useRef(null); // Small device slider ref
+
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setPosition({
+      x: event.clientX - rect.left, // Adjust based on parent div's left position
+      y: event.clientY - rect.top, // Adjust based on parent div's top position
+    });
+  };
+
+  const scrollAnimation = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 2s linear infinite",
+  };
+
+  const keyframes = `
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
 
   useEffect(() => {
     const handleMouseWheel = (e) => {
@@ -106,7 +133,23 @@ const Slideshow = () => {
   };
 
   return (
-    <div>
+    <div
+      className="relative cursor-pointer overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      <style>{keyframes}</style>
+
+      <div
+        className="w-44 h-10 absolute z-[120] border border-gray-700 rounded-full"
+        style={{ top: position.y - 50, left: position.x - 90 }}
+      >
+        <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+          {/* Scrolling text with inline styles */}
+          <Link href={""} className="" style={scrollAnimation}>
+            View More View More
+          </Link>
+        </div>
+      </div>
       <div className="relative hidden md:block">
         <div className="relative z-[110] h-screen w-screen overflow-hidden bg-[#110101] ">
           {/* Left Slideshow (Top-Down) */}
@@ -198,7 +241,7 @@ const Slideshow = () => {
           </div>
         </div>
         <button
-          className="absolute bottom-10  left-5 z-[9999] cursor-pointer"
+          className="absolute bottom-10  left-5 z-[120] cursor-pointer"
           onClick={handleClick}
         >
           <BsArrowRight
@@ -252,7 +295,7 @@ const Slideshow = () => {
           </Slider>
 
           <button
-            className="absolute bottom-10 left-5 z-[9999] cursor-pointer"
+            className="absolute bottom-10 left-5 z-[120] cursor-pointer"
             onClick={handleClickMobile}
           >
             <BsArrowRight className="text-5xl text-[#125b5c] bg-white p-3 rounded-full " />

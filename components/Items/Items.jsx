@@ -369,7 +369,7 @@ const Items = () => {
         <Link key={item.id} href="/work-details">
           <div
             className="relative"
-            onMouseMove={(e) => handleMouseMove(e, item.id)} // Pass card's id
+            onMouseMove={(e) => handleMouseMove(e, item.id)}
             onMouseLeave={handleMouseLeave}
           >
             <Image

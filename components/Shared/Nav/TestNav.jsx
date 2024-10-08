@@ -68,7 +68,7 @@ const TestNav = () => {
   ];
 
   return (
-    <div className="  relative navber cursor-pointer  px-[5%] ">
+    <div className="   navber cursor-pointer  px-[5%] ">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
@@ -590,7 +590,7 @@ const TestNav = () => {
                 isHoveredResources ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
-            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] bg-white border-b-2 border-black w-full h-[20vh]">
+            <div className=" absolute invisible opacity-0 z-[150] top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] bg-white border-b-2 border-black w-full h-[20vh]">
               <div
                 className="  w-full h-full z-[115] "
                 // onMouseEnter={() => setIsHoveredResources(true)}
