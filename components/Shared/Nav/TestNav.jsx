@@ -11,7 +11,7 @@ import logo from "@/public/assets/logo/logo.png";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
 
-const Nav = () => {
+const TestNav = () => {
   // State declarations
   const [on, setOn] = useState(false);
   const [solutions, setSolutions] = useState(false);
@@ -68,7 +68,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="navber cursor-pointer pd px-[5%] lg:pt-2 sticky top-0 z-[200] bg-white">
+    <div className="  relative navber cursor-pointer  px-[5%] ">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
@@ -313,11 +313,11 @@ const Nav = () => {
                     innerActive == "/contact" ? "actives" : "text-[#115c5c]"
                   } mb-4`}
                 >
-                  <ButtonEffect>
+                  <button>
                     <span className="flex gap-[6px]">
                       Contact Us <MdOutlineArrowRightAlt className="text-xl" />
                     </span>
-                  </ButtonEffect>
+                  </button>
                 </Link>
               </div>
             </div>
@@ -326,11 +326,11 @@ const Nav = () => {
       </div>
 
       {/* Main Nav Links */}
-      <div className="navber-links text-[#125b5c] font-sora font-[500] text-[14px]">
-        <ul>
+      <div className=" navber-links text-[#125b5c] font-sora font-[500] text-[14px] h-full">
+        <ul className=" h-full">
           <li
             onClick={() => handleNavigations("/work")}
-            className={`${
+            className={` ${
               innerActive == "/work" ? "actives" : "text-[#115c5c]"
             }`}
           >
@@ -338,54 +338,316 @@ const Nav = () => {
               Work
             </Link>
           </li>
-
+          {/* ----------------------------------------------------------------------------------------- */}
           <li
-            className={`dropdown cursor-pointer hoverArea h-10 ${
+            className={`group dropdown cursor-pointer  h-16  ${
               isActive === "/solutions" ? "active" : ""
             }`}
-            onMouseEnter={() => setIsHoveredSolutions(true)}
-            onMouseLeave={() => setIsHoveredSolutions(false)}
+            // onMouseEnter={() => setIsHoveredSolutions(true)}
+            // onMouseLeave={() => setIsHoveredSolutions(false)}
             onClick={() => setIsHoveredSolutions(false)}
           >
-            <p className="link group ">Solutions</p>
+            <p className="link  ">Solutions</p>
             {/* Add transition and transform to the icon */}
             <RiArrowDropDownLine
               className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
                 isHoveredSolutions ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
+
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] border-b-2 bg-white border-black w-full h-[20vh]">
+              {/* ------------------------------------------------- */}
+              <div
+                className=" w-full h-full z-[115] "
+                // onMouseEnter={() => setIsHoveredSolutions(true)}
+                // onMouseLeave={() => setIsHoveredSolutions(false)}
+              >
+                <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
+                  <div className="min-w-72  solutions">
+                    <h2
+                      onClick={() => handleNavigations("/brand-solutions")}
+                      className={`${
+                        innerActive == "/brand-solutions"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"brand-solutions"}
+                        className="text-2xl lg:text-3xl font-bold "
+                        onClick={() => setIsHoveredSolutions(false)}
+                      >
+                        Brand Solution
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/media-solutions")}
+                      className={`${
+                        innerActive == "/media-solutions"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"media-solutions"}
+                        className="text-2xl lg:text-3xl font-bold "
+                        onClick={() => setIsHoveredSolutions(false)}
+                      >
+                        Media Solution
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/tech-solutions")}
+                      className={`${
+                        innerActive == "/tech-solutions"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"tech-solutions"}
+                        className="text-2xl lg:text-3xl font-bold  transition-transform duration-1000 ease-out"
+                        onClick={() => setIsHoveredSolutions(false)}
+                      >
+                        Tech Solution
+                      </Link>
+                    </h2>
+                  </div>
+                  <React.Fragment>
+                    {solutionsData.map((item, index) => (
+                      <Link
+                        href={"/work"}
+                        key={index}
+                        className="card cursor-pointer "
+                        onClick={() => isHoveredSolutions(false)}
+                      >
+                        <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
+                          <img
+                            className="rounded-2xl h-full w-full"
+                            src={item?.src}
+                            alt={index}
+                          />
+                        </div>
+                      </Link>
+                    ))}
+                  </React.Fragment>
+                </div>
+              </div>
+            </div>
           </li>
 
           <li
-            className={`dropdown cursor-pointer ${
+            className={` group dropdown cursor-pointer  h-16   ${
               isActive === "/about" ? "active" : ""
             }`}
-            onMouseEnter={() => setIsHoveredAbout(true)}
-            onMouseLeave={() => setIsHoveredAbout(false)}
+            // onMouseEnter={() => setIsHoveredAbout(true)}
+            // onMouseLeave={() => setIsHoveredAbout(false)}
             onClick={() => setIsHoveredAbout(false)}
           >
-            <p className="link group">About</p>
+            <p className="link">About</p>
             <RiArrowDropDownLine
               className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
                 isHoveredAbout ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] bg-white w-full h-[20vh] border-b-2 border-black">
+              {/* -------------------------------------- */}
+              <div
+                className=" w-full h-full   z-[115] "
+                // onMouseEnter={() => setIsHoveredAbout(true)}
+                // onMouseLeave={() => setIsHoveredAbout(false)}
+              >
+                <div className="h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
+                  <div className="min-w-72  solutions">
+                    <h2
+                      onClick={() => handleNavigations("/who-we-are")}
+                      className={`${
+                        innerActive == "/who-we-are"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"/who-we-are"}
+                        className="text-2xl lg:text-3xl font-bold  "
+                        onClick={() => setIsHoveredAbout(false)}
+                      >
+                        Who We Are
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/we-works")}
+                      className={`${
+                        innerActive == "/we-works"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"we-works"}
+                        className="text-2xl lg:text-3xl font-bold   "
+                        onClick={() => setIsHoveredAbout(false)}
+                      >
+                        How We Work
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/partnership")}
+                      className={`${
+                        innerActive == "/partnership"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"partnership"}
+                        className="text-2xl lg:text-3xl font-bold   "
+                        onClick={() => setIsHoveredAbout(false)}
+                      >
+                        Our Partnership
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/achievements")}
+                      className={`${
+                        innerActive == "/achievements"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"achievements"}
+                        className="text-2xl lg:text-3xl font-bold   "
+                        onClick={() => setIsHoveredAbout(false)}
+                      >
+                        Achievements
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/meet-our-team")}
+                      className={`${
+                        innerActive == "/meet-our-team"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"meet-our-team"}
+                        className="text-2xl lg:text-3xl font-bold  "
+                        onClick={() => setIsHoveredAbout(false)}
+                      >
+                        Meet The Team
+                      </Link>
+                    </h2>
+                  </div>
+                  {/* <div className="flex gap-5">
+              <Link href={"/awards"}>
+                <video className="rounded-2xl w-[600px]" autoPlay loop muted>
+                  <source src="/videos/about1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Link>
+              <Link href={"/awards"}>
+                <video className="rounded-2xl w-[600px]" autoPlay loop muted>
+                  <source src="/videos/about2.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Link>
+            </div> */}
+                  <React.Fragment>
+                    {AboutData.map((item, index) => (
+                      <Link
+                        href={"/work"}
+                        key={index}
+                        className="card cursor-pointer "
+                      >
+                        <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
+                          <img
+                            className="rounded-2xl h-full w-full"
+                            src={item?.src}
+                            alt={index}
+                          />
+                        </div>
+                      </Link>
+                    ))}
+                  </React.Fragment>
+                </div>
+              </div>
+            </div>
           </li>
 
           <li
-            className={`dropdown cursor-pointer ${
+            className={` group dropdown cursor-pointer h-16  ${
               isActive === "/resources" ? "active" : ""
             }`}
-            onMouseEnter={() => setIsHoveredResources(true)}
-            onMouseLeave={() => setIsHoveredResources(false)}
+            // onMouseEnter={() => setIsHoveredResources(true)}
+            // onMouseLeave={() => setIsHoveredResources(false)}
             onClick={() => setIsHoveredResources(false)}
           >
-            <p className="link group">Resources</p>
+            <p className="link">Resources</p>
             <RiArrowDropDownLine
               className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
                 isHoveredResources ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] bg-white border-b-2 border-black w-full h-[20vh]">
+              <div
+                className="  w-full h-full z-[115] "
+                // onMouseEnter={() => setIsHoveredResources(true)}
+                // onMouseLeave={() => setIsHoveredResources(false)}
+              >
+                <div className=" h-full justify-between  flex gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
+                  <div className="min-w-72 ">
+                    <h2
+                      onClick={() => handleNavigations("/blogs")}
+                      className={`${
+                        innerActive == "/blogs" ? "actives" : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"/blogs"}
+                        className="text-2xl lg:text-3xl font-bold   "
+                        onClick={() => setIsHoveredResources(false)}
+                      >
+                        Blogs
+                      </Link>
+                    </h2>
+                    <h2
+                      onClick={() => handleNavigations("/the-edge")}
+                      className={`${
+                        innerActive == "/the-edge"
+                          ? "actives"
+                          : "text-[#115c5c]"
+                      } mb-4`}
+                    >
+                      <Link
+                        href={"the-edge"}
+                        className="text-2xl lg:text-3xl font-bold  "
+                        onClick={() => setIsHoveredResources(false)}
+                      >
+                        The Edge
+                      </Link>
+                    </h2>
+                  </div>
+                  {ResourcesData.map((item, index) => (
+                    <Link
+                      href={"/blogs"}
+                      key={index}
+                      className="card cursor-pointer "
+                    >
+                      <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
+                        <img
+                          className="rounded-2xl h-full w-full"
+                          src={item?.src}
+                          alt={index}
+                          onClick={() => setIsHoveredResources(false)}
+                        />
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </li>
 
           <li
@@ -405,9 +667,6 @@ const Nav = () => {
               innerActive == "/contact" ? "actives" : "text-[#115c5c]"
             } mb-4`}
           >
-            {/* <Button>
-            Contact Us <MdOutlineArrowRightAlt className="text-xl" />
-          </Button> */}
             <ButtonEffect>
               <span className="flex gap-[6px]">
                 Contact Us <MdOutlineArrowRightAlt className="text-xl" />
@@ -484,7 +743,7 @@ const Nav = () => {
                   onClick={() => isHoveredSolutions(false)}
                 >
                   <div className="card_image">
-                    <Image
+                    <img
                       className="rounded-2xl "
                       src={item?.src}
                       alt={index}
@@ -600,7 +859,7 @@ const Nav = () => {
                   className="card cursor-pointer "
                 >
                   <div className="card_image ">
-                    <Image
+                    <img
                       className="rounded-2xl md:h-[270px] lg:h-[330px]"
                       src={item?.src}
                       alt={index}
@@ -655,7 +914,7 @@ const Nav = () => {
             {ResourcesData.map((item, index) => (
               <Link href={"/blogs"} key={index} className="card cursor-pointer">
                 <div className="card_image">
-                  <Image
+                  <img
                     className="rounded-2xl "
                     src={item?.src}
                     alt={index}
@@ -678,4 +937,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default TestNav;
