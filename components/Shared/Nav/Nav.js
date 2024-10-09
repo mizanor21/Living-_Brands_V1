@@ -454,9 +454,6 @@ const Nav = () => {
               innerActive == "/contact" ? "actives" : "text-[#115c5c]"
             } mb-4`}
           >
-            {/* <Button>
-            Contact Us <MdOutlineArrowRightAlt className="text-xl" />
-          </Button> */}
             <ButtonEffect>
               <span className="flex gap-[6px]">
                 Contact Us <MdOutlineArrowRightAlt className="text-xl" />

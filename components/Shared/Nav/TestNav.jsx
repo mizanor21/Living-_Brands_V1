@@ -39,30 +39,74 @@ const TestNav = () => {
     toggleOn();
   };
 
+  const [hoveredId, setHoveredId] = useState(null); // To track the hovered card
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event, id) => {
+    // Get the mouse position relative to the viewport
+    const offsetX = event.clientX;
+    const offsetY = event.clientY;
+
+    setPosition({
+      x: offsetX,
+      y: offsetY,
+    });
+
+    setHoveredId(id); // Show the View Case div when hovering
+  };
+
+  const handleMouseLeave = () => {
+    // Hide the small div when the mouse leaves the blue div
+    setHoveredId(null);
+  };
+
+  const scrollAnimation = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 2s linear infinite",
+  };
+
+  const keyframes = `
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
+
   // Card data
   const solutionsData = [
     {
+      id: 1,
       src: "https://i.postimg.cc/8PDs8ccw/kgrit-U3-IYXE-HD-1.jpg",
     },
     {
+      id: 2,
       src: "https://i.postimg.cc/K88zzWnM/1.jpg",
     },
   ];
 
   const AboutData = [
     {
+      id: 1,
       src: "https://i.postimg.cc/7hyZJDrZ/about1.png",
     },
     {
+      id: 2,
       src: "https://i.postimg.cc/J0c4bgRc/about2.jpg",
     },
   ];
 
   const ResourcesData = [
     {
+      id: 1,
       src: "https://i.postimg.cc/1t3S7tTc/dt-BSuy7-OJd8-HD.jpg",
     },
     {
+      id: 2,
       src: "https://i.postimg.cc/XNg2MVb3/ey-SLf-CX2-Vsk-HD.jpg",
     },
   ];
@@ -407,6 +451,8 @@ const TestNav = () => {
                       <Link
                         href={"/work"}
                         key={index}
+                        onMouseMove={(e) => handleMouseMove(e, item.id)}
+                        onMouseLeave={handleMouseLeave}
                         className="card cursor-pointer "
                         onClick={() => isHoveredSolutions(false)}
                       >
@@ -426,6 +472,24 @@ const TestNav = () => {
                             height={500}
                           />
                         </div>
+
+                        <style>{keyframes}</style>
+
+                        {hoveredId === item.id && ( // Show the small div only if hoveredId matches the card id
+                          <div
+                            className="w-36 h-10 fixed z-[100]"
+                            style={{
+                              top: `${position.y - 30}px`,
+                              left: `${position.x}px`,
+                              pointerEvents: "none",
+                              transform: "translate(-50%, -50%)", // Center under the mouse
+                            }}
+                          >
+                            <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                              <p style={scrollAnimation}>View Casestudy</p>
+                            </div>
+                          </div>
+                        )}
                       </Link>
                     ))}
                   </React.Fragment>
@@ -537,6 +601,8 @@ const TestNav = () => {
                       <Link
                         href={"/work"}
                         key={index}
+                        onMouseMove={(e) => handleMouseMove(e, item.id)}
+                        onMouseLeave={handleMouseLeave}
                         className="card cursor-pointer "
                       >
                         <div className="card_image ">
@@ -548,6 +614,24 @@ const TestNav = () => {
                             height={500}
                           />
                         </div>
+
+                        <style>{keyframes}</style>
+
+                        {hoveredId === item.id && ( // Show the small div only if hoveredId matches the card id
+                          <div
+                            className="w-36 h-10 fixed z-[100]"
+                            style={{
+                              top: `${position.y - 30}px`,
+                              left: `${position.x}px`,
+                              pointerEvents: "none",
+                              transform: "translate(-50%, -50%)", // Center under the mouse
+                            }}
+                          >
+                            <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                              <p style={scrollAnimation}>View Casestudy</p>
+                            </div>
+                          </div>
+                        )}
                       </Link>
                     ))}
                   </React.Fragment>
@@ -607,6 +691,8 @@ const TestNav = () => {
                     <Link
                       href={"/blogs"}
                       key={index}
+                      onMouseMove={(e) => handleMouseMove(e, item.id)}
+                      onMouseLeave={handleMouseLeave}
                       className="card cursor-pointer "
                     >
                       <div className="card_image">
@@ -618,6 +704,24 @@ const TestNav = () => {
                           height={500}
                         />
                       </div>
+
+                      <style>{keyframes}</style>
+
+                      {hoveredId === item.id && ( // Show the small div only if hoveredId matches the card id
+                        <div
+                          className="w-36 h-10 fixed z-[100]"
+                          style={{
+                            top: `${position.y - 30}px`,
+                            left: `${position.x}px`,
+                            pointerEvents: "none",
+                            transform: "translate(-50%, -50%)", // Center under the mouse
+                          }}
+                        >
+                          <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                            <p style={scrollAnimation}>View Blog</p>
+                          </div>
+                        </div>
+                      )}
                     </Link>
                   ))}
                 </div>
