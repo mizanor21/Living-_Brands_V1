@@ -68,7 +68,7 @@ const TestNav = () => {
   ];
 
   return (
-    <div className="   navber cursor-pointer  px-[5%] ">
+    <div className="font-sora  navber cursor-pointer sticky top-0  px-[5%] z-[150] bg-white">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
@@ -78,18 +78,15 @@ const TestNav = () => {
               href="/"
             >
               <Image
-                onClick={() => handleNavigations("/")}
                 src={logo}
-                className={`w-20 ${
-                  innerActive == "/" ? "actives" : "text-[#115c5c]"
-                }`}
+                className="w-20"
                 alt="Living Brands logo"
               ></Image>
-              <h1 className="text-4xl animate-pulse font-bold mb-2 transform origin-center">
+              <h1 className="text-4xl animate-pulse font-[600] mb-2 transform origin-center">
                 .
               </h1>
               <WordRotate
-                className="text-sm md:text-lg font-bold p-0 m-0 w-full -duration-1000"
+                className="text-sm md:text-lg font-[600] p-0 m-0 w-full -duration-700"
                 words={[
                   "Brands",
                   "Tech",
@@ -119,11 +116,11 @@ const TestNav = () => {
                         className="w-20"
                         alt="Living Brands logo"
                       ></Image>
-                      <h1 className="text-4xl animate-pulse font-bold mb-2">
+                      <h1 className="text-4xl animate-pulse font-[600] mb-2">
                         .
                       </h1>
                       <WordRotate
-                        className="text-sm md:text-lg font-bold p-0 m-0 w-full duration-500"
+                        className="text-sm md:text-lg font-[600] p-0 m-0 w-full duration-500"
                         words={[
                           "Brands",
                           "Tech",
@@ -338,13 +335,10 @@ const TestNav = () => {
               Work
             </Link>
           </li>
-          {/* ----------------------------------------------------------------------------------------- */}
           <li
-            className={`group dropdown cursor-pointer  h-16  ${
+            className={`group flex items-center justify-center cursor-pointer  h-16  ${
               isActive === "/solutions" ? "active" : ""
             }`}
-            // onMouseEnter={() => setIsHoveredSolutions(true)}
-            // onMouseLeave={() => setIsHoveredSolutions(false)}
             onClick={() => setIsHoveredSolutions(false)}
           >
             <p className="link  ">Solutions</p>
@@ -355,13 +349,8 @@ const TestNav = () => {
               } group-hover:rotate-180`}
             />
 
-            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] border-b-2 bg-white border-black w-full h-[20vh]">
-              {/* ------------------------------------------------- */}
-              <div
-                className=" w-full h-full z-[115] "
-                // onMouseEnter={() => setIsHoveredSolutions(true)}
-                // onMouseLeave={() => setIsHoveredSolutions(false)}
-              >
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 border-b-2 bg-white border-black w-screen h-[20vh]">
+              <div className=" w-full h-full z-[115] ">
                 <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72  solutions">
                     <h2
@@ -374,7 +363,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"brand-solutions"}
-                        className="text-2xl lg:text-3xl font-bold "
+                        className="text-2xl lg:text-[30px] font-[600] "
                         onClick={() => setIsHoveredSolutions(false)}
                       >
                         Brand Solution
@@ -390,7 +379,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"media-solutions"}
-                        className="text-2xl lg:text-3xl font-bold "
+                        className="text-2xl lg:text-[30px] font-[600] "
                         onClick={() => setIsHoveredSolutions(false)}
                       >
                         Media Solution
@@ -406,7 +395,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"tech-solutions"}
-                        className="text-2xl lg:text-3xl font-bold  transition-transform duration-1000 ease-out"
+                        className="text-2xl lg:text-[30px] font-[600]  transition-transform duration-700 ease-out"
                         onClick={() => setIsHoveredSolutions(false)}
                       >
                         Tech Solution
@@ -421,11 +410,20 @@ const TestNav = () => {
                         className="card cursor-pointer "
                         onClick={() => isHoveredSolutions(false)}
                       >
-                        <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
+                        {/* <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
                           <img
                             className="rounded-2xl h-full w-full"
                             src={item?.src}
                             alt={index}
+                          />
+                        </div> */}
+                        <div className="card_image">
+                          <Image
+                            className="rounded-2xl "
+                            src={item?.src}
+                            alt={index}
+                            width={700}
+                            height={500}
                           />
                         </div>
                       </Link>
@@ -437,11 +435,9 @@ const TestNav = () => {
           </li>
 
           <li
-            className={` group dropdown cursor-pointer  h-16   ${
+            className={` group flex items-center justify-center cursor-pointer  h-16   ${
               isActive === "/about" ? "active" : ""
             }`}
-            // onMouseEnter={() => setIsHoveredAbout(true)}
-            // onMouseLeave={() => setIsHoveredAbout(false)}
             onClick={() => setIsHoveredAbout(false)}
           >
             <p className="link">About</p>
@@ -450,13 +446,8 @@ const TestNav = () => {
                 isHoveredAbout ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
-            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] bg-white w-full h-[20vh] border-b-2 border-black">
-              {/* -------------------------------------- */}
-              <div
-                className=" w-full h-full   z-[115] "
-                // onMouseEnter={() => setIsHoveredAbout(true)}
-                // onMouseLeave={() => setIsHoveredAbout(false)}
-              >
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 bg-white w-screen h-[20vh] border-b-2 border-black">
+              <div className=" w-full h-full   z-[115] ">
                 <div className="h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
                   <div className="min-w-72  solutions">
                     <h2
@@ -469,7 +460,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"/who-we-are"}
-                        className="text-2xl lg:text-3xl font-bold  "
+                        className="text-2xl lg:text-[30px] font-[600]  "
                         onClick={() => setIsHoveredAbout(false)}
                       >
                         Who We Are
@@ -485,7 +476,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"we-works"}
-                        className="text-2xl lg:text-3xl font-bold   "
+                        className="text-2xl lg:text-[30px] font-[600]   "
                         onClick={() => setIsHoveredAbout(false)}
                       >
                         How We Work
@@ -501,7 +492,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"partnership"}
-                        className="text-2xl lg:text-3xl font-bold   "
+                        className="text-2xl lg:text-[30px] font-[600]   "
                         onClick={() => setIsHoveredAbout(false)}
                       >
                         Our Partnership
@@ -517,7 +508,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"achievements"}
-                        className="text-2xl lg:text-3xl font-bold   "
+                        className="text-2xl lg:text-[30px] font-[600]   "
                         onClick={() => setIsHoveredAbout(false)}
                       >
                         Achievements
@@ -533,27 +524,14 @@ const TestNav = () => {
                     >
                       <Link
                         href={"meet-our-team"}
-                        className="text-2xl lg:text-3xl font-bold  "
+                        className="text-2xl lg:text-[30px] font-[600]  "
                         onClick={() => setIsHoveredAbout(false)}
                       >
                         Meet The Team
                       </Link>
                     </h2>
                   </div>
-                  {/* <div className="flex gap-5">
-              <Link href={"/awards"}>
-                <video className="rounded-2xl w-[600px]" autoPlay loop muted>
-                  <source src="/videos/about1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Link>
-              <Link href={"/awards"}>
-                <video className="rounded-2xl w-[600px]" autoPlay loop muted>
-                  <source src="/videos/about2.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Link>
-            </div> */}
+
                   <React.Fragment>
                     {AboutData.map((item, index) => (
                       <Link
@@ -561,11 +539,13 @@ const TestNav = () => {
                         key={index}
                         className="card cursor-pointer "
                       >
-                        <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
-                          <img
-                            className="rounded-2xl h-full w-full"
+                        <div className="card_image ">
+                          <Image
+                            className="rounded-2xl max-h-[380px]"
                             src={item?.src}
                             alt={index}
+                            width={700}
+                            height={500}
                           />
                         </div>
                       </Link>
@@ -577,11 +557,9 @@ const TestNav = () => {
           </li>
 
           <li
-            className={` group dropdown cursor-pointer h-16  ${
+            className={` group flex items-center justify-center cursor-pointer h-16  ${
               isActive === "/resources" ? "active" : ""
             }`}
-            // onMouseEnter={() => setIsHoveredResources(true)}
-            // onMouseLeave={() => setIsHoveredResources(false)}
             onClick={() => setIsHoveredResources(false)}
           >
             <p className="link">Resources</p>
@@ -590,13 +568,9 @@ const TestNav = () => {
                 isHoveredResources ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
-            <div className=" absolute invisible opacity-0 z-[150] top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[70vh] transition-all duration-[600ms] bg-white border-b-2 border-black w-full h-[20vh]">
-              <div
-                className="  w-full h-full z-[115] "
-                // onMouseEnter={() => setIsHoveredResources(true)}
-                // onMouseLeave={() => setIsHoveredResources(false)}
-              >
-                <div className=" h-full justify-between  flex gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
+            <div className=" absolute invisible opacity-0 top-full left-0  ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 bg-white border-b-2 border-black w-screen h-[20vh]">
+              <div className="  w-full h-full z-[115] ">
+                <div className=" h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72 ">
                     <h2
                       onClick={() => handleNavigations("/blogs")}
@@ -606,7 +580,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"/blogs"}
-                        className="text-2xl lg:text-3xl font-bold   "
+                        className="text-2xl lg:text-[30px] font-[600]   "
                         onClick={() => setIsHoveredResources(false)}
                       >
                         Blogs
@@ -622,7 +596,7 @@ const TestNav = () => {
                     >
                       <Link
                         href={"the-edge"}
-                        className="text-2xl lg:text-3xl font-bold  "
+                        className="text-2xl lg:text-[30px] font-[600]  "
                         onClick={() => setIsHoveredResources(false)}
                       >
                         The Edge
@@ -635,12 +609,13 @@ const TestNav = () => {
                       key={index}
                       className="card cursor-pointer "
                     >
-                      <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
-                        <img
-                          className="rounded-2xl h-full w-full"
+                      <div className="card_image">
+                        <Image
+                          className="rounded-2xl "
                           src={item?.src}
                           alt={index}
-                          onClick={() => setIsHoveredResources(false)}
+                          width={700}
+                          height={500}
                         />
                       </div>
                     </Link>
@@ -675,259 +650,6 @@ const TestNav = () => {
           </Link>
         </ul>
       </div>
-
-      {/* Dropdown services card section */}
-      {isHoveredSolutions && (
-        <div
-          className="card-containers w-screen z-[115]"
-          onMouseEnter={() => setIsHoveredSolutions(true)}
-          onMouseLeave={() => setIsHoveredSolutions(false)}
-        >
-          <div className="flex justify-between bg-white mt-10 gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
-            <div className="min-w-72  solutions">
-              <h2
-                onClick={() => handleNavigations("/brand-solutions")}
-                className={`${
-                  innerActive == "/brand-solutions"
-                    ? "actives"
-                    : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"brand-solutions"}
-                  className="text-2xl lg:text-3xl font-bold "
-                  onClick={() => setIsHoveredSolutions(false)}
-                >
-                  Brand Solution
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/media-solutions")}
-                className={`${
-                  innerActive == "/media-solutions"
-                    ? "actives"
-                    : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"media-solutions"}
-                  className="text-2xl lg:text-3xl font-bold "
-                  onClick={() => setIsHoveredSolutions(false)}
-                >
-                  Media Solution
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/tech-solutions")}
-                className={`${
-                  innerActive == "/tech-solutions"
-                    ? "actives"
-                    : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"tech-solutions"}
-                  className="text-2xl lg:text-3xl font-bold  transition-transform duration-1000 ease-out"
-                  onClick={() => setIsHoveredSolutions(false)}
-                >
-                  Tech Solution
-                </Link>
-              </h2>
-            </div>
-            <React.Fragment>
-              {solutionsData.map((item, index) => (
-                <Link
-                  href={"/work"}
-                  key={index}
-                  className="card cursor-pointer "
-                  onClick={() => isHoveredSolutions(false)}
-                >
-                  <div className="card_image">
-                    <img
-                      className="rounded-2xl "
-                      src={item?.src}
-                      alt={index}
-                      width={700}
-                      height={500}
-                    />
-                  </div>
-                </Link>
-              ))}
-            </React.Fragment>
-          </div>
-        </div>
-      )}
-
-      {isHoveredAbout && (
-        <div
-          className="card-containers w-screen pt-1  z-[115]"
-          onMouseEnter={() => setIsHoveredAbout(true)}
-          onMouseLeave={() => setIsHoveredAbout(false)}
-        >
-          <div className="flex justify-between bg-white mt-10 gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
-            <div className="min-w-72  solutions">
-              <h2
-                onClick={() => handleNavigations("/who-we-are")}
-                className={`${
-                  innerActive == "/who-we-are" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"/who-we-are"}
-                  className="text-2xl lg:text-3xl font-bold  "
-                  onClick={() => setIsHoveredAbout(false)}
-                >
-                  Who We Are
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/we-works")}
-                className={`${
-                  innerActive == "/we-works" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"we-works"}
-                  className="text-2xl lg:text-3xl font-bold   "
-                  onClick={() => setIsHoveredAbout(false)}
-                >
-                  How We Work
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/partnership")}
-                className={`${
-                  innerActive == "/partnership" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"partnership"}
-                  className="text-2xl lg:text-3xl font-bold   "
-                  onClick={() => setIsHoveredAbout(false)}
-                >
-                  Our Partnership
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/achievements")}
-                className={`${
-                  innerActive == "/achievements" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"achievements"}
-                  className="text-2xl lg:text-3xl font-bold   "
-                  onClick={() => setIsHoveredAbout(false)}
-                >
-                  Achievements
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/meet-our-team")}
-                className={`${
-                  innerActive == "/meet-our-team" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"meet-our-team"}
-                  className="text-2xl lg:text-3xl font-bold  "
-                  onClick={() => setIsHoveredAbout(false)}
-                >
-                  Meet The Team
-                </Link>
-              </h2>
-            </div>
-            {/* <div className="flex gap-5">
-              <Link href={"/awards"}>
-                <video className="rounded-2xl w-[600px]" autoPlay loop muted>
-                  <source src="/videos/about1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Link>
-              <Link href={"/awards"}>
-                <video className="rounded-2xl w-[600px]" autoPlay loop muted>
-                  <source src="/videos/about2.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Link>
-            </div> */}
-            <React.Fragment>
-              {AboutData.map((item, index) => (
-                <Link
-                  href={"/work"}
-                  key={index}
-                  className="card cursor-pointer "
-                >
-                  <div className="card_image ">
-                    <img
-                      className="rounded-2xl md:h-[270px] lg:h-[330px]"
-                      src={item?.src}
-                      alt={index}
-                      width={700}
-                      height={300}
-                    />
-                  </div>
-                </Link>
-              ))}
-            </React.Fragment>
-          </div>
-        </div>
-      )}
-
-      {isHoveredResources && (
-        <div
-          className="card-containers w-screen z-[115] mt-1"
-          onMouseEnter={() => setIsHoveredResources(true)}
-          onMouseLeave={() => setIsHoveredResources(false)}
-        >
-          <div className="card_container bg-white mt-10 flex gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
-            <div className="min-w-72 ">
-              <h2
-                onClick={() => handleNavigations("/blogs")}
-                className={`${
-                  innerActive == "/blogs" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"/blogs"}
-                  className="text-2xl lg:text-3xl font-bold   "
-                  onClick={() => setIsHoveredResources(false)}
-                >
-                  Blogs
-                </Link>
-              </h2>
-              <h2
-                onClick={() => handleNavigations("/the-edge")}
-                className={`${
-                  innerActive == "/the-edge" ? "actives" : "text-[#115c5c]"
-                } mb-4`}
-              >
-                <Link
-                  href={"the-edge"}
-                  className="text-2xl lg:text-3xl font-bold  "
-                  onClick={() => setIsHoveredResources(false)}
-                >
-                  The Edge
-                </Link>
-              </h2>
-            </div>
-            {ResourcesData.map((item, index) => (
-              <Link href={"/blogs"} key={index} className="card cursor-pointer">
-                <div className="card_image">
-                  <img
-                    className="rounded-2xl "
-                    src={item?.src}
-                    alt={index}
-                    width={700}
-                    height={500}
-                    onClick={() => setIsHoveredResources(false)}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Mobile menu button */}
       <div className="navber-menu" onClick={toggleOn}>
