@@ -69,11 +69,11 @@ const Define = () => {
                 </div>
               </div>
               <div className="col-span-2 pb-5 mx-3 md:mx-0">
-                <p className="text-xl lg:text-[30px] font-bold text-[#185C5D] leading-[42px]">
+                <p className="text-xl lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
                   We&apos;re brand architects, crafting narratives with
                   precision, fueled by innovation and seamless integration.
                 </p>
-                <p className="my-5 lg:my-16 text-justify text-black opacity-50 text-[18px] font-[500] leading-[10px]  lg:leading-[30px] ">
+                <p className="my-5 lg:my-16 text-justify text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px] ">
                   “Living Brands” is fueled by an unquenchable drive to make
                   your brand a global force. We believe in the power of
                   collaboration, bringing together the best creative minds,
@@ -82,11 +82,11 @@ const Define = () => {
                   digital marketing, crafting impactful campaigns that ignite
                   brand growth.
                 </p>
-                <div className="lg:max-w-md">
+                <div className="max-w-[280px] lg:max-w-md">
                   <Link href="/careers">
                     <ButtonEffect>
                       <span className="flex gap-2">
-                        Discover Our Dynamic Culture{" "}
+                        Discover Our Culture
                         <MdOutlineArrowRightAlt className="text-xl" />
                       </span>
                     </ButtonEffect>

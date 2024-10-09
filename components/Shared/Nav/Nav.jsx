@@ -10,7 +10,7 @@ import WordRotate from "@/components/magicui/word-rotate";
 import logo from "@/public/assets/logo/logo.png";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
-import dot from "@/public/assets/cursor/cursor-black.png";
+import dot from "@/public/assets/logo/dotIcon.png";
 
 const Nav = () => {
   // State declarations
@@ -127,14 +127,12 @@ const Nav = () => {
                 className="w-20"
                 alt="Living Brands logo"
               ></Image>
-              <Image
-                className="animate-pulse mb-4 w-[7px]"
-                src={dot}
-                alt="dot"
-              ></Image>
+              <h1 className="text-4xl animate-pulse font-bold mb-2 transform origin-center">
+                .
+              </h1>
 
               <WordRotate
-                className="text-sm md:text-lg  font-[600] p-0 m-0 w-full -duration-700"
+                className="text-sm md:text-lg  font-[600] p-0 m-0 w-full"
                 words={[
                   "Brands",
                   "Tech",
@@ -164,11 +162,11 @@ const Nav = () => {
                         className="w-20"
                         alt="Living Brands logo"
                       ></Image>
-                      <h1 className="text-4xl rounded-full animate-pulse font-[600] mb-2">
+                      <h1 className="text-4xl animate-pulse font-bold mb-1">
                         .
                       </h1>
                       <WordRotate
-                        className="text-sm md:text-lg  font-[600] p-0 m-0 w-full duration-500"
+                        className="text-sm md:text-lg  font-[600] p-0 m-0 w-full "
                         words={[
                           "Brands",
                           "Tech",
@@ -198,7 +196,13 @@ const Nav = () => {
                     onClick={() => handleNavigation("/")}
                     className={`${isActive === "/" && "active"}`}
                   >
-                    <Link href="/work" className="">
+                    <Link
+                      href="/work"
+                      onClick={() => handleNavigations("/work")}
+                      className={`${
+                        innerActive == "/work" ? "actives" : ""
+                      } mb-4`}
+                    >
                       Work
                     </Link>
                   </li>
@@ -215,17 +219,39 @@ const Nav = () => {
                     <div className="itemHover">
                       <ul>
                         <li>
-                          <Link href={"/brand-solutions"} className=" ">
+                          <Link
+                            href={"/brand-solutions"}
+                            onClick={() =>
+                              handleNavigations("/brand-solutions")
+                            }
+                            className={`${
+                              innerActive == "/brand-solutions" ? "actives" : ""
+                            } mb-4`}
+                          >
                             Brand Solutions
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/media-solutions"} className="">
+                          <Link
+                            href={"/media-solutions"}
+                            onClick={() =>
+                              handleNavigations("/media-solutions")
+                            }
+                            className={`${
+                              innerActive == "/media-solutions" ? "actives" : ""
+                            } mb-4`}
+                          >
                             Media Solutions
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/tech-solutions"} className="">
+                          <Link
+                            href={"/tech-solutions"}
+                            onClick={() => handleNavigations("/tech-solutions")}
+                            className={`${
+                              innerActive == "/tech-solutions" ? "actives" : ""
+                            } mb-4`}
+                          >
                             Tech Solutions
                           </Link>
                         </li>
@@ -329,12 +355,24 @@ const Nav = () => {
                     <div className="itemHover">
                       <ul>
                         <li>
-                          <Link href={"/blogs"} className="">
+                          <Link
+                            href={"/blogs"}
+                            onClick={() => handleNavigations("/blogs")}
+                            className={`${
+                              innerActive == "/blogs" ? "actives" : ""
+                            } mb-4`}
+                          >
                             Blogs
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/the-edge"} className="">
+                          <Link
+                            href={"/the-edge"}
+                            onClick={() => handleNavigations("/the-edge")}
+                            className={`${
+                              innerActive == "/the-edge" ? "actives" : ""
+                            } mb-4`}
+                          >
                             The Edge
                           </Link>
                         </li>
@@ -346,7 +384,13 @@ const Nav = () => {
                     onClick={() => handleNavigation("/career")}
                     className={`${isActive === "/career" && "active"}`}
                   >
-                    <Link href="/careers" className="">
+                    <Link
+                      href="/careers"
+                      onClick={() => handleNavigations("/careers")}
+                      className={`${
+                        innerActive == "/careers" ? "actives" : ""
+                      } mb-4`}
+                    >
                       Careers
                     </Link>
                   </li>
@@ -358,11 +402,11 @@ const Nav = () => {
                     innerActive == "/contact" ? "actives" : "text-[#115c5c]"
                   } mb-4`}
                 >
-                  <button>
+                  <ButtonEffect>
                     <span className="flex gap-[6px]">
                       Contact Us <MdOutlineArrowRightAlt className="text-xl" />
                     </span>
-                  </button>
+                  </ButtonEffect>
                 </Link>
               </div>
             </div>
@@ -392,9 +436,7 @@ const Nav = () => {
             <p className="link  ">Solutions</p>
             {/* Add transition and transform to the icon */}
             <RiArrowDropDownLine
-              className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
-                isHoveredSolutions ? "rotate-180" : ""
-              } group-hover:rotate-180`}
+              className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
             />
 
             <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 border-b-2 bg-white border-black w-screen h-[20vh]">

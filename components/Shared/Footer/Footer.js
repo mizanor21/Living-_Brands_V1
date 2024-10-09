@@ -62,8 +62,8 @@ const Footer = () => {
             target="_blank"
             className="flex items-center gap-2"
           >
-            <HiLocationMarker className="text-[26px]" /> House: 230, New D.O.H.S
-            Lake Road, Lane-16, Mohakhali, Dhaka-1206.
+            <HiLocationMarker className="text-[50px] lg:text-[26px]" /> House:
+            230, New D.O.H.S Lake Road, Lane-16, Mohakhali, Dhaka-1206.
           </Link>
           <div className=" flex items-center  gap-2">
             <RiCopyrightFill className="text-[22px] m-[2px]" />
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="py-5 text-white text-center font-sora">
+      {/* <div className="py-5 text-white text-center font-sora">
         <small>
           Design & Developed By {""}
           <Link
@@ -82,7 +82,7 @@ const Footer = () => {
             Goinnovior Limited
           </Link>
         </small>
-      </div>
+      </div> */}
     </div>
   );
 };
