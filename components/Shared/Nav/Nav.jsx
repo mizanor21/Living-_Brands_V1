@@ -10,8 +10,9 @@ import WordRotate from "@/components/magicui/word-rotate";
 import logo from "@/public/assets/logo/logo.png";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
+import dot from "@/public/assets/cursor/cursor-black.png";
 
-const TestNav = () => {
+const Nav = () => {
   // State declarations
   const [on, setOn] = useState(false);
   const [solutions, setSolutions] = useState(false);
@@ -118,7 +119,7 @@ const TestNav = () => {
         <div className="">
           <div className="w-[100%]">
             <Link
-              className={`flex items-end gap-1 text-[#125b5c]  mb-4`}
+              className={`flex rounded-full items-end gap-1 text-[#125b5c]  mb-4`}
               href="/"
             >
               <Image
@@ -126,11 +127,14 @@ const TestNav = () => {
                 className="w-20"
                 alt="Living Brands logo"
               ></Image>
-              <h1 className="text-4xl animate-pulse font-[600] mb-2 transform origin-center">
-                .
-              </h1>
+              <Image
+                className="animate-pulse mb-4 w-[7px]"
+                src={dot}
+                alt="dot"
+              ></Image>
+
               <WordRotate
-                className="text-sm md:text-lg font-[600] p-0 m-0 w-full -duration-700"
+                className="text-sm md:text-lg  font-[600] p-0 m-0 w-full -duration-700"
                 words={[
                   "Brands",
                   "Tech",
@@ -160,11 +164,11 @@ const TestNav = () => {
                         className="w-20"
                         alt="Living Brands logo"
                       ></Image>
-                      <h1 className="text-4xl animate-pulse font-[600] mb-2">
+                      <h1 className="text-4xl rounded-full animate-pulse font-[600] mb-2">
                         .
                       </h1>
                       <WordRotate
-                        className="text-sm md:text-lg font-[600] p-0 m-0 w-full duration-500"
+                        className="text-sm md:text-lg  font-[600] p-0 m-0 w-full duration-500"
                         words={[
                           "Brands",
                           "Tech",
@@ -763,4 +767,4 @@ const TestNav = () => {
   );
 };
 
-export default TestNav;
+export default Nav;

@@ -46,14 +46,14 @@ const Define = () => {
                 <h2 className="text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D]">
                   What defines us
                 </h2>
-                <div className="hidden lg:flex">
-                  <div className="relative w-[50%] h-auto flex px-8  items-center">
+                <div className="hidden lg:flex mt-7">
+                  <div className="relative h-auto flex items-center">
                     <div
                       id="arrow-container"
                       className="bg-no-repeat flex justify-start items-center"
                     >
                       <div
-                        className=" w-[150px] md:w-[250px] transform origin-center"
+                        className=" w-[150px] md:w-[265px] transform origin-center"
                         style={{ transform: `rotate(${angle + 90}deg)` }}
                       >
                         {/* <FaArrowLeft /> */}

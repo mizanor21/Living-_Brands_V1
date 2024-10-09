@@ -5,18 +5,57 @@ import "./solutions.css";
 import Link from "next/link";
 
 const Card = ({ section, index }) => {
+  const [hoveredId, setHoveredId] = useState(null); // To track the hovered card
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event, id) => {
+    // Get the mouse position relative to the viewport
+    const offsetX = event.clientX;
+    const offsetY = event.clientY;
+
+    setPosition({
+      x: offsetX,
+      y: offsetY,
+    });
+
+    setHoveredId(id); // Show the View Case div when hovering
+  };
+
+  const handleMouseLeave = () => {
+    // Hide the small div when the mouse leaves the blue div
+    setHoveredId(null);
+  };
+
+  const scrollAnimation = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 2s linear infinite",
+  };
+
+  const keyframes = `
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
   return (
     <div className="flex bg-white relative font-sora">
       <div
+        onMouseMove={(e) => handleMouseMove(e, section?.id)}
+        onMouseLeave={handleMouseLeave}
         key={index}
         className={`hover-container ${section?.id} h-screen border-r-2 hover:text-white group`}
       >
-        <div className="text-center w-[550px] h-full flex items-center justify-center">
-          <div className="px-5 lg:px-16">
+        <div className="text-center w-[580px] h-full flex items-center justify-center">
+          <div className="px-5 lg:px-20">
             <h3 className="text-[60px] font-[600] leading-[84px] text-gray-300 group-hover:text-white transition-colors duration-300 mb-5">
               {section?.title}
             </h3>
-            <p className="carousel-p text-[16px] font-[500] leading-[22px] text-gray-50 hidden-on-hover text-justify">
+            <p className="carousel-p text-[16px] font-[500] leading-[22px] text-gray-50 text-justify hidden-on-hover">
               {section?.content}
             </p>
             <div className="flex justify-center pt-5 lg:pt-20">
@@ -24,6 +63,23 @@ const Card = ({ section, index }) => {
             </div>
           </div>
         </div>
+        <style>{keyframes}</style>
+
+        {hoveredId === section.id && ( // Show the small div only if hoveredId matches the card id
+          <div
+            className="w-36 h-10 fixed z-[100]"
+            style={{
+              top: `${position.y}px`,
+              left: `${position.x}px`,
+              pointerEvents: "none",
+              transform: "translate(-50%, -50%)", // Center under the mouse
+            }}
+          >
+            <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+              <p style={scrollAnimation}>View Casestudy</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -101,7 +157,7 @@ const Solutions = () => {
 
   const totalCards = sections.length;
   //   const visibleCards = 3;
-  const cardWidth = 1200;
+  const cardWidth = 1300;
   const cardMargin = 8;
   const totalWidth = (cardWidth + cardMargin) * totalCards;
 
