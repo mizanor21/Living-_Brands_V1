@@ -14,8 +14,8 @@
 }
 
 body {
-  font-family: 'Sora', sans-serif;
   cursor: url(../public/assets/cursor/cursor.png), auto;
+  font-family: 'Sora', sans-serif;
 }
 
 Link,

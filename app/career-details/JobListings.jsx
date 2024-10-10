@@ -47,7 +47,7 @@ const JobListings = () => {
   };
 
   return (
-    <div className="lg:container lg:mx-auto py-10 lg:py-20" id="job ">
+    <div className="lg:container lg:mx-auto py-10 lg:py-20" id="job">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-[5%]">
         {/* Sidebar Filters */}
         <div className="col-span-1">

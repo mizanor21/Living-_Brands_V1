@@ -41,7 +41,7 @@ const PartnerSection = () => {
   return (
     <div className="bg-white py-10 relative z-[110] rounded-b-[20px] lg:rounded-b-[50px] font-sora">
       <div className="p-[5%]">
-        <h2 className="text-2xl md:text-3xl lg:text-[48px] font-bold text-[#125b5c] mb-10 tracking-tighter">
+        <h2 className="text-2xl md:text-3xl lg:text-[48px] leading-[1.2] font-bold text-[#125b5c] mb-10 tracking-tighter">
           Proudly Collaborating With The Most Cutting-Edge Platforms In The
           Industry
         </h2>

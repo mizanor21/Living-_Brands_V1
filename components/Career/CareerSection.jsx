@@ -17,7 +17,7 @@ const CareerSection = () => {
         <div className="max-w-sm">
           <ButtonEffect>
             <span className="flex gap-2">
-              View Openings
+              See All Openings
               <MdOutlineArrowRightAlt className="text-xl" />
             </span>
           </ButtonEffect>

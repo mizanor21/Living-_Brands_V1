@@ -32,7 +32,7 @@ const CareerDetails = () => {
                   }
                 }}
               >
-                <ButtonEffect>See All Openings</ButtonEffect>
+                <ButtonEffect id="job">View Openings</ButtonEffect>
               </a>
             </div>
           </div>

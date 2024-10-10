@@ -127,9 +127,7 @@ const Nav = () => {
                 className="w-20"
                 alt="Living Brands logo"
               ></Image>
-              <h1 className="text-4xl animate-pulse font-bold mb-2 transform origin-center">
-                .
-              </h1>
+              <h1 className="rounded-full bg-[#125b5c] w-[5px] h-[5px] lg:w-[7px] lg:h-[7px] animate-pulse font-bold mb-[16px]"></h1>
 
               <WordRotate
                 className="text-sm md:text-lg  font-[600] p-0 m-0 w-full"
@@ -162,9 +160,7 @@ const Nav = () => {
                         className="w-20"
                         alt="Living Brands logo"
                       ></Image>
-                      <h1 className="text-4xl animate-pulse font-bold mb-1">
-                        .
-                      </h1>
+                      <h1 className="animate-pulse rounded-full bg-[#125b5c] w-[5px] h-[5px] mb-[14px]"></h1>
                       <WordRotate
                         className="text-sm md:text-lg  font-[600] p-0 m-0 w-full "
                         words={[
