@@ -1,4 +1,5 @@
 import ButtonEffect from "@/app/button/page";
+import Link from "next/link";
 import React from "react";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
@@ -157,14 +158,16 @@ const ContactUsRightPart = () => {
           Submit
         </button> */}
 
-        <div className="max-w-md pt-10">
-          <ButtonEffect>
-            <span className="flex gap-[6px]">
-              Submit
-              <MdOutlineArrowRightAlt className="text-[20px]" />
-            </span>
-          </ButtonEffect>
-        </div>
+        <Link href={""}>
+          <div className="max-w-md pt-10">
+            <ButtonEffect>
+              <span className="flex gap-[6px]">
+                Submit
+                <MdOutlineArrowRightAlt className="text-[20px]" />
+              </span>
+            </ButtonEffect>
+          </div>
+        </Link>
       </div>
     </div>
   );

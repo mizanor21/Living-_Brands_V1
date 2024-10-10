@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonEffect from "../button/page";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 const WhoWeAre = () => {
   return (
@@ -24,17 +25,16 @@ const WhoWeAre = () => {
             presence in the market.
           </p>
           <br />
-          {/* <button className="border hidden md:block p-3 px-14 rounded-full overflow-hidden transition-transform duration-300 text-sm hover:bg-white hover:text-black border-black text-white bg-[#125b5c] mt-5">
-            Access Living Brand&apos;s Bots →
-          </button> */}
-          <div className="max-w-md">
-            <ButtonEffect>
-              <span className="flex gap-2">
-                Access Living Brand&apos;s Bots{" "}
-                <MdOutlineArrowRightAlt className="text-xl" />
-              </span>
-            </ButtonEffect>
-          </div>
+          <Link href={""}>
+            <div className="max-w-md">
+              <ButtonEffect>
+                <span className="flex gap-2">
+                  Access Living Brand&apos;s Bots{" "}
+                  <MdOutlineArrowRightAlt className="text-xl" />
+                </span>
+              </ButtonEffect>
+            </div>
+          </Link>
         </div>
         <div className="order-first md:order-last flex justify-center items-center">
           <video className="rounded-2xl lg:w-[800px]" autoPlay loop muted>

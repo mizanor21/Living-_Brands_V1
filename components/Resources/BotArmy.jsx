@@ -1,4 +1,5 @@
 import ButtonEffect from "@/app/button/page";
+import Link from "next/link";
 import React from "react";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
@@ -32,12 +33,14 @@ const BotArmy = () => {
               them for a spin now!
             </p>
             <div className="max-w-sm mt-10">
-              <ButtonEffect>
-                <span className="flex gap-2">
-                  Access Living Brand&apos;s Glossary
-                  <MdOutlineArrowRightAlt className="text-xl" />
-                </span>
-              </ButtonEffect>
+              <Link href={""}>
+                <ButtonEffect>
+                  <span className="flex gap-2">
+                    Access Living Brand&apos;s Glossary
+                    <MdOutlineArrowRightAlt className="text-xl" />
+                  </span>
+                </ButtonEffect>
+              </Link>
             </div>
           </div>
           <div className="order-first md:order-last flex justify-center items-center">
