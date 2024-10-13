@@ -43,7 +43,7 @@ const Define = () => {
           <div className="flex justify-center items-center rounded-badge ">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
               <div className="col-span-1">
-                <h2 className="text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D]">
+                <h2 className="defineHeading text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D]">
                   What defines us
                 </h2>
                 <div className="hidden lg:flex mt-7">
@@ -56,7 +56,6 @@ const Define = () => {
                         className=" w-[150px] md:w-[265px] transform origin-center"
                         style={{ transform: `rotate(${angle + 90}deg)` }}
                       >
-                        {/* <FaArrowLeft /> */}
                         <Image
                           width={300}
                           height={400}
@@ -82,7 +81,7 @@ const Define = () => {
                   digital marketing, crafting impactful campaigns that ignite
                   brand growth.
                 </p>
-                <div className="max-w-[280px] lg:max-w-md">
+                <div className="max-w-[280px] lg:max-w-sm">
                   <Link href="/careers">
                     <ButtonEffect>
                       <span className="flex gap-2">
