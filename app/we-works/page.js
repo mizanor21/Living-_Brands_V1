@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
     <>
@@ -40,7 +40,7 @@ const HorizontalScrollCarousel = () => {
               apply..
             </p>
           </div>
-          <div className="sticky top-10 flex  items-center overflow-hidden">
+          <div className="sticky top-12 flex  items-center overflow-hidden">
             <motion.div
               style={{ x }}
               className="flex gap-4 transition-transform duration-1000 ease-out"

@@ -26,7 +26,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
     <>
@@ -44,10 +44,10 @@ const HorizontalScrollCarousel = () => {
               apply..
             </p>
           </div>
-          <div className="sticky top-10 flex  items-center overflow-hidden">
+          <div className="sticky top-12 flex  items-center overflow-hidden">
             <motion.div
               style={{ x }}
-              className="flex gap-4 transition-transform duration-1000 ease-out"
+              className="flex gap-4 transition-transform duration-2000 ease-out"
             >
               {cards.map((card) => {
                 return <Card card={card} key={card.id} />;
@@ -87,7 +87,7 @@ const Card = ({ card }) => {
     <div>
       <div
         key={card.id}
-        className=" relative  w-[450px] h-[750px] overflow-hidden border hover:-translate-y-5 duration-300 mt-5 shadow-lg bg-white  hover:bg-neutral-100"
+        className=" relative  w-[450px] h-[750px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white  hover:bg-neutral-100"
       >
         <div>
           <Image
