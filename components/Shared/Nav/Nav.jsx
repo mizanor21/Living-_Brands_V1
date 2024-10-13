@@ -111,20 +111,25 @@ const Nav = () => {
   ];
 
   return (
-    <div className="font-sora  navber cursor-pointer sticky top-0  px-[5%] z-[150] bg-white">
+    <div className="font-sora  navber sticky top-0  px-[5%] z-[150] bg-white">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
           <div className="w-[100%]">
-            <Link
-              className={`flex rounded-full items-end gap-1 text-[#125b5c]  mb-4`}
-              href="/"
-            >
-              <Image
-                src={logo}
-                className="w-20"
-                alt="Living Brands logo"
-              ></Image>
+            <div className={`flex items-end gap-[5px] text-[#125b5c]  mb-4`}>
+              <Link
+                href="/"
+                onClick={() => handleNavigations("/")}
+                className={`${
+                  innerActive == "/" ? "actives" : "text-[#115c5c]"
+                }`}
+              >
+                <Image
+                  src={logo}
+                  className="w-20"
+                  alt="Living Brands logo"
+                ></Image>
+              </Link>
               <h1 className="rounded-full bg-[#125b5c] w-[5px] h-[5px] lg:w-[7px] lg:h-[7px] animate-pulse font-bold mb-[16px]"></h1>
 
               <WordRotate
@@ -142,7 +147,7 @@ const Nav = () => {
                   "Chatbots",
                 ]}
               />
-            </Link>
+            </div>
           </div>
           {on && (
             <div className="side-menu">

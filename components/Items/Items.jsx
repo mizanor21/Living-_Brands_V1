@@ -364,7 +364,7 @@ const Items = () => {
     },
   ];
   return (
-    <div className="px[5%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
       {items.map((item) => (
         <Link key={item.id} href="/work-details">
           <div
@@ -391,7 +391,7 @@ const Items = () => {
               <div
                 className="w-36 h-10 fixed z-[100]"
                 style={{
-                  top: `${position.y}px`,
+                  top: `${position.y - 30}px`,
                   left: `${position.x}px`,
                   pointerEvents: "none",
                   transform: "translate(-50%, -50%)", // Center under the mouse

@@ -60,3 +60,14 @@
 .slide-10:hover {
     background-color: #2d8fab;
 }
+
+@media (min-width: 1300px) and (max-width: 1450px) {
+    .solutionCard {
+        width: 431px;
+    }
+
+    .solutionCard .arrowIcon {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,56 +1,17 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { HiMiniArrowLongRight } from "react-icons/hi2";
 import "./solutions.css";
 import Link from "next/link";
 
 const Card = ({ section, index }) => {
-  const [hoveredId, setHoveredId] = useState(null); // To track the hovered card
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event, id) => {
-    // Get the mouse position relative to the viewport
-    const offsetX = event.clientX;
-    const offsetY = event.clientY;
-
-    setPosition({
-      x: offsetX,
-      y: offsetY,
-    });
-
-    setHoveredId(id); // Show the View Case div when hovering
-  };
-
-  const handleMouseLeave = () => {
-    // Hide the small div when the mouse leaves the blue div
-    setHoveredId(null);
-  };
-
-  const scrollAnimation = {
-    position: "absolute",
-    whiteSpace: "nowrap",
-    animation: "scroll 2s linear infinite",
-  };
-
-  const keyframes = `
-    @keyframes scroll {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-  `;
   return (
-    <div className="flex bg-white relative font-sora">
+    <div className="flex bg-white relative group font-sora">
       <div
-        onMouseMove={(e) => handleMouseMove(e, section?.id)}
-        onMouseLeave={handleMouseLeave}
         key={index}
         className={`hover-container ${section?.id} h-screen border-r-2 hover:text-white group`}
       >
-        <div className="text-center w-[580px] h-full flex items-center justify-center">
+        <div className="text-center solutionCard w-[580px] h-full flex items-center justify-center">
           <div className="px-5 lg:px-20">
             <h3 className="text-[60px] font-[600] leading-[84px] text-gray-300 group-hover:text-white transition-colors duration-300 mb-5">
               {section?.title}
@@ -59,27 +20,10 @@ const Card = ({ section, index }) => {
               {section?.content}
             </p>
             <div className="flex justify-center pt-5 lg:pt-20">
-              <BsArrowRight className="text-2xl lg:text-[48px] carousel-p text-[#125b5c] p-2 hidden-on-hover  bg-white rounded-full" />
+              <HiMiniArrowLongRight className="xl:w-20 arrowIcon xl:h-20 text-2xl lg:text-[40px] carousel-p text-[#125b5c] p-3 hidden-on-hover  bg-white rounded-full group-hover:border-2 border-gray-300" />
             </div>
           </div>
         </div>
-        <style>{keyframes}</style>
-
-        {hoveredId === section.id && ( // Show the small div only if hoveredId matches the card id
-          <div
-            className="w-36 h-10 fixed z-[100]"
-            style={{
-              top: `${position.y}px`,
-              left: `${position.x}px`,
-              pointerEvents: "none",
-              transform: "translate(-50%, -50%)", // Center under the mouse
-            }}
-          >
-            <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
-              <p style={scrollAnimation}>View Casestudy</p>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
@@ -190,7 +134,7 @@ const Solutions = () => {
     <>
       <div className="overflow-hidden h-screen  relative z-[110] bg-white hidden md:block">
         <div
-          className="flex transition-all duration-2000 ease-out"
+          className="flex transition-all duration-[2500ms] ease-out"
           style={{
             transform: `translateX(${offset}px)`,
             width: `${totalWidth}px`,
@@ -217,7 +161,7 @@ const Solutions = () => {
                     {section?.title}
                   </h3>
                   <p className="text-justify">{section?.content}</p>
-                  <BsArrowRight className="text-[40px] my-6 bg-[#125b5c] p-2 rounded-full text-white" />
+                  <HiMiniArrowLongRight className="text-[40px] my-6 bg-[#125b5c] p-2 rounded-full text-white" />
                 </div>
               </div>
             </div>
