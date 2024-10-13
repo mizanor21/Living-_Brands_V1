@@ -84,29 +84,27 @@ const HorizontalScrollCarousel = () => {
 
 const Card = ({ card }) => {
   return (
-    <div>
-      <div
-        key={card.id}
-        className=" relative  w-[450px] h-[750px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white  hover:bg-neutral-100"
-      >
-        <div>
-          <Image
-            width={450}
-            height={400}
-            className="w-full h-[450px] object-cover"
-            src={card.imageUrl}
-            alt={card.title}
-          />
-        </div>
-        <div className="p-[2rem]  ">
-          <div className="text-center">
-            <h2 className="text-[24px] font-bold  text-[#185C5D]">
-              {card.title}
-            </h2>
-            <p className="text-[16px] group-hover:text-black py-4">
-              {card.description}
-            </p>
-          </div>
+    <div
+      key={card.id}
+      className=" relative  w-[450px] h-[750px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white  hover:bg-gray-200"
+    >
+      <div>
+        <Image
+          width={450}
+          height={400}
+          className="w-full h-[450px] object-cover"
+          src={card.imageUrl}
+          alt={card.title}
+        />
+      </div>
+      <div className="p-[2rem]  ">
+        <div className="text-center">
+          <h2 className="text-[24px] font-bold  text-[#185C5D]">
+            {card.title}
+          </h2>
+          <p className="text-[16px] group-hover:text-black py-4">
+            {card.description}
+          </p>
         </div>
       </div>
     </div>

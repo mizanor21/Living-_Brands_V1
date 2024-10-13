@@ -83,7 +83,7 @@ const Card = ({ card }) => {
     <div>
       <div
         key={card.id}
-        className="font-sora relative  w-[450px] h-[760px] overflow-hidden border hover:-translate-y-5 duration-300 mt-5 shadow-lg bg-white  hover:bg-neutral-50"
+        className="font-sora relative  w-[450px] h-[760px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 shadow-lg bg-white  hover:bg-gray-200"
       >
         <div>
           <Image
