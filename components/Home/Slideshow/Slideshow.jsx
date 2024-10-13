@@ -140,7 +140,7 @@ const Slideshow = () => {
       <style>{keyframes}</style>
 
       <div
-        className="w-44 h-10 absolute z-[120] border border-gray-700 rounded-full"
+        className="w-44 h-10 absolute z-[120] border border-gray-700 rounded-full hidden lg:block"
         style={{ top: position.y - 50, left: position.x - 90 }}
       >
         <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">

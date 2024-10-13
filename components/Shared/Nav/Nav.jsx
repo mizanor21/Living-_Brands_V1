@@ -10,7 +10,6 @@ import WordRotate from "@/components/magicui/word-rotate";
 import logo from "@/public/assets/logo/logo.png";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
-import dot from "@/public/assets/logo/dotIcon.png";
 
 const Nav = () => {
   // State declarations
@@ -18,7 +17,6 @@ const Nav = () => {
   const [solutions, setSolutions] = useState(false);
   const [about, setAbout] = useState(false);
   const [resources, setResources] = useState(false);
-  const [isHoveredSolutions, setIsHoveredSolutions] = useState(false);
   const [isHoveredAbout, setIsHoveredAbout] = useState(false);
   const [isHoveredResources, setIsHoveredResources] = useState(false);
   const [isActive, setIsActive] = useState("");
@@ -427,7 +425,6 @@ const Nav = () => {
             className={`group flex items-center justify-center cursor-pointer  h-16  ${
               isActive === "/solutions" ? "active" : ""
             }`}
-            onClick={() => setIsHoveredSolutions(false)}
           >
             <p className="link  ">Solutions</p>
             {/* Add transition and transform to the icon */}
@@ -435,7 +432,7 @@ const Nav = () => {
               className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
             />
 
-            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 border-b-2 bg-white border-black w-screen h-[20vh]">
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 border-b bg-white border-black w-screen h-[20vh]">
               <div className=" w-full h-full z-[115] ">
                 <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72  solutions">
@@ -450,7 +447,6 @@ const Nav = () => {
                       <Link
                         href={"brand-solutions"}
                         className="text-2xl lg:text-[30px] font-[600] "
-                        onClick={() => setIsHoveredSolutions(false)}
                       >
                         Brand Solution
                       </Link>
@@ -466,7 +462,6 @@ const Nav = () => {
                       <Link
                         href={"media-solutions"}
                         className="text-2xl lg:text-[30px] font-[600] "
-                        onClick={() => setIsHoveredSolutions(false)}
                       >
                         Media Solution
                       </Link>
@@ -481,8 +476,7 @@ const Nav = () => {
                     >
                       <Link
                         href={"tech-solutions"}
-                        className="text-2xl lg:text-[30px] font-[600]  transition-transform duration-700 ease-out"
-                        onClick={() => setIsHoveredSolutions(false)}
+                        className="text-2xl lg:text-[30px] font-[600]"
                       >
                         Tech Solution
                       </Link>
@@ -493,18 +487,10 @@ const Nav = () => {
                       <Link
                         href={"/work"}
                         key={index}
-                        onMouseMove={(e) => handleMouseMove(e, item.id)}
+                        onMouseMove={(e) => handleMouseMove(e, item?.id)}
                         onMouseLeave={handleMouseLeave}
                         className="card cursor-pointer "
-                        onClick={() => isHoveredSolutions(false)}
                       >
-                        {/* <div className="card_image h-[100px] group-hover:h-[300px] w-[500px] duration-[450ms]">
-                          <img
-                            className="rounded-2xl h-full w-full"
-                            src={item?.src}
-                            alt={index}
-                          />
-                        </div> */}
                         <div className="card_image">
                           <Image
                             className="rounded-2xl "
@@ -552,7 +538,7 @@ const Nav = () => {
                 isHoveredAbout ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
-            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 bg-white w-screen h-[20vh] border-b-2 border-black">
+            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 bg-white w-screen h-[20vh] border-b border-black">
               <div className=" w-full h-full   z-[115] ">
                 <div className="h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
                   <div className="min-w-72  solutions">
@@ -649,7 +635,7 @@ const Nav = () => {
                       >
                         <div className="card_image ">
                           <Image
-                            className="rounded-2xl max-h-[380px]"
+                            className="rounded-2xl h-[300px] lg:h-[380px]"
                             src={item?.src}
                             alt={index}
                             width={700}
@@ -694,7 +680,7 @@ const Nav = () => {
                 isHoveredResources ? "rotate-180" : ""
               } group-hover:rotate-180`}
             />
-            <div className=" absolute invisible opacity-0 top-full left-0  ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-700 bg-white border-b-2 border-black w-screen h-[20vh]">
+            <div className=" absolute invisible opacity-0 top-full left-0  ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 bg-white border-b border-black w-screen h-[20vh]">
               <div className="  w-full h-full z-[115] ">
                 <div className=" h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72 ">

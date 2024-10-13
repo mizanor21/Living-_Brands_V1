@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 const Footer = () => {
   return (
-    <div className="bg-[#185C5D] lg:sticky bottom-0 z-[105] font-sora">
+    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora">
       <footer className="footer p-10 items-center justify-center">
         <img
           className="max-h-[230px]"
