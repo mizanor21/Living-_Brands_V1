@@ -83,7 +83,7 @@ const Card = ({ card }) => {
     <div>
       <div
         key={card.id}
-        className="font-sora relative  w-[450px] h-[760px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 shadow-lg bg-white  hover:bg-gray-200"
+        className="font-sora relative  w-[450px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
       >
         <div>
           <Image
@@ -94,8 +94,8 @@ const Card = ({ card }) => {
             alt={card.title}
           />
         </div>
-        <div className="p-[2rem]  ">
-          <div className="text-center">
+        <div className="p-[2rem] relative group h-[300px]">
+          <div className="text-center ">
             <h2 className="text-[24px] font-[700]  text-[#185C5D]">
               {card.title}
             </h2>
@@ -103,6 +103,7 @@ const Card = ({ card }) => {
               {card.description}
             </p>
           </div>
+          <div className="absolute bottom-0 left-0 right-0 top-[100%] bg-gray-300 opacity-20 transition-all duration-500 transform group-hover:top-0" />
         </div>
       </div>
     </div>
