@@ -12,8 +12,8 @@ const TimeSchbang = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollThresholdHide = window.innerHeight * 0.1; // 90% threshold to hide
-      const scrollThresholdShow = window.innerHeight * 0.1; // 50% threshold to show
+      const scrollThresholdHide = window.innerHeight * 0.1;
+      const scrollThresholdShow = window.innerHeight * 0.1;
 
       if (
         currentScrollY > scrollThresholdHide &&

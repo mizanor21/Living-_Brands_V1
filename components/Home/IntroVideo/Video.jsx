@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
-import ReactPlayer from "react-player";
 
 const Video = () => {
   const [position, setPosition] = useState({ x: null, y: null });
@@ -64,7 +63,7 @@ const Video = () => {
         className="w-44 h-10 absolute z-[999] border border-gray-700 rounded-full"
         style={{ top: position.y - 50, left: position.x - 90 }}
       >
-        <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+        <div className="bg-[#125b5c] hidden  text-white overflow-hidden w-full h-full rounded-full md:flex justify-center items-center relative">
           {/* Scrolling text with inline styles */}
           <Link href={""} className="" style={scrollAnimation}>
             Play Reel Play Reel
@@ -86,16 +85,6 @@ const Video = () => {
           <source src="/videos/Intro.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
-        {/* <ReactPlayer
-          url="/videos/Intro.mp4" // Path to your video in the public folder
-          playing={true} // Auto-play the video
-          muted={true} // Mute the video to comply with autoplay policies
-          loop={true} // Loop the video
-          controls={true} // Show controls like play/pause
-          width="100%" // Responsive width
-          height="auto" // Maintain the aspect ratio
-        /> */}
       </div>
     </div>
   );
