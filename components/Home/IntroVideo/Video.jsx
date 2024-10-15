@@ -7,6 +7,25 @@ const Video = () => {
   const [isFirstVisit, setIsFirstVisit] = useState(true); // Track first visit
   const videoRef = useRef(null);
 
+  const [isScrolledUp, setIsScrolledUp] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Detect if the user has scrolled up and set the width to 100%
+      if (window.scrollY > 50) {
+        setIsScrolledUp(true);
+      } else {
+        setIsScrolledUp(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     // Check if the user has visited before
     const hasVisited = localStorage.getItem("hasVisited");
@@ -53,38 +72,43 @@ const Video = () => {
   };
 
   return (
-    <div
-      className="relative bg-black z-[110] h-60 lg:h-screen overflow-hidden"
-      onMouseMove={handleMouseMove}
-    >
-      <style>{keyframes}</style>
-
+    <div className="relative z-[110] flex justify-center items-center bg-white">
       <div
-        className="w-44 h-10 absolute z-[999] border border-gray-700 rounded-full"
-        style={{ top: position.y - 50, left: position.x - 90 }}
+        // className="relative bg-black z-[110] h-60 lg:h-screen overflow-hidden"
+        className={`relative h-60 lg:h-screen overflow-hidden  transition-all duration-500 ease-in-out ${
+          isScrolledUp ? "w-[100%]" : "w-[90%]"
+        }`}
+        onMouseMove={handleMouseMove}
       >
-        <div className="bg-[#125b5c] hidden  text-white overflow-hidden w-full h-full rounded-full md:flex justify-center items-center relative">
-          {/* Scrolling text with inline styles */}
-          <Link href={""} className="" style={scrollAnimation}>
-            Play Reel Play Reel
-          </Link>
-        </div>
-      </div>
-      <div className="transition-all duration-500 lg:h-[100vh] ease-in-out mx-auto">
-        <video
-          ref={videoRef}
-          className="absolute h-[100%] top-0 left-0 w-full md:h-full object-cover"
-          autoPlay
-          playsInline
-          loop
-          preload="auto" // Preload video to reduce lag
-          muted={isFirstVisit} // Muted only on the first visit
-          onClick={handleVideoClick} // Toggle play/pause on click
-          poster="/images/loading.jpg" // Poster image while video loads
+        <style>{keyframes}</style>
+
+        <div
+          className="w-44 h-10 absolute z-[999] border border-gray-700 rounded-full"
+          style={{ top: position.y - 50, left: position.x - 90 }}
         >
-          <source src="/videos/Intro.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <div className="bg-[#125b5c] hidden  text-white overflow-hidden w-full h-full rounded-full md:flex justify-center items-center relative">
+            {/* Scrolling text with inline styles */}
+            <Link href={""} className="" style={scrollAnimation}>
+              Play Reel Play Reel
+            </Link>
+          </div>
+        </div>
+        <div className="transition-all duration-500 lg:h-[100vh] ease-in-out mx-auto">
+          <video
+            ref={videoRef}
+            className="absolute h-[100%] top-0 left-0 w-full md:h-full object-cover"
+            autoPlay
+            playsInline
+            loop
+            preload="auto" // Preload video to reduce lag
+            muted={isFirstVisit} // Muted only on the first visit
+            onClick={handleVideoClick} // Toggle play/pause on click
+            poster="/images/loading.jpg" // Poster image while video loads
+          >
+            <source src="/videos/Intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   );
