@@ -14,7 +14,7 @@
 }
 
 body {
-  cursor: url(../public/assets/cursor/cursor.png), auto;
+  cursor: url(/assets/cursor/cursor.png), auto;
   font-family: 'Sora', sans-serif;
 }
 
