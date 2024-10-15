@@ -3,10 +3,10 @@ import { useRef, useEffect, useState } from "react";
 import arrowIcon from "@/public/assets/define/about-arrow.png";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "@/components/Custom/Button";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import "./Define.css";
 import ButtonEffect from "@/app/button/page";
+import FlipText from "@/components/magicui/flip-text";
 
 const Define = () => {
   const [angle, setAngle] = useState(0);
@@ -68,19 +68,23 @@ const Define = () => {
                 </div>
               </div>
               <div className="col-span-2 pb-5 mx-3 md:mx-0">
-                <p className="text-xl lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
-                  We&apos;re brand architects, crafting narratives with
-                  precision, fueled by innovation and seamless integration.
-                </p>
-                <p className="my-5 lg:my-16 text-justify text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px] ">
-                  “Living Brands” is fueled by an unquenchable drive to make
+                <div className="text-xl lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
+                  <FlipText
+                    word="We're brand architects, crafting narratives with
+                  precision, fueled by innovation and seamless integration."
+                  />
+                </div>
+                <div className="my-5 lg:py-16 text-justify text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px]">
+                  <FlipText
+                    word="“Living Brands” is fueled by an unquenchable drive to make
                   your brand a global force. We believe in the power of
                   collaboration, bringing together the best creative minds,
                   in-house specialists, industry partners, and technology
-                  leaders - pushing the boundaries of what&apos;s possible in
+                  leaders - pushing the boundaries of what's possible in
                   digital marketing, crafting impactful campaigns that ignite
-                  brand growth.
-                </p>
+                  brand growth."
+                  />
+                </div>
                 <div className="max-w-[280px] lg:max-w-[395px]">
                   <Link href="/careers">
                     <ButtonEffect>
