@@ -81,7 +81,7 @@ const Define = () => {
                   digital marketing, crafting impactful campaigns that ignite
                   brand growth.
                 </p>
-                <div className="max-w-[280px] lg:max-w-sm">
+                <div className="max-w-[280px] lg:max-w-[395px]">
                   <Link href="/careers">
                     <ButtonEffect>
                       <span className="flex gap-2">

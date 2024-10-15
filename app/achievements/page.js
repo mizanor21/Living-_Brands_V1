@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Achievement = () => {
   return (
-    <div className="bg-white relative z-[110] grid grid-cols-1 lg:gap-y-20 py-10 lg:py-20 font-sora">
+    <div className="bg-white relative z-[110] grid grid-cols-1 lg:gap-y-20 py-10 lg:py-20 font-sora rounded-b-[20px] lg:rounded-b-[50px]">
       <div className="grid gap-5 mb-8 sm:grid-cols-1 md:grid-cols-2 px-[5%]">
         <div className="order-last md:order-first">
           <h1 className="text-2xl font-bold mt-1 md:text-3Xl lg:text-[48px] text-[#125b5c] mb-8">
