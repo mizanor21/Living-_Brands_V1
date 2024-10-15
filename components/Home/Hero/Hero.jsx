@@ -8,8 +8,8 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const Hero = () => {
   return (
-    <div className={"relative z-[110] bg-white font-sora"}>
-      <div className="lg:container lg:mx-auto px-[5%] py-[4%]">
+    <div className={"sticky top-[85px] z-[110] bg-white font-sora"}>
+      <div className="lg:container lg:mx-auto px-[5%] py-[3%]">
         <div className="px-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="flex flex-col items-center justify-between lg:flex-row">
             <div className="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
