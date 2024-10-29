@@ -10,6 +10,7 @@ import WordRotate from "@/components/magicui/word-rotate";
 import logo from "@/public/assets/logo/logo.png";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   // State declarations
@@ -17,24 +18,15 @@ const Nav = () => {
   const [solutions, setSolutions] = useState(false);
   const [about, setAbout] = useState(false);
   const [resources, setResources] = useState(false);
-  const [isHoveredAbout, setIsHoveredAbout] = useState(false);
-  const [isHoveredResources, setIsHoveredResources] = useState(false);
-  const [isActive, setIsActive] = useState("");
-  const [innerActive, setInnerActive] = useState("");
 
+  const pathname = usePathname();
   // Toggle functions
   const toggleSolutions = () => setSolutions(!solutions);
   const toggleAbout = () => setAbout(!about);
   const toggleResources = () => setResources(!resources);
   const toggleOn = () => setOn(!on);
 
-  // Navigation handlers
-  const handleNavigation = (path) => {
-    setIsActive(path);
-    toggleOn();
-  };
   const handleNavigations = (path) => {
-    setInnerActive(path);
     toggleOn();
   };
 
@@ -111,19 +103,13 @@ const Nav = () => {
   ];
 
   return (
-    <div className="font-sora  navber sticky top-0  px-[5%] z-[150] bg-white">
+    <div className="font-sora  navber md:sticky top-0  px-[5%] z-[150] bg-white py-3">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
           <div className="w-[100%]">
-            <div className={`flex items-end gap-[5px] text-[#125b5c]  mb-4`}>
-              <Link
-                href="/"
-                onClick={() => handleNavigations("/")}
-                className={`${
-                  innerActive == "/" ? "actives" : "text-[#115c5c]"
-                }`}
-              >
+            <div className={`flex items-end gap-[5px] text-[#125b5c]`}>
+              <Link href="/" onClick={() => handleNavigations("/")}>
                 <Image
                   src={logo}
                   className="w-20"
@@ -191,16 +177,13 @@ const Nav = () => {
 
                 {/* Side Menu Links */}
                 <ul>
-                  <li
-                    onClick={() => handleNavigation("/")}
-                    className={`${isActive === "/" && "active"}`}
-                  >
+                  <li>
                     <Link
                       href="/work"
                       onClick={() => handleNavigations("/work")}
-                      className={`${
-                        innerActive == "/work" ? "actives" : ""
-                      } mb-4`}
+                      className={`mb-4 ${
+                        pathname === "/work" && "text-[#ee4580]"
+                      }`}
                     >
                       Work
                     </Link>
@@ -223,9 +206,10 @@ const Nav = () => {
                             onClick={() =>
                               handleNavigations("/brand-solutions")
                             }
-                            className={`${
-                              innerActive == "/brand-solutions" ? "actives" : ""
-                            } mb-4`}
+                            className={`mb-4 ${
+                              pathname === "/brand-solutions" &&
+                              "text-[#ee4580]"
+                            }`}
                           >
                             Brand Solutions
                           </Link>
@@ -236,9 +220,10 @@ const Nav = () => {
                             onClick={() =>
                               handleNavigations("/media-solutions")
                             }
-                            className={`${
-                              innerActive == "/media-solutions" ? "actives" : ""
-                            } mb-4`}
+                            className={`mb-4 ${
+                              pathname === "/media-solutions" &&
+                              "text-[#ee4580]"
+                            }`}
                           >
                             Media Solutions
                           </Link>
@@ -247,9 +232,9 @@ const Nav = () => {
                           <Link
                             href={"/tech-solutions"}
                             onClick={() => handleNavigations("/tech-solutions")}
-                            className={`${
-                              innerActive == "/tech-solutions" ? "actives" : ""
-                            } mb-4`}
+                            className={`mb-4 ${
+                              pathname === "/tech-solutions" && "text-[#ee4580]"
+                            }`}
                           >
                             Tech Solutions
                           </Link>
@@ -271,73 +256,43 @@ const Nav = () => {
                       <ul>
                         <li
                           onClick={() => handleNavigations("/who-we-are")}
-                          className={`${
-                            innerActive == "/who-we-are" ? "actives" : ""
-                          } mb-4`}
+                          className={`mb-4 ${
+                            pathname === "/who-we-are" && "text-[#ee4580]"
+                          }`}
                         >
-                          <Link
-                            href={"/who-we-are"}
-                            className=""
-                            onClick={() => setIsHoveredAbout(false)}
-                          >
-                            Who We Are
-                          </Link>
+                          <Link href={"/who-we-are"}>Who We Are</Link>
                         </li>
                         <li
                           onClick={() => handleNavigations("/we-works")}
-                          className={`${
-                            innerActive == "/we-works" ? "actives" : ""
-                          } mb-4`}
+                          className={`mb-4 ${
+                            pathname === "/we-works" && "text-[#ee4580]"
+                          }`}
                         >
-                          <Link
-                            href={"we-works"}
-                            className=" "
-                            onClick={() => setIsHoveredAbout(false)}
-                          >
-                            How We Work
-                          </Link>
+                          <Link href={"we-works"}>How We Work</Link>
                         </li>
                         <li
                           onClick={() => handleNavigations("/partnership")}
-                          className={`${
-                            innerActive == "/partnership" ? "actives" : ""
-                          } mb-4`}
+                          className={`mb-4 ${
+                            pathname === "/partnership" && "text-[#ee4580]"
+                          }`}
                         >
-                          <Link
-                            href={"partnership"}
-                            className=" "
-                            onClick={() => setIsHoveredAbout(false)}
-                          >
-                            Our Partnership
-                          </Link>
+                          <Link href={"partnership"}>Our Partnership</Link>
                         </li>
                         <li
                           onClick={() => handleNavigations("/achievements")}
-                          className={`${
-                            innerActive == "/achievements" ? "actives" : ""
-                          } mb-4`}
+                          className={`mb-4 ${
+                            pathname === "/achievements" && "text-[#ee4580]"
+                          }`}
                         >
-                          <Link
-                            href={"achievements"}
-                            className=" "
-                            onClick={() => setIsHoveredAbout(false)}
-                          >
-                            Achievements
-                          </Link>
+                          <Link href={"achievements"}>Achievements</Link>
                         </li>
                         <li
                           onClick={() => handleNavigations("/meet-our-team")}
-                          className={`${
-                            innerActive == "/meet-our-team" ? "actives" : ""
-                          } mb-4`}
+                          className={`mb-4 ${
+                            pathname === "/meet-our-team" && "text-[#ee4580]"
+                          }`}
                         >
-                          <Link
-                            href={"meet-our-team"}
-                            className=""
-                            onClick={() => setIsHoveredAbout(false)}
-                          >
-                            Meet The Team
-                          </Link>
+                          <Link href={"meet-our-team"}>Meet The Team</Link>
                         </li>
                       </ul>
                     </div>
@@ -357,9 +312,9 @@ const Nav = () => {
                           <Link
                             href={"/blogs"}
                             onClick={() => handleNavigations("/blogs")}
-                            className={`${
-                              innerActive == "/blogs" ? "actives" : ""
-                            } mb-4`}
+                            className={`mb-4 ${
+                              pathname === "/blogs" && "text-[#ee4580]"
+                            }`}
                           >
                             Blogs
                           </Link>
@@ -368,9 +323,9 @@ const Nav = () => {
                           <Link
                             href={"/the-edge"}
                             onClick={() => handleNavigations("/the-edge")}
-                            className={`${
-                              innerActive == "/the-edge" ? "actives" : ""
-                            } mb-4`}
+                            className={`mb-4 ${
+                              pathname === "/the-edge" && "text-[#ee4580]"
+                            }`}
                           >
                             The Edge
                           </Link>
@@ -379,16 +334,13 @@ const Nav = () => {
                     </div>
                   )}
 
-                  <li
-                    onClick={() => handleNavigation("/career")}
-                    className={`${isActive === "/career" && "active"}`}
-                  >
+                  <li>
                     <Link
                       href="/careers"
                       onClick={() => handleNavigations("/careers")}
-                      className={`${
-                        innerActive == "/careers" ? "actives" : ""
-                      } mb-4`}
+                      className={` mb-4 ${
+                        pathname === "/careers" && "text-[#ee4580]"
+                      }`}
                     >
                       Careers
                     </Link>
@@ -397,9 +349,9 @@ const Nav = () => {
                 <Link
                   href={"/contact"}
                   onClick={() => handleNavigations("/contact")}
-                  className={`mt-10 ${
-                    innerActive == "/contact" ? "actives" : "text-[#115c5c]"
-                  } mb-4`}
+                  className={`mt-10 mb-4 ${
+                    pathname === "/contact" && "text-[#ee4580]"
+                  }`}
                 >
                   <ButtonEffect>
                     <span className="flex gap-[6px]">
@@ -415,21 +367,14 @@ const Nav = () => {
 
       {/* Main Nav Links */}
       <div className=" navber-links text-[#125b5c] font-sora font-[500] text-[14px] h-full">
-        <ul className=" h-full">
-          <li
-            onClick={() => handleNavigations("/work")}
-            className={` ${
-              innerActive == "/work" ? "actives" : "text-[#115c5c]"
-            }`}
-          >
+        <ul className="">
+          <li className={`${pathname === "/work" && "text-[#ee4580]"}`}>
             <Link href="/work" className="link">
               Work
             </Link>
           </li>
           <li
-            className={`group flex items-center justify-center cursor-pointer  h-16  ${
-              isActive === "/solutions" ? "active" : ""
-            }`}
+            className={`group flex items-center justify-center cursor-pointer `}
           >
             <p className="link  ">Solutions</p>
             {/* Add transition and transform to the icon */}
@@ -437,64 +382,58 @@ const Nav = () => {
               className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
             />
 
-            <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 border-b bg-white border-black w-screen h-[20vh]">
+            <div
+              className={`absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible
+              } group-hover:h-[60vh] transition-all duration-500 border-b bg-white border-black w-screen h-[20vh]`}
+            >
               <div className=" w-full h-full z-[115] ">
                 <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72  solutions">
-                    <h2
-                      onClick={() => handleNavigations("/brand-solutions")}
-                      className={`${
-                        innerActive == "/brand-solutions"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
+                    <h2 className="mb-4">
                       <Link
-                        href={"brand-solutions"}
-                        className="text-2xl lg:text-[30px] font-[600] "
+                        href={"/brand-solutions"}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/brand-solutions"
+                            ? "text-[#ee4580]"
+                            : ""
+                        }`}
                       >
                         Brand Solution
                       </Link>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/media-solutions")}
-                      className={`${
-                        innerActive == "/media-solutions"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"media-solutions"}
-                        className="text-2xl lg:text-[30px] font-[600] "
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/media-solutions"
+                            ? "text-[#ee4580]"
+                            : ""
+                        }`}
                       >
                         Media Solution
-                      </Link>
+                      </a>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/tech-solutions")}
-                      className={`${
-                        innerActive == "/tech-solutions"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2>
+                      <a
                         href={"tech-solutions"}
-                        className="text-2xl lg:text-[30px] font-[600]"
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/tech-solutions" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         Tech Solution
-                      </Link>
+                      </a>
                     </h2>
                   </div>
                   <React.Fragment>
                     {solutionsData.map((item, index) => (
-                      <Link
+                      <a
                         href={"/work"}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item?.id)}
                         onMouseLeave={handleMouseLeave}
-                        className="card cursor-pointer "
+                        className={`card cursor-pointer ${
+                          pathname === "/who-we-are" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         <div className="card_image">
                           <Image
@@ -523,7 +462,7 @@ const Nav = () => {
                             </div>
                           </div>
                         )}
-                      </Link>
+                      </a>
                     ))}
                   </React.Fragment>
                 </div>
@@ -532,111 +471,78 @@ const Nav = () => {
           </li>
 
           <li
-            className={` group flex items-center justify-center cursor-pointer  h-16   ${
-              isActive === "/about" ? "active" : ""
-            }`}
-            onClick={() => setIsHoveredAbout(false)}
+            className={` group flex items-center justify-center cursor-pointer`}
           >
             <p className="link">About</p>
             <RiArrowDropDownLine
-              className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
-                isHoveredAbout ? "rotate-180" : ""
-              } group-hover:rotate-180`}
+              className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
             />
             <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 bg-white w-screen h-[20vh] border-b border-black">
               <div className=" w-full h-full   z-[115] ">
                 <div className="h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
                   <div className="min-w-72  solutions">
-                    <h2
-                      onClick={() => handleNavigations("/who-we-are")}
-                      className={`${
-                        innerActive == "/who-we-are"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"/who-we-are"}
-                        className="text-2xl lg:text-[30px] font-[600]  "
-                        onClick={() => setIsHoveredAbout(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/who-we-are" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         Who We Are
-                      </Link>
+                      </a>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/we-works")}
-                      className={`${
-                        innerActive == "/we-works"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"we-works"}
-                        className="text-2xl lg:text-[30px] font-[600]   "
-                        onClick={() => setIsHoveredAbout(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/we-works" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         How We Work
-                      </Link>
+                      </a>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/partnership")}
-                      className={`${
-                        innerActive == "/partnership"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"partnership"}
-                        className="text-2xl lg:text-[30px] font-[600]   "
-                        onClick={() => setIsHoveredAbout(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/partnership" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         Our Partnership
-                      </Link>
+                      </a>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/achievements")}
-                      className={`${
-                        innerActive == "/achievements"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"achievements"}
-                        className="text-2xl lg:text-[30px] font-[600]   "
-                        onClick={() => setIsHoveredAbout(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/achievements" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         Achievements
-                      </Link>
+                      </a>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/meet-our-team")}
-                      className={`${
-                        innerActive == "/meet-our-team"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"meet-our-team"}
-                        className="text-2xl lg:text-[30px] font-[600]  "
-                        onClick={() => setIsHoveredAbout(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/meet-our-team" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         Meet The Team
-                      </Link>
+                      </a>
                     </h2>
                   </div>
 
                   <React.Fragment>
                     {AboutData.map((item, index) => (
-                      <Link
+                      <a
                         href={"/work"}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
-                        className="card cursor-pointer "
+                        className={`card cursor-pointer text-lg ${
+                          pathname === "/work" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         <div className="card_image ">
                           <Image
@@ -665,7 +571,7 @@ const Nav = () => {
                             </div>
                           </div>
                         )}
-                      </Link>
+                      </a>
                     ))}
                   </React.Fragment>
                 </div>
@@ -674,59 +580,46 @@ const Nav = () => {
           </li>
 
           <li
-            className={` group flex items-center justify-center cursor-pointer h-16  ${
-              isActive === "/resources" ? "active" : ""
-            }`}
-            onClick={() => setIsHoveredResources(false)}
+            className={` group flex items-center justify-center cursor-pointer h-16`}
           >
             <p className="link">Resources</p>
             <RiArrowDropDownLine
-              className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
-                isHoveredResources ? "rotate-180" : ""
-              } group-hover:rotate-180`}
+              className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
             />
             <div className=" absolute invisible opacity-0 top-full left-0  ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 bg-white border-b border-black w-screen h-[20vh]">
               <div className="  w-full h-full z-[115] ">
                 <div className=" h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72 ">
-                    <h2
-                      onClick={() => handleNavigations("/blogs")}
-                      className={`${
-                        innerActive == "/blogs" ? "actives" : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"/blogs"}
-                        className="text-2xl lg:text-[30px] font-[600]   "
-                        onClick={() => setIsHoveredResources(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/blogs" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         Blogs
-                      </Link>
+                      </a>
                     </h2>
-                    <h2
-                      onClick={() => handleNavigations("/the-edge")}
-                      className={`${
-                        innerActive == "/the-edge"
-                          ? "actives"
-                          : "text-[#115c5c]"
-                      } mb-4`}
-                    >
-                      <Link
+                    <h2 className="mb-4">
+                      <a
                         href={"the-edge"}
-                        className="text-2xl lg:text-[30px] font-[600]  "
-                        onClick={() => setIsHoveredResources(false)}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/the-edge" ? "text-[#ee4580]" : ""
+                        }`}
                       >
                         The Edge
-                      </Link>
+                      </a>
                     </h2>
                   </div>
                   {ResourcesData.map((item, index) => (
-                    <Link
+                    <a
                       href={"/blogs"}
                       key={index}
                       onMouseMove={(e) => handleMouseMove(e, item.id)}
                       onMouseLeave={handleMouseLeave}
-                      className="card cursor-pointer "
+                      className={`card cursor-pointer text-lg ${
+                        pathname === "/blogs" ? "text-[#ee4580]" : ""
+                      }`}
                     >
                       <div className="card_image">
                         <Image
@@ -755,36 +648,33 @@ const Nav = () => {
                           </div>
                         </div>
                       )}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
             </div>
           </li>
 
-          <li
-            onClick={() => handleNavigations("/careers")}
-            className={`${
-              innerActive == "/careers" ? "actives" : "text-[#115c5c]"
-            }`}
-          >
-            <Link href="/careers" className="link">
+          <li>
+            <Link
+              href="/careers"
+              className={`${pathname === "/careers" && "text-[#ee4580]"}`}
+            >
               Careers
             </Link>
           </li>
-          <Link
-            href={"/contact"}
-            onClick={() => handleNavigations("/contact")}
-            className={`mt-14 ${
-              innerActive == "/contact" ? "actives" : "text-[#115c5c]"
-            } mb-4`}
-          >
-            <ButtonEffect>
-              <span className="flex gap-[6px]">
-                Contact Us <MdOutlineArrowRightAlt className="text-xl" />
-              </span>
-            </ButtonEffect>
-          </Link>
+          <li>
+            <Link
+              href={"/contact"}
+              className={` ${pathname === "/contact" ? "text-[#ee4580]" : ""}`}
+            >
+              <ButtonEffect>
+                <span className="flex gap-[6px]">
+                  Contact Us <MdOutlineArrowRightAlt className="text-xl" />
+                </span>
+              </ButtonEffect>
+            </Link>
+          </li>
         </ul>
       </div>
 

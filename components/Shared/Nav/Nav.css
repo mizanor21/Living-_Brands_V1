@@ -69,14 +69,6 @@
     color: inherit;
 }
 
-/* .navber-links ul li.active {
-    color: #ee4580
-} */
-
-.actives {
-    color: #ee4580
-}
-
 
 .navber-links ul .dropdown {
     display: flex;
