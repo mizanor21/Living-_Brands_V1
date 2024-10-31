@@ -390,7 +390,7 @@ const Nav = () => {
                 <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                   <div className="min-w-72  solutions">
                     <h2 className="mb-4">
-                      <Link
+                      <a
                         href={"/brand-solutions"}
                         className={`text-2xl lg:text-[30px] font-[600] ${
                           pathname === "/brand-solutions"
@@ -399,7 +399,7 @@ const Nav = () => {
                         }`}
                       >
                         Brand Solution
-                      </Link>
+                      </a>
                     </h2>
                     <h2 className="mb-4">
                       <a
@@ -546,11 +546,11 @@ const Nav = () => {
                       >
                         <div className="card_image ">
                           <Image
-                            className="rounded-2xl h-[300px] lg:h-[380px]"
+                            className="rounded-2xl h-[300px] lg:h-[350px]"
                             src={item?.src}
                             alt={index}
                             width={700}
-                            height={500}
+                            height={300}
                           />
                         </div>
 
