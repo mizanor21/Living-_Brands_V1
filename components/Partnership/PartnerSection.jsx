@@ -1,43 +1,25 @@
-import React from "react";
+"use client";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const PartnerSection = () => {
-  const partnersData = [
-    {
-      name: "ONDC Partner",
-      description: "Complete e-commerce solutions to meet your business goals.",
-      logo: "https://i.postimg.cc/02t5zJKh/Screenshot_from_2024-09-28_16-58-13.png",
-    },
-    {
-      name: "Google Premier Partner",
-      description: "Leverage the power of Google Ads to scale your business.",
-      logo: "https://i.postimg.cc/rFyFy9sS/Screenshot-from-2024-09-28-16-59-59.png",
-    },
-    {
-      name: "Zoho Premium Partner",
-      description:
-        "Design and implement integrated business architectures and digital transformation solutions.",
-      logo: "https://i.postimg.cc/4xRCp7pQ/6483768cc3d75ee3ac3fc879-Zoho-Partner-Updated.png",
-    },
-    {
-      name: "MoEngage Partner",
-      description:
-        "Design and implement integrated business architectures and digital transformation solutions.",
-      logo: "https://i.postimg.cc/RCkWjdc1/Screenshot-from-2024-10-01-12-39-27.png",
-    },
-    {
-      name: "Adobe Solution Partner",
-      description:
-        "Design and implement integrated business architectures and digital transformation solutions.",
-      logo: "https://i.postimg.cc/fWfRhPzz/Screenshot_from_2024-09-28_16-59-21.png",
-    },
+  const [partnersData, setPartnersData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://living-brands-admin.vercel.app/api/partnership"
+        );
+        console.log(response);
+        setPartnersData(response.data);
+      } catch (error) {
+        console.error("Error fetching partner data:", error);
+      }
+    };
 
-    {
-      name: "Zoho Premium Partner",
-      description:
-        "Design and implement integrated business architectures and digital transformation solutions.",
-      logo: "https://i.postimg.cc/hPYS7tGS/Screenshot-from-2024-10-01-12-35-55.png",
-    },
-  ];
+    fetchData();
+  }, []);
+  console.log(partnersData);
   return (
     <div className="bg-white py-10 relative z-[110] rounded-b-[20px] lg:rounded-b-[50px] font-sora">
       <div className="p-[5%]">
