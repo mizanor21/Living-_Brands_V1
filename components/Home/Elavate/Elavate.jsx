@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import React, { useEffect } from "react";
 
-const Elevate = () => {
+const Elevate = ({ data }) => {
   const styles = {
     display: "flex",
     justifyContent: "center",
@@ -61,12 +61,11 @@ const Elevate = () => {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center p-[5%]">
             <h2 className="text-2xl md:text-4xl lg:text-[48px] font-medium text-white lg:pr-5">
-              Elevate Your Brand Today!
+              {data?.title}
             </h2>
             <div>
               <p className="text-white text-[20px] font-[400] ">
-                Ready to transform your digital presence? Let&apos;s create
-                magic together! book our services now!
+                {data?.shortDescription}
               </p>
               <div className="mt-5">
                 <Link

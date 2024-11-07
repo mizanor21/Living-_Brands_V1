@@ -3,7 +3,8 @@ import Link from "next/link";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import React, { useEffect } from "react";
 
-const Journey = () => {
+const Journey = ({ data }) => {
+  console.log(data);
   const styles = {
     display: "flex",
     justifyContent: "center",
@@ -60,7 +61,7 @@ const Journey = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-[5%] items-center py-10">
             <div>
               <h2 className="text-2xl md:text-4xl lg:text-[51px] font-[500] leading-[1] md:leading-[1.1] lg:leading-[1.2] text-white">
-                Start Your Journey With Us Now
+                {data?.title}
               </h2>
 
               <div className="mt-5">

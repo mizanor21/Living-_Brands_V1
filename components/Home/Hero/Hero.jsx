@@ -6,7 +6,7 @@ import TimeSchbang from "../TimeSchbang/TimeSchbang";
 import ButtonEffect from "@/app/button/page";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
-const Hero = () => {
+const Hero = ({ data }) => {
   const [isSticky, setIsSticky] = useState(true);
 
   useEffect(() => {
@@ -43,12 +43,10 @@ const Hero = () => {
             <div className="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
               <div className="max-w-xl mb-6">
                 <h2 className="mb-6 text-3xl sm:leading-none lg:text-[60px] font-[700] tracking-tight text-[#185C5D] ">
-                  Spark Something Real. Live Your Brands with Us.
+                  {data?.title}
                 </h2>
                 <p className="text-[20px] my-[44px] font-[400] md:mt-0">
-                  We ignite emotions, tell captivating stories, create campaigns
-                  that resonate, and drive real results. Let&apos;s bring your
-                  brand to life.
+                  {data?.shortDescription}
                 </p>
               </div>
               <div className="mt-2 lg:mt-5 max-w-52 ">
