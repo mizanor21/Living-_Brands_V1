@@ -13,12 +13,8 @@ const Work = () => {
         </h2>
         <hr />
         <div className="md:flex justify-end my-5 space-y-1 md:space-y-0">
-          {/* <Button>
-            Casestudy <br />
-          </Button> */}
           <ButtonEffect>Casestudy</ButtonEffect>
           <span className="divider divider-horizontal divider-start divider-neutral"></span>
-          {/* <Button>Daily Creativity</Button> */}
           <ButtonEffect>Daily Creativity</ButtonEffect>
         </div>
 
