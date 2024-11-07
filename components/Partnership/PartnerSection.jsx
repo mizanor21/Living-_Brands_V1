@@ -19,7 +19,6 @@ const PartnerSection = () => {
 
     fetchData();
   }, []);
-  console.log(partnersData);
   return (
     <div className="bg-white py-10 relative z-[110] rounded-b-[20px] lg:rounded-b-[50px] font-sora">
       <div className="p-[5%]">
