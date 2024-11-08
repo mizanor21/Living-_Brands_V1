@@ -42,7 +42,7 @@ export default function SlightFlip({
   return (
     <div ref={ref}>
       {/* Only animate if visible */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {isVisible &&
           word.split("").map((char, i) => (
             <motion.span
