@@ -4,7 +4,6 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import React, { useEffect } from "react";
 
 const Journey = ({ data }) => {
-  console.log(data);
   const styles = {
     display: "flex",
     justifyContent: "center",

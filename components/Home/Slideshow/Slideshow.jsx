@@ -7,7 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "./slideshow.css";
 import Link from "next/link";
 
-const Slideshow = () => {
+const Slideshow = ({ data }) => {
+  // console.log(data);
   const [position, setPosition] = useState({ x: null, y: null });
   const sliderLeftRef = useRef(null);
   const sliderRightRef = useRef(null);

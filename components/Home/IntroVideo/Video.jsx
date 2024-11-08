@@ -2,7 +2,8 @@
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
-const Video = () => {
+const Video = ({ data }) => {
+  // console.log(data);
   const [position, setPosition] = useState({ x: null, y: null });
   const [isFirstVisit, setIsFirstVisit] = useState(true); // Track first visit
   const videoRef = useRef(null);
@@ -103,7 +104,6 @@ const Video = () => {
             preload="auto" // Preload video to reduce lag
             muted={isFirstVisit} // Muted only on the first visit
             onClick={handleVideoClick} // Toggle play/pause on click
-            poster="/images/loading.jpg" // Poster image while video loads
           >
             <source src="/videos/Intro.mp4" type="video/mp4" />
             Your browser does not support the video tag.
