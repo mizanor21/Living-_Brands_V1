@@ -24,7 +24,7 @@ export default async function Home() {
     journeySection = {},
     brandSection = {},
   } = home[0];
-  console.log(solutionSection);
+  // console.log(heroSection);
   return (
     <main>
       <Hero data={heroSection} />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import TimeSchbang from "../TimeSchbang/TimeSchbang";
 import ButtonEffect from "@/app/button/page";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Image from "next/image";
 
 const Hero = ({ data }) => {
   const [isSticky, setIsSticky] = useState(true);
@@ -65,9 +66,11 @@ const Hero = ({ data }) => {
               </div>
             </div>
             <div className="relative">
-              <img
+              <Image
+                width={200}
+                height={200}
                 className="hidden md:block w-[400px]"
-                src="https://i.postimg.cc/rmvDtcvp/hero-img.png"
+                src={data?.image}
                 alt="Living banner"
               />
             </div>
