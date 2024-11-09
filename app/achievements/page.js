@@ -11,11 +11,11 @@ const Achievement = async () => {
   const awards = await res.json();
 
   return (
-    <div className="bg-white relative z-[110] py-10 lg:py-20 font-sora">
+    <div className="bg-white relative z-[110] py-10 lg:py-20 font-sora rounded-b-[20px] lg:rounded-b-[40px]">
       {awards.map((award, index) => (
         <div
           key={award._id}
-          className="grid gap-8 mb-20 px-[5%] lg:gap-20 md:grid-cols-2"
+          className="grid gap-8 mb-20 px-[5%] lg:px-[10%] lg:gap-20 md:grid-cols-2"
         >
           {/* Image Part */}
           <div
@@ -29,7 +29,7 @@ const Achievement = async () => {
                 height={600}
                 src={award.image}
                 alt={award.title}
-                className="rounded-lg max-h-[800px]"
+                className="rounded-lg max-h-[900px]"
               />
             ) : (
               <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
