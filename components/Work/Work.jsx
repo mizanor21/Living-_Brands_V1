@@ -1,10 +1,7 @@
-import React from "react";
-import Button from "../Custom/Button";
-import Image from "next/image";
 import Items from "../Items/Items";
 import ButtonEffect from "@/app/button/page";
 
-const Work = () => {
+const Work = ({ workData }) => {
   return (
     <div className="bg-white relative z-[110] rounded-b-[40px] pb-10 lg:pb-20 font-sora">
       <div className="px-[5%] pb-10">
@@ -18,7 +15,7 @@ const Work = () => {
           <ButtonEffect>Daily Creativity</ButtonEffect>
         </div>
 
-        <Items />
+        <Items workData={workData} />
       </div>
     </div>
   );
