@@ -27,7 +27,7 @@ const WhoWeAre = async () => {
   ] = sections;
 
   return (
-    <div className="bg-white relative z-[110] grid grid-cols-1 px-[5%] font-sora">
+    <div className="bg-white relative z-[110] grid grid-cols-1 px-[5%] font-sora rounded-b-[20px] lg:rounded-b-[40px]">
       <h1 className="text-3xl font-bold text-[#125B5C] py-[5%] lg:pt-[80px] lg:pb-[60px] md:text-3xl lg:text-[48px]">
         {title}
       </h1>
@@ -37,7 +37,7 @@ const WhoWeAre = async () => {
           <h1 className="text-2xl font-bold mt-1 md:text-3xl text-[#125b5c] mb-8">
             {heading}
           </h1>
-          {descriptionText.map((paragraph, index) => (
+          {descriptionText?.map((paragraph, index) => (
             <p key={index} className="text-[16px] text-justify">
               {paragraph}
             </p>
@@ -54,7 +54,13 @@ const WhoWeAre = async () => {
           </Link>
         </div>
         <div className="order-first md:order-last flex justify-center items-center">
-          <video className="rounded-2xl lg:w-[800px]" autoPlay loop muted>
+          <video
+            className="rounded-2xl lg:w-[800px]"
+            alt={shortVideoAlt}
+            autoPlay
+            loop
+            muted
+          >
             <source src={shortVideoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -62,6 +68,7 @@ const WhoWeAre = async () => {
       </div>
       <video
         className="rounded-2xl lg:w-[100%] lg:h-[100%] pb-10 lg:pb-20"
+        alt={longVideoAlt}
         autoPlay
         loop
         muted
