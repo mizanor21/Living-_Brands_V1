@@ -3,34 +3,51 @@ import ButtonEffect from "../button/page";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import Link from "next/link";
 
-const WhoWeAre = () => {
+const WhoWeAre = async () => {
+  // Fetching data from the API
+  const res = await fetch(
+    "https://living-brands-admin.vercel.app/api/who-we-are",
+    { next: { revalidate: 10 } }
+  );
+  const whoWeAreData = await res.json();
+
+  // Destructuring `sections` from the first object in `whoWeAreData`
+  const [{ title, sections }] = whoWeAreData;
+
+  // Destructuring properties inside the `sections` array
+  const [
+    {
+      button: { text: buttonText, link: buttonLink },
+      shortVideo: { src: shortVideoSrc, alt: shortVideoAlt },
+      longVideo: { src: longVideoSrc, alt: longVideoAlt },
+      heading,
+      text: descriptionText,
+      _id: sectionId,
+    },
+  ] = sections;
+
   return (
     <div className="bg-white relative z-[110] grid grid-cols-1 px-[5%] font-sora">
       <h1 className="text-3xl font-bold text-[#125B5C] py-[5%] lg:pt-[80px] lg:pb-[60px] md:text-3xl lg:text-[48px]">
-        We bring the whole Living Brands.
+        {title}
       </h1>
       <hr className="w-full text-black bg-gray-400 h-[2px]" />
       <div className="grid gap-5 mb-8 sm:grid-cols-1 md:grid-cols-2 mt-10 lg:mt-20">
         <div className="order-last md:order-first">
-          <h1 className="text-2xl font-bold mt-1 md:text-3Xl text-[#125b5c] mb-8">
-            Who We Are
+          <h1 className="text-2xl font-bold mt-1 md:text-3xl text-[#125b5c] mb-8">
+            {heading}
           </h1>
-          <p className="text-[16px]  text-justify">
-            Living Brands is a dynamic digital marketing agency with a singular
-            mission: to turn your brand into a global powerhouse. We believe in
-            the strength of collaboration, where creative minds, marketing
-            specialists, and cutting-edge technology come together to craft
-            innovative strategies. With a relentless focus on results, we push
-            boundaries to ignite lasting growth and elevate your brand&apos;s
-            presence in the market.
-          </p>
+          {descriptionText.map((paragraph, index) => (
+            <p key={index} className="text-[16px] text-justify">
+              {paragraph}
+            </p>
+          ))}
           <br />
-          <Link href={""}>
+          <Link href={buttonLink}>
             <div className="max-w-md">
               <ButtonEffect>
                 <span className="flex gap-2">
-                  Access Living Brand&apos;s Bots{" "}
-                  <MdOutlineArrowRightAlt className="text-xl" />
+                  {buttonText} <MdOutlineArrowRightAlt className="text-xl" />
                 </span>
               </ButtonEffect>
             </div>
@@ -38,7 +55,7 @@ const WhoWeAre = () => {
         </div>
         <div className="order-first md:order-last flex justify-center items-center">
           <video className="rounded-2xl lg:w-[800px]" autoPlay loop muted>
-            <source src="/videos/about1.mp4" type="video/mp4" />
+            <source src={shortVideoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -49,7 +66,7 @@ const WhoWeAre = () => {
         loop
         muted
       >
-        <source src="/videos/about2.mp4" type="video/mp4" />
+        <source src={longVideoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

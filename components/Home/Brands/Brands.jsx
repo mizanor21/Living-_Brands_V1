@@ -3,7 +3,6 @@ import "./Brands.css";
 import Image from "next/image";
 
 const Brands = ({ body, data }) => {
-  console.log(data?.partnerBrands);
   return (
     <div className="bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[60px]">
       <div className="relative flex h-[300px] lg:h-[450px] w-full flex-col items-center justify-center overflow-hidden">
