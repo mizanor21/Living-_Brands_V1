@@ -37,9 +37,9 @@ const ColorPalette = () => {
       <div className="hidden md:block font-sora">
         <section
           ref={targetRef}
-          className="relative h-[700vh] bg-white py-10 lg:py-20"
+          className="relative h-[650vh] bg-white py-10 lg:py-16 "
         >
-          <div className="my-10 lg:my-20">
+          {/* <div className="my-10 lg:my-20">
             <h1 className="text-[24px] text-[#125b5c] font-[600] text-center ">
               Have you got what it takes to #CreateALivingBrands?
             </h1>
@@ -47,7 +47,7 @@ const ColorPalette = () => {
               Check out our core principles. If they align with your values, do
               apply.
             </p>
-          </div>
+          </div> */}
           <div className="sticky top-12 flex items-center overflow-hidden">
             <motion.div
               style={{ x }}
@@ -86,20 +86,22 @@ const ColorPalette = () => {
       </div>
       {/* Small device view */}
       <div className="md:hidden mt-10">
-        {colors.map((item) => (
-          <div key={item.id}>
+        {colors.map((color) => (
+          <div key={color.id}>
             <div>
-              <img
-                className="w-full h-[350px]"
-                src={item.imageUrl}
-                alt={item.title}
+              <Image
+                width={350}
+                height={400}
+                className="w-full h-[400px] object-cover"
+                src={color.imageUrl} // Assuming color data includes imageUrl
+                alt={color.title}
               />
             </div>
             <div className="mt-4 mb-5">
               <h2 className="text-[22px] font-[600] text-[#185C5D]">
-                {item.title}
+                {color.title}
               </h2>
-              <p className="text-[16px] py-4">{item.description}</p>
+              <p className="text-[16px] py-4">{color.description}</p>
             </div>
           </div>
         ))}
