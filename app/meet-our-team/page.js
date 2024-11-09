@@ -1,15 +1,19 @@
 import MeetOurTeam from "@/components/About/MeetOurTeam";
 
-const page = () => {
+const page = async () => {
+  const res = await fetch("https://living-brands-admin.vercel.app/api/teams", {
+    next: { revalidate: 10 },
+  });
+  const teamsData = await res.json();
   return (
-    <div className=" relative z-[110] bg-white font-sora">
-      <div className="flex justify-center my-20 ">
+    <div className=" relative z-[110] bg-white font-sora rounded-b-[20px] lg:rounded-b-[40px]">
+      <div className="flex justify-center py-10 ">
         <h2 className="text-2xl  md:text-[48px] font-bold text-[#125b5c]">
           Our Team
         </h2>
       </div>
       <div className="mx-4 lg:mx-72">
-        <MeetOurTeam />
+        <MeetOurTeam teamsData={teamsData} />
       </div>
     </div>
   );
