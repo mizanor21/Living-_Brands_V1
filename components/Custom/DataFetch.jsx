@@ -10,3 +10,11 @@ export const useItemsData = () => {
   );
   return { data, error, isLoading: !data && !error };
 };
+
+export const useJobsData = () => {
+  const { data, error } = useSWR(
+    "https://living-brands-admin.vercel.app/api/jobs",
+    fetcher
+  );
+  return { data, error, isLoading: !data && !error };
+};
