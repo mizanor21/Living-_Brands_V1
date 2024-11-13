@@ -1,3 +1,4 @@
+export const revalidate = 10;
 import Hero from "../components/Home/Hero/Hero";
 import Define from "../components/Home/Define/Define";
 import Solutions from "../components/Home/Solutions/Solutions";
@@ -8,9 +9,7 @@ import Elevate from "@/components/Home/Elavate/Elavate";
 import Journey from "@/components/Home/Journey/Journey";
 
 export default async function Home() {
-  const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
-    next: { revalidate: 10 },
-  });
+  const res = await fetch("https://living-brands-admin.vercel.app/api/home");
   const home = await res.json();
 
   // Destructure fetched data sections
