@@ -17,7 +17,7 @@ const Card = ({ section, index }) => {
             <h3 className="text-[60px] font-[600] leading-[84px] text-gray-300 group-hover:text-white transition-colors duration-300 mb-5">
               {section?.title}
             </h3>
-            <p className="carousel-p text-[16px] font-[500] leading-[22px] text-gray-50 text-justify hidden-on-hover">
+            <p className="carousel-p text-[16px] font-[500] leading-[22px] text-gray-50 hidden-on-hover">
               {section?.content}
             </p>
             <div className="flex justify-center pt-5 lg:pt-20">
