@@ -11,7 +11,7 @@ import Journey from "@/components/Home/Journey/Journey";
 
 export default async function Home() {
   const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
-    cache: "no-cache",
+    cache: "no-store",
   });
 
   if (!res.ok) {
