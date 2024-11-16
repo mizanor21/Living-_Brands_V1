@@ -1,8 +1,9 @@
 import React from "react";
 
-const WorkDetail = () => {
+const WorkDetails = ({ id }) => {
+  console.log(id);
   return (
-    <div className="flex flex-col px-4 lg:px-[100px] font-sora">
+    <div className="flex flex-col px-4 lg:px-[100px] font-sora bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
       <div className="w-full flex flex-col gap-3 text-[#125b5c] justify-start mt-16">
         <p className="text-[19px]">Casestudy</p>
         <h1 className="font-bold text-[24px] lg:text-[48px]">
@@ -64,4 +65,4 @@ const WorkDetail = () => {
   );
 };
 
-export default WorkDetail;
+export default WorkDetails;

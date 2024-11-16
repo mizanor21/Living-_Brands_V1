@@ -66,7 +66,7 @@ const Items = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
       {workData?.map((item) => (
-        <Link key={item._id} href="/work-details">
+        <Link key={item._id} href={`works/${item._id}`}>
           <div
             className="relative"
             onMouseMove={(e) => handleMouseMove(e, item._id)}

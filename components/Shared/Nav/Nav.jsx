@@ -369,7 +369,7 @@ const Nav = () => {
       <div className=" navber-links text-[#125b5c] font-sora font-[500] text-[14px] h-full">
         <ul className="">
           <li className={`${pathname === "/work" && "text-[#ee4580]"}`}>
-            <Link href="/work" className="link">
+            <Link href="/works" className="link">
               Work
             </Link>
           </li>
