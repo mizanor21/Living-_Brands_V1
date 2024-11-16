@@ -26,7 +26,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
 
           <hr className="h-[3px] bg-gray-500 mb-5 max-w-52" />
           <p className="font-semibold text-[18px] text-[#125b5c] mb-10 transition-opacity duration-300 ease-in-out">
-            Proud to work with the biggest brands in India & Abroad
+            Proud to work with the biggest brands in Bangladesh & Abroad
           </p>
 
           {/* Brand Logos with Skeleton Loader */}
