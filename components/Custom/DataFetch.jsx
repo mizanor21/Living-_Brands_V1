@@ -13,7 +13,9 @@ export const useItemsData = () => {
 
 export const useItemDetailsData = ({ params }) => {
   const { data, error } = useSWR(
-    params?.id ? `http://localhost:3001/api/works/${params.id}` : null,
+    params?.id
+      ? `https://living-brands-admin.vercel.app/api/works/${params.id}`
+      : null,
     fetcher
   );
   return { data, error, isLoading: !data && !error };

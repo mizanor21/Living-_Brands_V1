@@ -13,14 +13,14 @@ const Card = ({ section, index }) => {
         className={`hover-container ${section?.id} h-screen border-r-2 hover:text-white group`}
       >
         <div className="text-center solutionCard w-[580px] h-full flex items-center justify-center">
-          <div className="px-5 lg:px-20">
-            <h3 className="text-[50px] font-[600] leading-[60px] text-gray-300 group-hover:text-white transition-colors duration-300 mb-5">
+          <div className="px-5 lg:px-16">
+            <h3 className="text-[50px] font-[600] leading-[55px] text-gray-300 group-hover:text-white transition-colors duration-300 mb-5">
               {section?.title}
             </h3>
             <p className="carousel-p text-[16px] font-[500] leading-[22px] text-gray-50 hidden-on-hover">
               {section?.content}
             </p>
-            <div className="flex justify-center pt-5 lg:pt-20">
+            <div className="flex justify-center pt-5 lg:pt-14">
               <HiMiniArrowLongRight className="xl:w-20 arrowIcon xl:h-20 text-2xl lg:text-[40px] carousel-p text-[#125b5c] p-3 hidden-on-hover  bg-white rounded-full group-hover:border-2 border-gray-300" />
             </div>
           </div>
