@@ -1,4 +1,5 @@
-export const revalidate = 10;
+export const revalidate = 10; // Set the revalidation interval to 10 seconds
+
 import Hero from "../components/Home/Hero/Hero";
 import Define from "../components/Home/Define/Define";
 import Solutions from "../components/Home/Solutions/Solutions";
@@ -9,7 +10,17 @@ import Elevate from "@/components/Home/Elavate/Elavate";
 import Journey from "@/components/Home/Journey/Journey";
 
 export default async function Home() {
-  const res = await fetch("https://living-brands-admin.vercel.app/api/home");
+  // Fetch data from the API with caching and revalidation
+  const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
+    next: { revalidate: 10 }, // Enable ISR with 10 seconds revalidation
+  });
+
+  if (!res.ok) {
+    // Handle API fetch errors
+    console.error("Failed to fetch home data");
+    return <div>Failed to load content</div>;
+  }
+
   const home = await res.json();
 
   // Destructure fetched data sections
@@ -22,17 +33,15 @@ export default async function Home() {
     solutionSection = {},
     journeySection = {},
     brandSection = {},
-  } = home[0];
-  // console.log(heroSection);
+  } = home[0] || {};
+
   return (
     <main>
       <Hero data={heroSection} />
       <Video data={videoSection} />
       <Elevate data={elevateSection} />
       <Define data={defineUsSection} />
-
       <Slideshow data={slideshowSection} />
-
       <Solutions data={solutionSection} />
       <Journey data={journeySection} />
       <Brands data={brandSection} />
