@@ -32,6 +32,24 @@ const ColorPalette = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
+  const [imageHeight, setImageHeight] = useState(450); // Default height
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1300 && width <= 1500) {
+        setImageHeight(380); // Height for 1300px - 1500px
+      } else {
+        setImageHeight(450); // Default height
+      }
+    };
+
+    handleResize(); // Set initial height
+    window.addEventListener("resize", handleResize); // Update on resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div className="hidden md:block font-sora">
@@ -56,20 +74,23 @@ const ColorPalette = () => {
               {colors.map((color) => (
                 <div
                   key={color.id}
-                  className="w-[450px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
+                  className="w-[430px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
                 >
                   <div>
                     <Image
                       width={450}
                       height={400}
-                      className="w-full h-[450px] object-cover"
+                      className="w-full object-cover"
                       src={color.imageUrl} // Assuming color data includes imageUrl
                       alt={color.title}
+                      style={{
+                        height: `${imageHeight}px`, // Apply dynamic height
+                      }}
                     />
                   </div>
-                  <div className="p-[2rem] h-[300px] relative group">
+                  <div className="p-[25px] h-[300px] relative group">
                     <div className="text-center">
-                      <h2 className="text-[24px] font-bold text-[#185C5D]">
+                      <h2 className="text-[22px] font-bold text-[#185C5D]">
                         {color.title}
                       </h2>
                       <p className="text-[16px] group-hover:text-black py-4">
