@@ -13,6 +13,7 @@ export default async function Home() {
   // Fetch data from the API with caching and revalidation
   const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
     next: { revalidate: 10 }, // Enable ISR with 10 seconds revalidation
+    cache: "no-store",
   });
 
   if (!res.ok) {
