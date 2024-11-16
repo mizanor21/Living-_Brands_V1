@@ -11,6 +11,14 @@ export const useItemsData = () => {
   return { data, error, isLoading: !data && !error };
 };
 
+export const useItemDetailsData = ({ params }) => {
+  const { data, error } = useSWR(
+    params?.id ? `http://localhost:3001/api/works/${params.id}` : null,
+    fetcher
+  );
+  return { data, error, isLoading: !data && !error };
+};
+
 export const useJobsData = () => {
   const { data, error } = useSWR(
     "https://living-brands-admin.vercel.app/api/jobs",
