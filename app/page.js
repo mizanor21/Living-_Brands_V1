@@ -12,8 +12,8 @@ import Journey from "@/components/Home/Journey/Journey";
 export default async function Home() {
   // Fetch data from the API with caching and revalidation
   const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
-    next: { revalidate: 60 }, // Enable ISR with 60 seconds revalidation
-    cache: "no-store",
+    next: { revalidate: 5 }, // Enable ISR with 60 seconds revalidation
+    cache: "no-cache",
   });
 
   if (!res.ok) {
