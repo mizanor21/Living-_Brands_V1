@@ -93,7 +93,7 @@ const ColorPalette = () => {
                       <h2 className="text-[22px] font-bold text-[#185C5D]">
                         {color.title}
                       </h2>
-                      <p className="text-[16px] group-hover:text-black py-4">
+                      <p className="text-[16px] group-hover:text-black py-2">
                         {color.description}
                       </p>
                     </div>
