@@ -103,7 +103,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="font-sora  navber md:sticky top-0  px-[5%] z-[150] bg-white py-3">
+    <div className="font-sora  navber md:sticky top-0  px-[5%] z-[150] bg-white py-2">
       {/* Logo and side menu */}
       <div className="navber-logo z-[115]">
         <div className="">
@@ -112,7 +112,7 @@ const Nav = () => {
               <Link href="/" onClick={() => handleNavigations("/")}>
                 <Image
                   src={logo}
-                  className="w-20"
+                  className="w-16"
                   alt="Living Brands logo"
                 ></Image>
               </Link>
