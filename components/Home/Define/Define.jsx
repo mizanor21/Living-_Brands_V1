@@ -46,7 +46,7 @@ const Define = ({ data }) => {
           <div className="flex justify-center items-center rounded-badge">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h2 className="defineHeading text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D]">
+                <h2 className="defineHeading text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1]">
                   {data?.heading}
                 </h2>
                 <div className="hidden lg:flex mt-7">
