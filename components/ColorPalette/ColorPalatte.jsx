@@ -32,7 +32,7 @@ const ColorPalette = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
-  const [imageHeight, setImageHeight] = useState(450); // Default height
+  const [imageHeight, setImageHeight] = useState(430); // Default height
 
   useEffect(() => {
     const handleResize = () => {
@@ -55,7 +55,7 @@ const ColorPalette = () => {
       <div className="hidden md:block font-sora">
         <section
           ref={targetRef}
-          className="relative h-[650vh] bg-white py-10 lg:py-16 "
+          className="relative h-[600vh] bg-white py-10 lg:py-16 "
         >
           {/* <div className="my-10 lg:my-20">
             <h1 className="text-[24px] text-[#125b5c] font-[600] text-center ">
@@ -66,7 +66,7 @@ const ColorPalette = () => {
               apply.
             </p>
           </div> */}
-          <div className="sticky top-12 flex items-center overflow-hidden">
+          <div className="sticky -top-6 flex items-center overflow-hidden">
             <motion.div
               style={{ x }}
               className="flex gap-4 transition-transform duration-2000 ease-out"
@@ -74,12 +74,12 @@ const ColorPalette = () => {
               {colors.map((color) => (
                 <div
                   key={color.id}
-                  className="w-[430px] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
+                  className="w-[27rem] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
                 >
                   <div>
                     <Image
-                      width={450}
-                      height={400}
+                      width={400}
+                      height={450}
                       className="w-full object-cover"
                       src={color.imageUrl} // Assuming color data includes imageUrl
                       alt={color.title}
