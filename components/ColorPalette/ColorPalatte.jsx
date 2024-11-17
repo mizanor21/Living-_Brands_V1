@@ -74,7 +74,7 @@ const ColorPalette = () => {
               {colors.map((color) => (
                 <div
                   key={color.id}
-                  className="w-[27rem] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
+                  className="w-[26rem] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
                 >
                   <div>
                     <Image
