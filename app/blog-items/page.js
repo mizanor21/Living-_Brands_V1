@@ -50,7 +50,7 @@ const BlogItems = () => {
   const blogitems = [
     {
       id: 1,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "https://i.postimg.cc/K88zzWnM/1.jpg",
       title: "Eid Campaign",
       detailsTitle: "Pusti Chinigura Rice X Nusrat Faria",
@@ -73,7 +73,7 @@ const BlogItems = () => {
     },
     {
       id: 2,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "digital-marketing-thumb.jpg",
       title: " Featuring Shakib Al Hasan",
       detailsTitle: "DBL Ceramics Presents: An Emotional May Day Tribute",
@@ -96,7 +96,7 @@ const BlogItems = () => {
     },
     {
       id: 3,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "graphic-design-thumb.jpg",
       title: "Expo Bangladesh",
       detailsTitle: "Ceramic Expo Bangladesh Highlight 03",
@@ -119,7 +119,7 @@ const BlogItems = () => {
     },
     {
       id: 4,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "mobile-dev-thumb.jpg",
       title: "Expo Bangladesh",
       detailsTitle: "Ceramic Expo Bangladesh Highlight 02",
@@ -141,7 +141,7 @@ const BlogItems = () => {
     },
     {
       id: 5,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "consulting-thumb.jpg",
       title: "Expo Bangladesh",
       detailsTitle: "Ceramic Expo Bangladesh Highlight 01",
@@ -164,7 +164,7 @@ const BlogItems = () => {
     },
     {
       id: 6,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "cloud-services-thumb.jpg",
       title: "Expo 2022",
       detailsTitle: "Ceramic Expo 2022 Bangladesh Documentary",
@@ -187,7 +187,7 @@ const BlogItems = () => {
     },
     {
       id: 8,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "content-creation-thumb.jpg",
       title: "Bangladesh Documentory",
       detailsTitle: "Tableware Market in Bangladesh Documentory",
@@ -257,7 +257,7 @@ const BlogItems = () => {
     },
     {
       id: 11,
-      category: "Casestudy",
+      category: "Case study",
       thumbnail: "ecommerce-thumb.jpg",
       title: "Digital",
       detailsTitle: "Disruption on the Digital Strages",
@@ -305,8 +305,8 @@ const BlogItems = () => {
       id: 14,
       category: "Daily Creativity",
       thumbnail: "project-management-thumb.jpg",
-      title: "Children Day",
-      detailsTitle: "Children Day OVC _Seven Rings Cement",
+      title: "Children’s Day",
+      detailsTitle: "Children’s Day OVC _Seven Rings Cement",
       services: [
         {
           serviceName: "Project Planning",

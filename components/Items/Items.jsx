@@ -98,7 +98,7 @@ const Items = () => {
                 }}
               >
                 <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
-                  <p style={scrollAnimation}>View Casestudy</p>
+                  <p style={scrollAnimation}>View Case study</p>
                 </div>
               </div>
             )}
