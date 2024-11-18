@@ -61,8 +61,8 @@ const Elevate = ({ data }) => {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center p-[5%]">
             {/* defineHeading text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1] */}
-            <h2 className="text-2xl md:text-4xl lg:text-[48px] font-medium text-white lg:pr-5 leading-[1.2] ">
-              {data?.title}
+            <h2 className="text-2xl md:text-4xl lg:text-[48px] font-medium text-white lg:pr-5 ">
+              <p className="leading-[1.1]">{data?.title}</p>
             </h2>
             <div>
               <p className="text-white text-[20px] font-[400] ">
