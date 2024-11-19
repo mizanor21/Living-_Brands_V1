@@ -83,7 +83,7 @@ const JobListings = () => {
           <h2 className="text-2xl font-semibold text-[#125b5c]">Join us</h2>
           <p className="text-gray-500">Current Openings</p>
 
-          {/* Search Section */}
+          {/* Search Section
           <div className="flex mt-6 gap-4">
             <input
               type="text"
@@ -98,7 +98,7 @@ const JobListings = () => {
             <button className="bg-[#125b5c] text-white px-4 py-2 rounded">
               Search
             </button>
-          </div>
+          </div> */}
 
           {/* Job Cards */}
           <div className="mt-8 space-y-4">
