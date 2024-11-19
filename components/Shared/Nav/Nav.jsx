@@ -179,10 +179,10 @@ const Nav = () => {
                 <ul>
                   <li>
                     <Link
-                      href="/work"
-                      onClick={() => handleNavigations("/work")}
+                      href="/works"
+                      onClick={() => handleNavigations("/works")}
                       className={`mb-4 ${
-                        pathname === "/work" && "text-[#ee4580]"
+                        pathname === "/works" && "text-[#ee4580]"
                       }`}
                     >
                       Work
