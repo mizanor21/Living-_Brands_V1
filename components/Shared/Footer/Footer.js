@@ -62,12 +62,12 @@ const Footer = () => {
             target="_blank"
             className="flex items-center gap-2"
           >
-            <HiLocationMarker className="text-[50px] lg:text-[26px]" /> House:
-            230, New D.O.H.S Lake Road, Lane-16, Mohakhali, Dhaka-1206.
+            <HiLocationMarker className="text-[50px] lg:text-[26px]" />
+            House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
           </Link>
           <div className=" flex items-center  gap-2">
             <RiCopyrightFill className="text-[22px] m-[2px]" />
-            <p>Living Brands All Rights Reserved</p>
+            <p>All Rights Reserved by Living Brands</p>
           </div>
         </div>
       </footer>

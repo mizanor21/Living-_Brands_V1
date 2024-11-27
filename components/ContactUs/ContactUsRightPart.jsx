@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ButtonEffect from "@/app/button/page";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import Link from "next/link";
 
 const ContactUsRightPart = () => {
   const [formData, setFormData] = useState({
@@ -82,11 +83,17 @@ const ContactUsRightPart = () => {
         {/* Form Fields */}
         <p className="text-[17px] my-2 text-[#125b5c]">GOT AN IDEA?</p>
         <h1 className="text-[30px] font-bold my-2 text-[#125b5c]">
-          Drop us a message
+          Drop us a message!
         </h1>
         <p className="text-[20px] text-[#1f2937] my-2">
-          We&apos;re excited to work with you soon! Please drop an email with
-          your details & requirements to bd@living-brand.com.
+          We are looking forward to collaborating with you! Kindly send us an
+          email with your details and requirements to
+          <a
+            href="mailto:life@living-brands.co"
+            className="text-[#125b5c] hover:underline ml-1"
+          >
+            life@living-brands.co
+          </a>
         </p>
         <p className="text-[20px] text-[#1f2937] my-2">
           You can also fill this form & we&apos;ll get back in 2 business days.
@@ -107,9 +114,7 @@ const ContactUsRightPart = () => {
 
         {/* Organization Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">
-            Your Organization&apos;s Name
-          </p>
+          <p className="text-[20px] mt-12 mb-8">Organization&apos;s Name</p>
           <input
             name="organization"
             type="text"
@@ -122,7 +127,7 @@ const ContactUsRightPart = () => {
 
         {/* Email Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Your Email</p>
+          <p className="text-[20px] mt-12 mb-8">Email</p>
           <input
             name="email"
             type="email"
@@ -135,7 +140,7 @@ const ContactUsRightPart = () => {
 
         {/* Phone Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Your Number</p>
+          <p className="text-[20px] mt-12 mb-8">Contact Number</p>
           <input
             name="phone"
             type="tel"
@@ -167,6 +172,7 @@ const ContactUsRightPart = () => {
           "Social Media Management",
           "Content Creation & Marketing",
           "Ad Film/Video Production",
+          "Integrated Campaigns",
           "SEO",
           "Website Transformation",
           "Mobile App Development & UI/UX",
@@ -174,7 +180,6 @@ const ContactUsRightPart = () => {
           "Influencer Marketing",
           "IP Creation",
           "Email & SMS Marketing Automation",
-          "Integrated Campaigns",
           "Performance Media",
           "Growth via Media Buying",
           "Social Listening & ORM",
@@ -212,7 +217,7 @@ const ContactUsRightPart = () => {
           "Media & News",
           "LinkedIn",
           "Instagram/Facebook",
-          "Emails/Newsletter",
+          "Email/Newsletter",
           "Search",
           "Other Sources",
         ].map((referralSource) => (
