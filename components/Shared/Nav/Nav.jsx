@@ -287,6 +287,15 @@ const Nav = () => {
                           <Link href={"achievements"}>Achievements</Link>
                         </li>
                         <li
+                          onClick={() => handleNavigations("/news-center")}
+                          className={`mb-4 ${
+                            pathname === "/news-center" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"news-center"}>News Center</Link>
+                        </li>
+
+                        <li
                           onClick={() => handleNavigations("/meet-our-team")}
                           className={`mb-4 ${
                             pathname === "/meet-our-team" && "text-[#ee4580]"
@@ -521,6 +530,17 @@ const Nav = () => {
                         Achievements
                       </a>
                     </h2>
+                    <h2 className="mb-4">
+                      <a
+                        href={"/news-center"}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/news-center" ? "text-[#ee4580]" : ""
+                        }`}
+                      >
+                        News Center
+                      </a>
+                    </h2>
+
                     <h2 className="mb-4">
                       <a
                         href={"meet-our-team"}

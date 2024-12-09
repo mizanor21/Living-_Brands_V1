@@ -1,133 +1,118 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
+import { useItemsData } from "../Custom/DataFetch";
+import ButtonEffect from "@/app/button/page";
+
+const SkeletonLoader = () => (
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20 relative z-[120] bg-white px-[5%] py-10">
+    {[1, 2, 3, 4, 5, 6].map((key) => (
+      <div key={key} className="space-y-3">
+        {/* Image skeleton */}
+        <div className="h-72 w-full bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 rounded-xl animate-pulse"></div>
+
+        {/* Subtitle skeleton */}
+        <div className="h-4 w-3/4 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 rounded-md animate-pulse"></div>
+      </div>
+    ))}
+  </div>
+);
 
 const NewsCentre = () => {
-  const pressReleasesData = [
-    {
-      id: 1,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Press the first card.",
-    },
-    {
-      id: 2,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Press the second card.",
-    },
-    {
-      id: 3,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Press the third card.",
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Press the third card.",
-    },
-    {
-      id: 5,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Press the third card.",
-    },
-    {
-      id: 6,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Press the third card.",
-    },
-  ];
+  const { data: workData, isLoading, error } = useItemsData();
 
-  const mediaFeaturesData = [
-    {
-      id: 1,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Media the first card.",
-    },
-    {
-      id: 2,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Media the second card.",
-    },
-    {
-      id: 3,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Media the third card.",
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Media the third card.",
-    },
-    {
-      id: 5,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Media the third card.",
-    },
-    {
-      id: 6,
-      image: "https://via.placeholder.com/600x400",
-      text: "This is Media the third card.",
-    },
-  ];
+  const [hoveredId, setHoveredId] = useState(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const [activeButton, setActiveButton] = useState("button1");
-  const [data, setData] = useState(pressReleasesData);
+  const handleMouseMove = (event, id) => {
+    const offsetX = event.clientX;
+    const offsetY = event.clientY;
 
-  const handleButtonClick = (button) => {
-    setActiveButton(button);
-    if (button === "button1") {
-      setData(pressReleasesData);
-    } else {
-      setData(mediaFeaturesData);
-    }
+    setPosition({ x: offsetX, y: offsetY });
+    setHoveredId(id);
   };
 
+  const handleMouseLeave = () => {
+    setHoveredId(null);
+  };
+
+  const scrollAnimation = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 2s linear infinite",
+  };
+
+  const keyframes = `
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
+
+  if (isLoading) {
+    return <SkeletonLoader />;
+  }
+
+  if (error) {
+    return <div className="text-center text-red-500">Failed to load data</div>;
+  }
+
   return (
-    <div className="flex flex-col px-4 lg:px-[100px] font-[sora]">
-      <div className="relative border-b border-gray-400 py-16 lg:py-[100px]">
-        <h1 className="text-3xl lg:text-6xl text-center font-bold mb-6 lg:mb-10">
-          Schbang in the news
-        </h1>
-
-        {/* Buttons stay at the side */}
-        <button
-          className={`absolute right-5 mr-36 lg:mr-44   bottom-5 outline rounded-full py-1 px-4 lg:px-5 text-sm lg:text-lg ${
-            activeButton === "button1"
-              ? "bg-black text-white"
-              : "bg-white text-black"
-          }`}
-          onClick={() => handleButtonClick("button1")}
-        >
-          Press Releases
-        </button>
-        <button
-          className={`absolute right-5 bottom-5 outline rounded-full py-1 px-4 lg:px-5 text-sm lg:text-lg ${
-            activeButton === "button2"
-              ? "bg-black text-white"
-              : "bg-white text-black"
-          }`}
-          onClick={() => handleButtonClick("button2")}
-        >
-          Media Features
-        </button>
+    <div className="flex flex-col px-4 lg:px-[100px] font-[sora] bg-white relative z-[120] py-10 lg:py-20 rounded-b-[20] lg:rounded-b-[40]">
+      <div className="">
+        <h2 className="text-2xl md:text-4xl lg:text-[48px] text-center leading-10 text-[#125b5c] font-bold pb-10 lg:pb-20">
+          Living Brands In The News
+        </h2>
+        <div className="md:flex justify-end my-5 space-y-1 md:space-y-0">
+          <ButtonEffect>Press Releases</ButtonEffect>
+          <span className="divider divider-horizontal divider-start divider-neutral"></span>
+          <ButtonEffect>Media Features</ButtonEffect>
+        </div>
       </div>
+      <hr />
 
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.map(({ id, image, text }) => (
-          <div
-            key={id}
-            className="flex flex-col justify-center px-4 items-center w-full sm:w-80 lg:w-96 mx-auto bg-[#F9F9F9] overflow-hidden"
-          >
-            <Image
-              width={200}
-              height={200}
-              className="w-full rounded h-64 object-cover"
-              src={image}
-              alt="news"
-            />
-            <div className="p-4 text-center">
-              <p className="text-gray-600">{text}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20 py-8">
+        {workData?.map((item) => (
+          <Link key={item._id} href={`works/${item._id}`}>
+            <div
+              className="relative"
+              onMouseMove={(e) => handleMouseMove(e, item._id)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Image
+                src={item.img}
+                alt=""
+                width={600}
+                height={100}
+                className="rounded-xl"
+              />
+              <p className="text-[14px] lg:text-[16px] mt-3">
+                {item.detailsTitle}
+              </p>
+              <style>{keyframes}</style>
+
+              {hoveredId === item._id && (
+                <div
+                  className="w-36 h-10 fixed z-[100]"
+                  style={{
+                    top: `${position.y - 30}px`,
+                    left: `${position.x}px`,
+                    pointerEvents: "none",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                    <p style={scrollAnimation}>View More</p>
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
