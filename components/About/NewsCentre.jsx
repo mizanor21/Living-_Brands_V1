@@ -63,7 +63,7 @@ const NewsCentre = () => {
   }
 
   return (
-    <div className="flex flex-col px-4 lg:px-[100px] font-[sora] bg-white relative z-[120] py-10 lg:py-20 rounded-b-[20] lg:rounded-b-[40]">
+    <div className="flex flex-col px-4 lg:px-[100px] font-[sora] bg-white relative z-[120] py-10 lg:py-20 rounded-b-[20px] lg:rounded-b-[40px]">
       <div className="">
         <h2 className="text-2xl md:text-4xl lg:text-[48px] text-center leading-10 text-[#125b5c] font-bold pb-10 lg:pb-20">
           Living Brands In The News

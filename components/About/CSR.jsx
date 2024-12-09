@@ -2,7 +2,7 @@ import React from "react";
 
 const CSR = () => {
   return (
-    <div className="flex flex-col justify-center items-center p-[80px]">
+    <div className="flex flex-col justify-center items-center px-[5%] py-10 lg:py-20 bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
       <div className="video-container w-full h-screen">
         <iframe
           width="100%"
@@ -24,12 +24,12 @@ const CSR = () => {
           benefits.
         </p>
         <p className="mb-4 ml-6">
-          Schbang Digital Solutions Private Limited (hereinafter referred as
-          “Schbang” or “the Company”) is committed to upholding the highest
-          standards of corporate social responsibility. Schbang’s objective is
-          to enable a larger population of India, beyond economic boundaries, to
-          participate in and benefit from the economic and technological growth
-          of India.
+          Living Brand Digital Solutions Private Limited (hereinafter referred
+          as “Living Brand” or “the Company”) is committed to upholding the
+          highest standards of corporate social responsibility. Living Brand’s
+          objective is to enable a larger population of India, beyond economic
+          boundaries, to participate in and benefit from the economic and
+          technological growth of India.
         </p>
 
         <h1 className=" font-bold mb-4">2. Scope</h1>
@@ -46,7 +46,7 @@ const CSR = () => {
         </p>
 
         <h1 className=" font-bold mb-4">3. Objective</h1>
-        <p className="mb-4 ml-6">Schbang’s CSR Policy intends to:</p>
+        <p className="mb-4 ml-6">Living Brand’s CSR Policy intends to:</p>
         <div className=" ml-6 mb-4">
           <p className="mb-3">
             3.1&nbsp;&nbsp;&nbsp;&nbsp;Serve the education and technological
@@ -68,10 +68,10 @@ const CSR = () => {
         </h1>
         <p className="mb-4 ml-6">
           This Policy applies to all CSR projects that will be undertaken by
-          Schbang and shall fulfill all the requirements of Section 135 of the
-          Companies Act, 2013. Schbang shall ensure all these activities are
-          over and above the normal course of business and are in line with
-          Schedule VII of the Companies Act, 2013.
+          Living Brand and shall fulfill all the requirements of Section 135 of
+          the Companies Act, 2013. Living Brand shall ensure all these
+          activities are over and above the normal course of business and are in
+          line with Schedule VII of the Companies Act, 2013.
         </p>
         <p className="mb-4 ml-6">
           While the major CSR activities will be undertaken in focus areas
@@ -106,13 +106,13 @@ const CSR = () => {
           capacities and dispositions.
         </p>
         <p className="mb-4 ml-16">
-          Schbang, directly and through a network of collaborators such as
+          Living Brand, directly and through a network of collaborators such as
           educational institutions, non-government organisations, non-profit
           organisations and other implementing agencies permissible and
           compliant by the Companies Act, 2013, shall perform activities to
           promote NIPUN Bharat mission’s goals towards Foundational Literacy and
-          Numeracy. Schbang activities shall strive to build an engaging and
-          interactive learning environment.
+          Numeracy. Living Brand activities shall strive to build an engaging
+          and interactive learning environment.
         </p>
 
         <h2 className=" ml-6 mb-4">
@@ -134,14 +134,14 @@ const CSR = () => {
         <p className="mb-4 ml-16">
           With the constantly changing knowledge landscape and advancement of
           scientific and technological information, the employment opportunities
-          are undergoing a paradigm shift. Schbang believes in the abundance of
-          talent and potential of the rising India and acknowledges its
-          responsibility in supporting this rise with skill development
+          are undergoing a paradigm shift. Living Brand believes in the
+          abundance of talent and potential of the rising India and acknowledges
+          its responsibility in supporting this rise with skill development
           opportunities to beneficiaries beyond gender, economic and other
           limitations.
         </p>
         <p className="mb-4 ml-16">
-          Schbang activities shall extend towards bridging the skill gap
+          Living Brand activities shall extend towards bridging the skill gap
           especially in the areas pertaining to designing, coding and
           professional development in the rural and peri-urban India. It shall
           also provide support towards livelihood development for economically
@@ -158,7 +158,7 @@ const CSR = () => {
         </p>
         <p className="mb-4 ml-16">
           Ensuring adept nutrition, health and sanitation facilities in the
-          educational facilities supported by Schbang is a priority as the
+          educational facilities supported by Living Brand is a priority as the
           Company recognizes the role played by nutrition, health and sanitation
           in building a holistic learning environment.
         </p>
@@ -171,8 +171,8 @@ const CSR = () => {
           4.4&nbsp;&nbsp;&nbsp;&nbsp;Rural Development through Digital Literacy
         </h2>
         <p className="mb-4 ml-16">
-          Schbang, through its direct expertise or through collaborations in
-          compliance with Companies Act, 2013 shall work towards building
+          Living Brand, through its direct expertise or through collaborations
+          in compliance with Companies Act, 2013 shall work towards building
           digital literacy learning centres in rural areas in and around the
           Companies’ operating units.
         </p>
@@ -189,27 +189,27 @@ const CSR = () => {
         <p className="mb-4 ml-16">
           {" "}
           <span className="mb-4 -ml-10">4.6</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;Schbang can support any other activities that
-          are conforming to Schedule VII of the Act as amended from time to
+          &nbsp;&nbsp;&nbsp;&nbsp;Living Brand can support any other activities
+          that are conforming to Schedule VII of the Act as amended from time to
           time, and any new areas that may be notified by the government and
           qualify for CSR.
         </p>
 
         <h1 className=" font-bold mb-4">5. Undertaking CSR Activities</h1>
         <p className="mb-4 ml-6">
-          Schbang will undertake CSR activities either in partnership with
+          Living Brand will undertake CSR activities either in partnership with
           not-for-profit, registered trusts/societies/other body corporates
-          (“hereinafter referred as “implementing Agency”) or through Schbang
-          for Good foundation (“Whenever it is declared as implementing agency)
-          who are engaged in activities or programs which fall within the
-          purview of Schbang’s CSR Policy.
+          (“hereinafter referred as “implementing Agency”) or through Living
+          Brand for Good foundation (“Whenever it is declared as implementing
+          agency) who are engaged in activities or programs which fall within
+          the purview of Living Brand’s CSR Policy.
         </p>
 
         <h1 className="font-bold mb-4">6. Governance Structure</h1>
         <p className="mb-4 ml-6">
           A CSR Committee and the Board of Directors of the Company will monitor
-          and ensure that the CSR projects undertaken by Schbang in accordance
-          with the policy and statutory requirements.
+          and ensure that the CSR projects undertaken by Living Brand in
+          accordance with the policy and statutory requirements.
         </p>
         <h1 className="font-bold mb-4">7. CSR Committee</h1>
         <br />
@@ -218,10 +218,10 @@ const CSR = () => {
           7.1&nbsp;&nbsp;&nbsp;&nbsp;Constitution
         </h2>
         <p className="mb-4 ml-16">
-          Schbang has constituted a Corporate Social Responsibility Committee
-          (the “CSR Committee”) in line with Section 135 of the Companies Act,
-          2013 (the “Act”). The CSR Committee consists of following members of
-          the Board:
+          Living Brand has constituted a Corporate Social Responsibility
+          Committee (the “CSR Committee”) in line with Section 135 of the
+          Companies Act, 2013 (the “Act”). The CSR Committee consists of
+          following members of the Board:
         </p>
 
         <div className="p-4 mb-5 ml-12">
@@ -327,9 +327,9 @@ const CSR = () => {
         </h2>
         <p className="mb-4 ml-16">
           Dedicated CSR team shall be constituted from among the employees at
-          Schbang, for implementing the CSR activities approved by the Board of
-          Directors of the Company. Responsibilities to be assigned to CSR Team
-          of the Company:
+          Living Brand, for implementing the CSR activities approved by the
+          Board of Directors of the Company. Responsibilities to be assigned to
+          CSR Team of the Company:
         </p>
         <p className="mb-4 ml-16">
           7.3.1&nbsp;&nbsp;&nbsp;&nbsp;Identify projects and key initiatives
