@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 const Journey = ({ data }) => {
   const styles = {
@@ -94,7 +95,9 @@ const Journey = ({ data }) => {
               </div>
             </div>
             <h2 className="text-4xl lg:text-6xl font-medium text-white lg:px-20">
-              <img
+              <Image
+                width={200}
+                height={200}
                 className="w-44 md:max-w-60 mt-5 md:mt-5 "
                 src="https://i.postimg.cc/fRhTM844/cta-round.png"
                 alt=""

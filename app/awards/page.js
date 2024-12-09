@@ -42,7 +42,9 @@ const HorizontalScrollCarousel = () => {
       <div className="md:hidden bg-white relative z-[110] px-[5%] py-10">
         {cards.map((item) => (
           <div key={""} id={item.id}>
-            <img
+            <Image
+              width={200}
+              height={200}
               className="w-full h-[400px] mt-5 rounded"
               src={item.imageUrl}
               alt={item.title}
@@ -61,7 +63,7 @@ const Card = ({ card }) => {
       className="group relative bg-white w-[500px] overflow-hidden  hover:-translate-y-5 duration-300 border mt-10"
     >
       <div>
-        <img
+        <Image
           width={700}
           height={700}
           className="w-full h-[700px] object-cover"

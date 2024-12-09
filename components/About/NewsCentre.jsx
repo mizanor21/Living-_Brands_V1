@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const NewsCentre = () => {
@@ -116,7 +117,9 @@ const NewsCentre = () => {
             key={id}
             className="flex flex-col justify-center px-4 items-center w-full sm:w-80 lg:w-96 mx-auto bg-[#F9F9F9] overflow-hidden"
           >
-            <img
+            <Image
+              width={200}
+              height={200}
               className="w-full rounded h-64 object-cover"
               src={image}
               alt="news"

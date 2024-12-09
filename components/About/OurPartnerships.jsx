@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const OurPartnerships = () => {
@@ -62,7 +63,9 @@ const OurPartnerships = () => {
             key={id}
             className="flex flex-col justify-center items-center max-w-sm mx-auto overflow-hidden"
           >
-            <img
+            <Image
+              width={200}
+              height={200}
               className="w-[50%] h-28 object-cover"
               src={image}
               alt={headline}

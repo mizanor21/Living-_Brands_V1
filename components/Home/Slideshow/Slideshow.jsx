@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./slideshow.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const Slideshow = ({ data }) => {
   // console.log(data);
@@ -158,7 +159,9 @@ const Slideshow = ({ data }) => {
             <Slider {...settingsLeft} ref={sliderLeftRef}>
               <div className="item h-screen">
                 <div className="left-half">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="https://i.postimg.cc/fyNKNTPF/OMG-1.png"
                     className=" w-full h-full"
                     alt="slide-1"

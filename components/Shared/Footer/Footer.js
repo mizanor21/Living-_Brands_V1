@@ -9,11 +9,14 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 const Footer = () => {
   return (
     <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora">
       <footer className="footer p-10 items-center justify-center">
-        <img
+        <Image
+          width={200}
+          height={200}
           className="max-h-[230px]"
           src="https://i.postimg.cc/L68GLfzq/footer-logo.png"
           alt=""
