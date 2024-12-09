@@ -8,6 +8,7 @@ import Brands from "@/components/Home/Brands/Brands";
 import Video from "@/components/Home/IntroVideo/Video";
 import Elevate from "@/components/Home/Elavate/Elavate";
 import Journey from "@/components/Home/Journey/Journey";
+import Trending from "@/components/Home/Trending/Trending";
 
 export default async function Home() {
   const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
@@ -35,7 +36,7 @@ export default async function Home() {
   } = home[0] || {};
 
   return (
-    <main>
+    <main className="bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px]">
       <Hero data={heroSection} />
       <Video data={videoSection} />
       <Elevate data={elevateSection} />
@@ -44,6 +45,7 @@ export default async function Home() {
       <Solutions data={solutionSection} />
       <Journey data={journeySection} />
       <Brands data={brandSection} />
+      <Trending />
     </main>
   );
 }
