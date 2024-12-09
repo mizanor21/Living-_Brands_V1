@@ -73,10 +73,12 @@ const Nav = () => {
     {
       id: 1,
       src: "https://i.postimg.cc/8PDs8ccw/kgrit-U3-IYXE-HD-1.jpg",
+      title: "DBL Ceramics Presents: An Emotional May Day Tribute",
     },
     {
       id: 2,
       src: "https://i.postimg.cc/K88zzWnM/1.jpg",
+      title: "Pusti Chinigura Rice X Nusrat Faria",
     },
   ];
 
@@ -84,10 +86,12 @@ const Nav = () => {
     {
       id: 1,
       src: "https://i.postimg.cc/7hyZJDrZ/about1.png",
+      title: "PUMA.com | Clothing, Shoes, Accessories | Forever Faster.",
     },
     {
       id: 2,
       src: "https://i.postimg.cc/J0c4bgRc/about2.jpg",
+      title: "Introducing Outlander Black Edition",
     },
   ];
 
@@ -95,10 +99,12 @@ const Nav = () => {
     {
       id: 1,
       src: "https://i.postimg.cc/1t3S7tTc/dt-BSuy7-OJd8-HD.jpg",
+      title: "Ceramic Expo Bangladesh Highlight 01",
     },
     {
       id: 2,
       src: "https://i.postimg.cc/XNg2MVb3/ey-SLf-CX2-Vsk-HD.jpg",
+      title: "Disruption on the Digital Strages",
     },
   ];
 
@@ -458,12 +464,12 @@ const Nav = () => {
                   <React.Fragment>
                     {solutionsData.map((item, index) => (
                       <a
-                        href={"/work"}
+                        href={"/works"}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item?.id)}
                         onMouseLeave={handleMouseLeave}
                         className={`card cursor-pointer ${
-                          pathname === "/who-we-are" ? "text-[#ee4580]" : ""
+                          pathname === "/" ? "text-[#ee4580]" : ""
                         }`}
                       >
                         <div className="card_image">
@@ -475,6 +481,9 @@ const Nav = () => {
                             height={500}
                           />
                         </div>
+                        <p className="font-[400] text-[19px] mt-2">
+                          {item?.title}
+                        </p>
 
                         <style>{keyframes}</style>
 
@@ -602,12 +611,12 @@ const Nav = () => {
                   <React.Fragment>
                     {AboutData.map((item, index) => (
                       <a
-                        href={"/work"}
+                        href={"/works"}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
                         className={`card cursor-pointer text-lg ${
-                          pathname === "/work" ? "text-[#ee4580]" : ""
+                          pathname === "/" ? "text-[#ee4580]" : ""
                         }`}
                       >
                         <div className="card_image ">
@@ -619,6 +628,10 @@ const Nav = () => {
                             height={300}
                           />
                         </div>
+
+                        <p className="font-[400] text-[19px] mt-2">
+                          {item?.title}
+                        </p>
 
                         <style>{keyframes}</style>
 
@@ -696,6 +709,10 @@ const Nav = () => {
                           height={500}
                         />
                       </div>
+
+                      <p className="font-[400] text-[19px] mt-2">
+                        {item?.title}
+                      </p>
 
                       <style>{keyframes}</style>
 
