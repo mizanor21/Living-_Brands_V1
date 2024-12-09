@@ -469,7 +469,7 @@ const Nav = () => {
                         onMouseMove={(e) => handleMouseMove(e, item?.id)}
                         onMouseLeave={handleMouseLeave}
                         className={`card cursor-pointer ${
-                          pathname === "/" ? "text-[#ee4580]" : ""
+                          pathname === "" ? "text-[#ee4580]" : ""
                         }`}
                       >
                         <div className="card_image">
@@ -616,7 +616,7 @@ const Nav = () => {
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
                         className={`card cursor-pointer text-lg ${
-                          pathname === "/" ? "text-[#ee4580]" : ""
+                          pathname === "" ? "text-[#ee4580]" : ""
                         }`}
                       >
                         <div className="card_image ">
