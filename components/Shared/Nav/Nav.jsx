@@ -294,6 +294,20 @@ const Nav = () => {
                         >
                           <Link href={"news-center"}>News Center</Link>
                         </li>
+
+                        <li
+                          onClick={() =>
+                            handleNavigations("/living-brands-networks")
+                          }
+                          className={`mb-4 ${
+                            pathname === "/living-brands-networks" &&
+                            "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"/living-brands-networks"}>
+                            Living Brands Networks
+                          </Link>
+                        </li>
                         <li
                           onClick={() => handleNavigations("/csr")}
                           className={`mb-4 ${
@@ -540,22 +554,36 @@ const Nav = () => {
                     </h2>
                     <h2 className="mb-4">
                       <a
-                        href={"/csr"}
-                        className={`text-2xl lg:text-[30px] font-[600] ${
-                          pathname === "/csr" ? "text-[#ee4580]" : ""
-                        }`}
-                      >
-                        CSR
-                      </a>
-                    </h2>
-                    <h2 className="mb-4">
-                      <a
                         href={"/news-center"}
                         className={`text-2xl lg:text-[30px] font-[600] ${
                           pathname === "/news-center" ? "text-[#ee4580]" : ""
                         }`}
                       >
                         News Center
+                      </a>
+                    </h2>
+
+                    <h2 className="mb-4">
+                      <a
+                        href={"/living-brands-networks"}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/living-brands-networks"
+                            ? "text-[#ee4580]"
+                            : ""
+                        }`}
+                      >
+                        Living Networks
+                      </a>
+                    </h2>
+
+                    <h2 className="mb-4">
+                      <a
+                        href={"/csr"}
+                        className={`text-2xl lg:text-[30px] font-[600] ${
+                          pathname === "/csr" ? "text-[#ee4580]" : ""
+                        }`}
+                      >
+                        CSR
                       </a>
                     </h2>
 
