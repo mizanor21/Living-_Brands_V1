@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const TrendingItems = () => {
@@ -14,14 +13,14 @@ const TrendingItems = () => {
       category: "Business",
       title:
         "Living Brands, Bangladesh Largest Independent Agency, Cements Its Status as a Global Challenger with European Expansion and Acquisition of Amsterdam’s Hottest Design Agency, Addikt",
-      // photo: "https://i.postimg.cc/QtJh1msG/bh3vptdTO4U-HD.jpg",
+      photo: "https://i.postimg.cc/QtJh1msG/bh3vptdTO4U-HD.jpg",
       date: "2024-12-09T12:00:00Z",
     },
     {
       category: "Health",
       title:
-        "Dabur Chyawanprash's 'Anti-Medicine Campaign’ Returns with a Festive TwistDabur Chyawanprash's 'Anti-Medicine Campaign’ Returns with a Festive Twist",
-      // photo: "https://i.postimg.cc/vBsG4jJt/jidDZpvSFU0-HD.jpg",
+        "Dabur Chyawanprash's 'Anti-Medicine Campaign’ Returns with a Festive Twist",
+      photo: "https://i.postimg.cc/vBsG4jJt/jidDZpvSFU0-HD.jpg",
       date: "2024-12-09T14:00:00Z",
     },
   ];
@@ -31,9 +30,9 @@ const TrendingItems = () => {
       {items.map((item) => (
         <div
           key={item.title}
-          className="grid grid-cols-3 gap-10 lg:gap-20 font-sora"
+          className="grid grid-cols-3 gap-10 lg:gap-20 font-sora group"
         >
-          <div className="col-span-2">
+          <div className="col-span-2 ">
             <p className="border border-black rounded-full px-3 inline-block my-5">
               {item?.category}
             </p>
@@ -53,13 +52,13 @@ const TrendingItems = () => {
               <hr />
             </div>
           </div>
-          {/* <div className="col-span-1 flex justify-items-center">
+          <div className="col-span-1 hidden group-hover:flex justify-center items-center ">
             <img
-              src={item?.photo} // Ensure 'item.photo' is correct
+              src={item?.photo}
               alt={item?.title}
-              className="rounded"
+              className="rounded w-full  transition-opacity duration-300"
             />
-          </div> */}
+          </div>
         </div>
       ))}
     </div>
