@@ -30,17 +30,17 @@ const TrendingItems = () => {
       {items.map((item) => (
         <div
           key={item.title}
-          className="grid grid-cols-3 gap-10 lg:gap-20 font-sora group"
+          className="grid grid-cols-3 gap-10 lg:gap-20 font-sora group relative"
         >
-          <div className="col-span-2 ">
+          <div className="col-span-2 cursor-pointer">
             <p className="border border-black rounded-full px-3 inline-block my-5">
               {item?.category}
             </p>
-            <div className="grid grid-cols-4 justify-between items-center">
-              <h3 className="font-[700] text-[18px] py-10 col-span-3">
+            <div className="lg:grid grid-cols-4 justify-between items-center">
+              <h3 className="font-[700] text-[14px] lg:text-[18px] py-10 col-span-3">
                 {item?.title}
               </h3>
-              <small className="text-end">
+              <small className="text-end hidden lg:flex">
                 {new Date(item.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -48,15 +48,13 @@ const TrendingItems = () => {
                 })}
               </small>
             </div>
-            <div className="pb-2">
-              <hr />
-            </div>
+            <div className="pb-2 border-b border-black">{/* <hr /> */}</div>
           </div>
-          <div className="col-span-1 hidden group-hover:flex justify-center items-center ">
+          <div className="col-span-1 md:hidden md:group-hover:flex md:absolute right-0">
             <img
               src={item?.photo}
               alt={item?.title}
-              className="rounded w-full  transition-opacity duration-300"
+              className="rounded w-[250px] lg:w-[500px] transition-opacity duration-300"
             />
           </div>
         </div>
