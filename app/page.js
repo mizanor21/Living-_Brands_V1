@@ -9,6 +9,7 @@ import Video from "@/components/Home/IntroVideo/Video";
 import Elevate from "@/components/Home/Elavate/Elavate";
 import Journey from "@/components/Home/Journey/Journey";
 import Trending from "@/components/Home/Trending/Trending";
+import Partner from "@/components/Home/Partner/Partner";
 
 export default async function Home() {
   const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
@@ -46,6 +47,7 @@ export default async function Home() {
       <Journey data={journeySection} />
       <Brands data={brandSection} />
       <Trending />
+      <Partner />
     </main>
   );
 }
