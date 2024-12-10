@@ -136,7 +136,7 @@ const Slideshow = ({ data }) => {
 
   return (
     <div
-      className="relative cursor-pointer overflow-hidden"
+      className="relative cursor-pointer overflow-hidden font-sora"
       onMouseMove={handleMouseMove}
     >
       <style>{keyframes}</style>
@@ -153,9 +153,9 @@ const Slideshow = ({ data }) => {
         </div>
       </div>
       <div className="relative hidden md:block">
-        <div className="relative z-[110] h-screen w-screen overflow-hidden bg-[#110101] ">
+        <div className="relative z-[110] h-screen w-screen overflow-hidden ">
           {/* Left Slideshow (Top-Down) */}
-          <div className="absolute inset-0 z-10 slideshow slideshow-left">
+          <div className="absolute inset-0 z-10 slideshow slideshow-left mr-8">
             <Slider {...settingsLeft} ref={sliderLeftRef}>
               <div className="item h-screen">
                 <div className="left-half">
@@ -244,8 +244,13 @@ const Slideshow = ({ data }) => {
             </Slider>
           </div>
         </div>
+        <div className="absolute bottom-32 left-10 z-[120] text-white max-w-[500px]">
+          <h2 className="font-[600] text-[40px] leading-[1]">
+            This is writeup section!
+          </h2>
+        </div>
         <button
-          className="absolute bottom-10  left-5 z-[120] cursor-pointer"
+          className="absolute bottom-10  left-10 z-[120] cursor-pointer"
           onClick={handleClick}
         >
           <BsArrowRight
