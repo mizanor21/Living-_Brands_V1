@@ -303,6 +303,12 @@ const Slideshow = ({ data }) => {
             </div>
           </Slider>
 
+          <div className="absolute bottom-28 left-5 z-[120] text-white max-w-[300px]">
+            <h2 className="font-[600] text-[22px] leading-[1]">
+              This is writeup section!
+            </h2>
+          </div>
+
           <button
             className="absolute bottom-10 left-5 z-[120] cursor-pointer"
             onClick={handleClickMobile}
