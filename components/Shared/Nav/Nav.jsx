@@ -118,7 +118,7 @@ const Nav = () => {
               <Link href="/" onClick={() => handleNavigations("/")}>
                 <Image
                   src={logo}
-                  className="w-10"
+                  className="w-16"
                   alt="Living Brands logo"
                 ></Image>
               </Link>
@@ -152,7 +152,7 @@ const Nav = () => {
                     >
                       <Image
                         src={logo}
-                        className="w-20"
+                        className="max-w-16"
                         alt="Living Brands logo"
                       ></Image>
                       <h1 className="animate-pulse rounded-full bg-[#125b5c] w-[5px] h-[5px] mb-[14px]"></h1>
