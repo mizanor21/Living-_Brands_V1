@@ -23,7 +23,7 @@ const Footer = () => {
         />
       </footer>
       <footer className="footer block lg:flex lg:justify-between border-t border-gray-400 px-10 py-4 text-white justify-center items-center">
-        <div className="flex justify-center items-center gap-4 text-3xl w-full">
+        <div className="flex justify-center items-center gap-3 text-3xl w-full lg:w-40 ">
           <Link
             href="https://www.facebook.com/Livingbrands.co"
             target="_blank"
@@ -65,7 +65,7 @@ const Footer = () => {
             target="_blank"
             className="flex items-center gap-2"
           >
-            <HiLocationMarker className="text-[50px] lg:text-[26px]" />
+            <HiLocationMarker className="text-[40px] md:text-[26px]" />
             House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
           </Link>
           <div className=" flex items-center  gap-2">
