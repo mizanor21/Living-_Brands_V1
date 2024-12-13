@@ -12,7 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora">
+    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora ">
       <footer className="footer p-10 items-center justify-center">
         <Image
           width={200}
@@ -23,7 +23,7 @@ const Footer = () => {
         />
       </footer>
       <footer className="footer block lg:flex lg:justify-between border-t border-gray-400 px-10 py-4 text-white justify-center items-center">
-        <div className="flex justify-center items-center gap-4 text-3xl">
+        <div className="flex justify-center items-center gap-4 text-3xl w-full">
           <Link
             href="https://www.facebook.com/Livingbrands.co"
             target="_blank"
@@ -74,18 +74,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      {/* <div className="py-5 text-white text-center font-sora">
-        <small>
-          Design & Developed By {""}
-          <Link
-            href={"https://www.goinnovior.com/"}
-            target="_blank"
-            className="text-[#2aa747] hover:text-[#83c24f] font-bold animate-bounce"
-          >
-            Goinnovior Limited
-          </Link>
-        </small>
-      </div> */}
     </div>
   );
 };
