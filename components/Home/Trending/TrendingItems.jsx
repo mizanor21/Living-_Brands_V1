@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 const TrendingItems = () => {
@@ -26,11 +27,11 @@ const TrendingItems = () => {
   ];
 
   return (
-    <div>
-      {items.map((item) => (
+    <div className="space-y-5">
+      {items.map((item, index) => (
         <div
-          key={item.title}
-          className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 lg:gap-20 font-sora group relative"
+          key={index}
+          className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 lg:gap-20 font-sora group relative hover:opacity-100 peer transition-opacity duration-500"
         >
           <div className="md:col-span-2 cursor-pointer">
             <p className="border border-black rounded-full px-3 inline-block my-5">
@@ -50,15 +51,23 @@ const TrendingItems = () => {
             </div>
             <div className="pb-2 border-b border-black">{/* <hr /> */}</div>
           </div>
-          <div className="md:col-span-1 md:hidden md:group-hover:flex md:absolute group-hover:transition-all group-hover:duration-1000 right-0 h-full flex justify-center items-center">
+          <div className="md:col-span-1 h-full flex justify-center items-center">
             <img
               src={item?.photo}
               alt={item?.title}
-              className="rounded w-[200px] lg:w-[500px]"
+              className="rounded w-[150px] sm:w-[200px] lg:w-[500px] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000"
             />
           </div>
         </div>
       ))}
+
+      {/* Opacity logic for other items */}
+      <style jsx>{`
+        .space-y-5:hover > .peer:not(:hover) {
+          opacity: 0.5;
+          transition: opacity 0.5s ease;
+        }
+      `}</style>
     </div>
   );
 };
