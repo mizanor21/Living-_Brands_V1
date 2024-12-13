@@ -27,18 +27,18 @@ const TrendingItems = () => {
   ];
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-1">
       {items.map((item, index) => (
         <div
           key={index}
-          className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 lg:gap-20 font-sora group relative hover:opacity-100 peer transition-opacity duration-500"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10 lg:gap-20 font-sora group relative hover:opacity-100 peer transition-opacity duration-500"
         >
           <div className="md:col-span-2 cursor-pointer">
-            <p className="border border-black rounded-full px-3 inline-block my-5">
+            <p className="border border-black rounded-full px-3 inline-block my-2">
               {item?.category}
             </p>
             <div className="lg:grid grid-cols-4 justify-between items-center">
-              <h3 className="font-[700] text-[14px] lg:text-[18px] py-5 md:py-10 col-span-3">
+              <h3 className="font-[700] text-[14px] lg:text-[18px] py-2 md:py-10 col-span-3">
                 {item?.title}
               </h3>
               <small className="text-end hidden lg:flex">
@@ -49,13 +49,13 @@ const TrendingItems = () => {
                 })}
               </small>
             </div>
-            <div className="pb-2 border-b border-black">{/* <hr /> */}</div>
+            <div className=" border-b border-black">{/* <hr /> */}</div>
           </div>
           <div className="md:col-span-1 h-full flex justify-center items-center">
             <img
               src={item?.photo}
               alt={item?.title}
-              className="rounded w-[150px] sm:w-[200px] lg:w-[500px] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000"
+              className="rounded lg:w-[400px] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000"
             />
           </div>
         </div>
@@ -63,7 +63,7 @@ const TrendingItems = () => {
 
       {/* Opacity logic for other items */}
       <style jsx>{`
-        .space-y-5:hover > .peer:not(:hover) {
+        .space-y-1:hover > .peer:not(:hover) {
           opacity: 0.5;
           transition: opacity 0.5s ease;
         }
