@@ -55,7 +55,7 @@ const TrendingItems = () => {
             <img
               src={item?.photo}
               alt={item?.title}
-              className="rounded lg:w-[400px] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000"
+              className="rounded lg:w-[450px] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000"
             />
           </div>
         </div>
