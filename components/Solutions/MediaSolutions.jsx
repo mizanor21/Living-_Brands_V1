@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Items from "../Items/Items";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
+import SolutionItems from "../Items/SolutionItems";
 
 const MediaSolutions = ({ shortDescription, items, brands }) => {
   const [open, setOpen] = useState(null);
@@ -77,7 +77,7 @@ const MediaSolutions = ({ shortDescription, items, brands }) => {
           ))}
         </div>
       </div>
-      <Items />
+      <SolutionItems />
 
       {/* Internal CSS for Shimmer Effect */}
       <style jsx>{`

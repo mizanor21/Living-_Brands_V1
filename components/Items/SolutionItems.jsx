@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useItemsData } from "../Custom/DataFetch";
 
 const SkeletonLoader = () => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
@@ -20,7 +21,8 @@ const SkeletonLoader = () => (
   </div>
 );
 
-const Items = ({ data }) => {
+const SolutionItems = () => {
+  const { data: workData, isLoading, error } = useItemsData();
   const [hoveredId, setHoveredId] = useState(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -53,13 +55,17 @@ const Items = ({ data }) => {
     }
   `;
 
-  if (!data) {
+  if (isLoading) {
     return <SkeletonLoader />;
+  }
+
+  if (error) {
+    return <div className="text-center text-red-500">Failed to load data</div>;
   }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
-      {data.map((item) => (
+      {workData?.map((item) => (
         <Link key={item._id} href={`works/${item._id}`}>
           <div
             className="relative"
@@ -103,4 +109,4 @@ const Items = ({ data }) => {
   );
 };
 
-export default Items;
+export default SolutionItems;

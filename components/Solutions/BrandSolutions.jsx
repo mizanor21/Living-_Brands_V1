@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Items from "../Items/Items";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Image from "next/image";
+import SolutionItems from "../Items/SolutionItems";
 
 const BrandSolutions = ({ shortDescription, items, brand }) => {
   const [open, setOpen] = useState(null);
@@ -77,7 +77,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
           ))}
         </div>
       </div>
-      <Items />
+      <SolutionItems />
     </section>
   );
 };
