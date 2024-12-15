@@ -129,8 +129,8 @@
 
 @media (max-width: 1150px) {
   .navber {
-    height: 12vh;
-    padding: 30px 40px !important;
+    height: 20vh;
+    padding: 0px 40px !important;
   }
 
   .navber-logo img {
@@ -186,7 +186,7 @@
     position: absolute;
     color: var(--color-violet);
     font-weight: 700;
-    height: 220vh;
+    height: 250vh;
     width: 100%;
     top: 0px;
     left: 0px;
