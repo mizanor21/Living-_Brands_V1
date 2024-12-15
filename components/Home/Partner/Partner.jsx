@@ -3,11 +3,18 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 const Partner = () => {
   const [partnershipData, setPartnershipData] = useState([]);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(false);
+  const [arrowPosition, setArrowPosition] = useState({
+    left: -999,
+    right: -999,
+  });
+  const [boundaryItems, setBoundaryItems] = useState({
+    leftIndex: null,
+    rightIndex: null,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,13 +56,34 @@ const Partner = () => {
     const leftBoundary = width * 0.3; // Left 30% area
     const rightBoundary = width * 0.7; // Right 30% area
 
-    setShowLeftArrow(cursorPosition < leftBoundary);
-    setShowRightArrow(cursorPosition > rightBoundary);
+    // Update arrow positions based on the cursor
+    if (cursorPosition < leftBoundary) {
+      setArrowPosition({
+        left: cursorPosition - 80, // Place left arrow near cursor
+        right: -999, // Hide right arrow
+      });
+      setBoundaryItems({ leftIndex: 0, rightIndex: null }); // Set left boundary
+    } else if (cursorPosition > rightBoundary) {
+      setArrowPosition({
+        left: -999, // Hide left arrow
+        right: cursorPosition - 150, // Place right arrow near cursor
+      });
+      setBoundaryItems({
+        leftIndex: null,
+        rightIndex: partnershipData.length - 1,
+      }); // Set right boundary
+    } else {
+      setArrowPosition({
+        left: -999, // Hide left arrow
+        right: -999, // Hide right arrow
+      });
+      setBoundaryItems({ leftIndex: null, rightIndex: null }); // Reset boundaries
+    }
   };
 
   const handleMouseLeave = () => {
-    setShowLeftArrow(false);
-    setShowRightArrow(false);
+    setArrowPosition({ left: -999, right: -999 }); // Hide both arrows on mouse leave
+    setBoundaryItems({ leftIndex: null, rightIndex: null }); // Reset boundaries
   };
 
   return (
@@ -78,25 +106,37 @@ const Partner = () => {
           itemClass="carousel-item"
           customLeftArrow={
             <div
-              className={`absolute top-1/2 transform -translate-y-1/2 left-0 bg-gray-500 text-white p-3 rounded-full transition-opacity duration-300 ${
-                showLeftArrow ? "opacity-100" : "opacity-0"
-              }`}
+              className={`hidden cursor-pointer absolute top-1/2 transform -translate-y-1/2 left-0 bg-[#135c5c] text-white lg:flex justify-center items-center text-xl w-12 h-12 lg:w-16 lg:h-16 rounded-full transition-transform duration-300`}
+              style={{
+                left: `${arrowPosition.left}px`,
+                transform: "translateX(-50%)",
+              }}
             >
-              &lt;
+              <FaArrowLeftLong />
             </div>
           }
           customRightArrow={
             <div
-              className={`absolute top-1/2 transform -translate-y-1/2 right-0 bg-gray-500 text-white p-3 rounded-full transition-opacity duration-300 ${
-                showRightArrow ? "opacity-100" : "opacity-0"
-              }`}
+              className={`hidden cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-0 bg-[#135c5c] text-white lg:flex justify-center items-center text-xl w-12 h-12 lg:w-16 lg:h-16 rounded-full transition-transform duration-300`}
+              style={{
+                left: `${arrowPosition.right}px`,
+                transform: "translateX(50%)",
+              }}
             >
-              &gt;
+              <FaArrowRightLong />
             </div>
           }
         >
           {partnershipData?.map((partner, index) => (
-            <div key={index} className="text-center">
+            <div
+              key={index}
+              className={`text-center mr-2 ${
+                index === boundaryItems.leftIndex ||
+                index === boundaryItems.rightIndex
+                  ? "opacity-70" // Apply opacity 70% to boundary items
+                  : ""
+              }`}
+            >
               <img
                 width={200}
                 height={200}
