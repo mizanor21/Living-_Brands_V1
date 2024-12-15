@@ -52,13 +52,13 @@ const Journey = ({ data }) => {
     span.style.transition = "width 0.7s ease, height 0.7s ease"; // Smooth shrinking
   };
   return (
-    <div className="bg-white relative z-[110] font-sora">
+    <div className="hidden md:block bg-white relative z-[110] font-sora">
       <div className=" flex justify-center items-center px-[5%] py-10 lg:pt-36">
         <div
           style={styles}
-          className="flex lg:max-w-[1200px] justify-center items-center min-h-60 lg:h-[40vh] rounded-lg md:rounded-badge"
+          className="flex lg:max-w-[1200px] justify-center items-center rounded-lg md:rounded-badge"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-[5%] items-center py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-[5%] items-center py-20">
             <div>
               <h2 className="text-2xl md:text-4xl lg:text-[51px] font-[500] leading-[1] md:leading-[1.1] lg:leading-[1.2] text-white">
                 {data?.title}
