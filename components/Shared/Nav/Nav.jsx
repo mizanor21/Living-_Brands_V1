@@ -111,7 +111,7 @@ const Nav = () => {
   return (
     <div className="font-sora  navber md:sticky md:top-0  px-[5%] z-[150] bg-white py-2">
       {/* Logo and side menu */}
-      <div className="navber-logo z-[210] pt-10 lg:pt-0">
+      <div className="navber-logo z-[210] pt-16 lg:pt-0">
         <div className="">
           <div className="w-[100%]">
             <div className={`flex items-end gap-[5px] text-[#125b5c]`}>
@@ -762,7 +762,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile menu button */}
-      <div className="navber-menu pt-10 lg:pt-0" onClick={toggleOn}>
+      <div className="navber-menu pt-16 lg:pt-0" onClick={toggleOn}>
         <IoMenu />
       </div>
     </div>
