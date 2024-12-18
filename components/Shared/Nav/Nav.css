@@ -129,8 +129,7 @@
 
 @media (max-width: 1150px) {
   .navber {
-    height: 20vh;
-    padding: 0px 40px !important;
+    padding: 16px !important;
   }
 
   .navber-logo img {
