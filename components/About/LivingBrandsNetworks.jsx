@@ -12,7 +12,7 @@ const LivingBrandsNetworks = ({ shortDescription, items, brand }) => {
   };
 
   return (
-    <section className="px-[5%] py-12 bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora">
+    <section className="px-[5%] md:pb-20 bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 lg:mb-20">
         {/* Left Side */}
         <div>
