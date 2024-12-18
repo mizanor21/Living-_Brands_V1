@@ -41,7 +41,7 @@ const News = () => {
     <div className="bg-white relative z-[110] rounded-b-[40px] pb-10 lg:pb-20 font-sora">
       <div className="px-[5%] pb-10">
         <h2 className="text-2xl text-center md:text-4xl lg:text-[48px] leading-10 text-[#125b5c] font-bold py-10 lg:pt-[80px] lg:pb-[70px]">
-          Living Brands In The News.
+          Living Brands In The News
         </h2>
         <div className="md:flex justify-end my-5 space-y-1 md:space-y-0">
           <button onClick={() => handleCategoryChange("Casestudy")}>
