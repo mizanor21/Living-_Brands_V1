@@ -73,10 +73,10 @@ const Items = ({ data }) => {
               height={100}
               className="rounded-xl"
             />
-            <h2 className="text-md lg:text-lg font-extrabold mt-3">
+            <h2 className="text-md lg:text-[16px] font-[700] mt-3">
               {item.title}
             </h2>
-            <p className="text-[16px] md:text-[20px] mt-3">
+            <p className="text-[16px] md:text-[22px] mt-3">
               {item.detailsTitle}
             </p>
             <style>{keyframes}</style>
