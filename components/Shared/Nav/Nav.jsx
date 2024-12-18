@@ -85,7 +85,7 @@ const Nav = () => {
   const AboutData = [
     {
       id: 1,
-      src: "https://i.postimg.cc/7hyZJDrZ/about1.png",
+      src: "https://i.postimg.cc/9Fkg9rMr/puma.png",
       title: "PUMA.com | Clothing, Shoes, Accessories | Forever Faster.",
     },
     {
@@ -621,9 +621,9 @@ const Nav = () => {
                       >
                         <div className="card_image ">
                           <Image
-                            className="rounded-2xl h-[300px] lg:h-[350px]"
+                            className="rounded-2xl "
                             src={item?.src}
-                            alt={index}
+                            alt="Puma"
                             width={700}
                             height={300}
                           />
