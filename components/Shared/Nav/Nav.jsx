@@ -109,7 +109,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="font-sora  navber md:sticky md:top-0  px-[5%] z-[150] bg-white py-2">
+    <div className="font-sora  navber md:sticky md:top-0  px-[5%] z-[150] bg-white py-2 lg:py-3">
       {/* Logo and side menu */}
       <div className="navber-logo z-[210] pt-16 md:pt-0">
         <div className="">
