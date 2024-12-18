@@ -9,7 +9,7 @@ const Popup = () => {
       <Image src={confetti} width={30} alt="confetti"></Image>
       <p className="font-[400] text-[11px] lg:text-[18px] text-center">
         &quot;Addikt is now part of the Living Brands Network.{" "}
-        <Link href={"/news-center"} className="text-[#eba428]">
+        <Link href={"/news-center"} className="text-[#ff6428]">
           Read More Here.
         </Link>
         &quot;
