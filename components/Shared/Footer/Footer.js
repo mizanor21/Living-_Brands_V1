@@ -1,28 +1,89 @@
+"use client";
+"use client";
+import React, { useState } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import { RiCopyrightFill } from "react-icons/ri";
-
 import {
   FaFacebook,
   FaInstagramSquare,
   FaLinkedin,
-  FaRegCopyright,
   FaYoutube,
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+
 const Footer = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // Handle mouse movement
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setPosition({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
+  };
+
+  // Scrolling animation keyframes
+  const keyframes = `
+    @keyframes scrollText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
+
+  const scrollAnimation = {
+    animation: "scrollText 5s linear infinite",
+    whiteSpace: "nowrap",
+    display: "inline-block",
+  };
+
+  const scrollAnimation1 = {
+    animation: "scrollText 1s linear infinite",
+    whiteSpace: "nowrap",
+    display: "inline-block",
+  };
+
   return (
-    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora ">
-      <footer className="footer p-10 items-center justify-center">
-        <Image
-          width={200}
-          height={200}
-          className="max-h-[230px]"
-          src="https://i.postimg.cc/L68GLfzq/footer-logo.png"
-          alt=""
-        />
-      </footer>
-      <footer className="footer block lg:flex lg:justify-between border-t font-sora border-gray-400 px-10 py-4 text-white justify-center items-center">
+    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora">
+      <style>{keyframes}</style>
+
+      {/* Footer Image Section with Hover Visibility */}
+      <Link
+        href="/contact"
+        className="relative group" // Group for hover-based control
+        onMouseMove={handleMouseMove}
+      >
+        <footer className="footer p-10 items-center justify-center">
+          {/* Floating Play Reel Animation - Visible only on hover */}
+          <div
+            className="w-44 h-10 absolute z-[999] opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-2xl rounded-full"
+            style={{ top: position.y - 50, left: position.x - 90 }}
+          >
+            <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center">
+              <p style={scrollAnimation}>Contact Us &nbsp; Contact Us</p>
+              <p style={scrollAnimation1} className="opacity-60">
+                Contact Us
+              </p>
+            </div>
+          </div>
+          <Image
+            width={200}
+            height={200}
+            className="max-h-[230px]"
+            src="https://i.postimg.cc/L68GLfzq/footer-logo.png"
+            alt="Footer Logo"
+          />
+        </footer>
+      </Link>
+
+      {/* Footer Links and Info */}
+      <footer className="footer block lg:flex lg:justify-between border-t border-gray-400 px-10 py-4 text-white justify-center items-center">
+        {/* Social Links */}
         <div className="flex justify-center items-center gap-3 text-3xl w-full">
           <Link
             href="https://www.facebook.com/Livingbrands.co"
@@ -57,6 +118,8 @@ const Footer = () => {
             <FaLinkedin />
           </Link>
         </div>
+
+        {/* Quick Links */}
         <div className="flex justify-center items-center text-[13px] gap-3 w-full py-3 lg:pt-0">
           <Link href={"/we-works"}>About</Link>
           <Link href={"/contact"}>Contact</Link>
@@ -64,19 +127,19 @@ const Footer = () => {
           <Link href={"/blogs"}>Blog</Link>
           <Link href={"/privacy-policy"}>Privacy</Link>
         </div>
+
+        {/* Address */}
         <div className="mb-3 md:my-0 flex justify-center items-center gap-3 w-full">
           <div>
             <Link
-              href={
-                "https://www.google.com/maps/place/Living+Brands,+House+230+Road+16,+Dhaka+1212/data=!4m2!3m1!1s0x3755c700426d1655:0x8a70d2c34d6aae47?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESCjExLjEzNS4xMDIYACDXggMqUSw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw0NzA4NzExOCw0NzA4NDM5Myw5NDIxMzIwMEICQkQ%3D&g_st=aw"
-              }
+              href="https://www.google.com/maps/place/Living+Brands,+House+230+Road+16,+Dhaka+1212"
               target="_blank"
               className="flex items-center gap-2"
             >
               <HiLocationMarker className="text-[40px] md:text-[26px]" />
               House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
             </Link>
-            <div className=" flex items-center  gap-2">
+            <div className="flex items-center gap-2">
               <RiCopyrightFill className="text-[22px] m-[2px]" />
               <p>All Rights Reserved by Living Brands</p>
             </div>
