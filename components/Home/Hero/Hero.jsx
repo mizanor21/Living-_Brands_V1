@@ -36,7 +36,7 @@ const Hero = ({ data }) => {
         isSticky
           ? "translate-y-0 opacity-100"
           : "-translate-y-5 opacity-0 pointer-events-none"
-      } transition-all duration-200 ease-in-out sticky top-[100px] lg:top-[80px] z-[110] bg-white font-sora`}
+      } transition-all duration-200 ease-in-out sticky top-[90px] lg:top-[80px] z-[110] bg-white font-sora`}
     >
       <div className="lg:container lg:mx-auto px-[5%] py-[2%]">
         <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -69,7 +69,7 @@ const Hero = ({ data }) => {
               <Image
                 width={400}
                 height={300}
-                className="hidden md:block w-[380px]"
+                className="hidden md:block w-[370px]"
                 src={data?.image}
                 alt="Living banner"
               />
