@@ -24,7 +24,7 @@ const ContactUsImg = () => {
       {cards.map((card, index) => (
         <div
           key={card.id}
-          className={`w-full mx-auto ${index !== 0 ? "hidden sm:block" : ""}`}
+          className={`w-full mx-auto ${index !== 0 ? "hidden md:block" : ""}`}
         >
           <Image
             src={card.image}
