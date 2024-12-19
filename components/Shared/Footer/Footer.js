@@ -22,8 +22,8 @@ const Footer = () => {
           alt=""
         />
       </footer>
-      <footer className="footer block lg:flex lg:justify-between border-t border-gray-400 px-10 py-4 text-white justify-center items-center">
-        <div className="flex justify-center items-center gap-3 text-3xl w-full lg:w-40 ">
+      <footer className="footer block lg:flex lg:justify-between border-t font-sora border-gray-400 px-10 py-4 text-white justify-center items-center">
+        <div className="flex justify-center items-center gap-3 text-3xl w-full">
           <Link
             href="https://www.facebook.com/Livingbrands.co"
             target="_blank"
@@ -57,20 +57,29 @@ const Footer = () => {
             <FaLinkedin />
           </Link>
         </div>
-        <div className="my-3 md:my-0">
-          <Link
-            href={
-              "https://www.google.com/maps/place/Living+Brands,+House+230+Road+16,+Dhaka+1212/data=!4m2!3m1!1s0x3755c700426d1655:0x8a70d2c34d6aae47?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESCjExLjEzNS4xMDIYACDXggMqUSw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw0NzA4NzExOCw0NzA4NDM5Myw5NDIxMzIwMEICQkQ%3D&g_st=aw"
-            }
-            target="_blank"
-            className="flex items-center gap-2"
-          >
-            <HiLocationMarker className="text-[40px] md:text-[26px]" />
-            House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
-          </Link>
-          <div className=" flex items-center  gap-2">
-            <RiCopyrightFill className="text-[22px] m-[2px]" />
-            <p>All Rights Reserved by Living Brands</p>
+        <div className="flex justify-center items-center text-[13px] gap-3 w-full py-3 lg:pt-0">
+          <Link href={"/we-works"}>About</Link>
+          <Link href={"/contact"}>Contact</Link>
+          <Link href={"/works"}>Case Study</Link>
+          <Link href={"/blogs"}>Blog</Link>
+          <Link href={"/privacy-policy"}>Privacy</Link>
+        </div>
+        <div className="mb-3 md:my-0 flex justify-center items-center gap-3 w-full">
+          <div>
+            <Link
+              href={
+                "https://www.google.com/maps/place/Living+Brands,+House+230+Road+16,+Dhaka+1212/data=!4m2!3m1!1s0x3755c700426d1655:0x8a70d2c34d6aae47?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESCjExLjEzNS4xMDIYACDXggMqUSw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw0NzA4NzExOCw0NzA4NDM5Myw5NDIxMzIwMEICQkQ%3D&g_st=aw"
+              }
+              target="_blank"
+              className="flex items-center gap-2"
+            >
+              <HiLocationMarker className="text-[40px] md:text-[26px]" />
+              House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
+            </Link>
+            <div className=" flex items-center  gap-2">
+              <RiCopyrightFill className="text-[22px] m-[2px]" />
+              <p>All Rights Reserved by Living Brands</p>
+            </div>
           </div>
         </div>
       </footer>
