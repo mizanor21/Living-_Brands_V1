@@ -69,7 +69,7 @@ const Hero = ({ data }) => {
               <Image
                 width={400}
                 height={300}
-                className="hidden md:block w-[370px]"
+                className="hidden md:block w-[360px]"
                 src={data?.image}
                 alt="Living banner"
               />
