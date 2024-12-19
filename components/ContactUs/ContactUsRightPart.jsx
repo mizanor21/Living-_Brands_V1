@@ -44,6 +44,7 @@ const ContactUsRightPart = () => {
       const response = await fetch(
         "https://living-brands-admin.vercel.app/api/contact",
         {
+          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +59,6 @@ const ContactUsRightPart = () => {
         toast.error("Failed to send message.");
       }
     } catch (error) {
-      console.error("Error:", error);
       toast.error("An error occurred.");
     } finally {
       setLoading(false); // Set loading to false after submission is complete
@@ -143,7 +143,7 @@ const ContactUsRightPart = () => {
           <p className="text-[20px] mt-12 mb-8">Contact Number</p>
           <input
             name="phone"
-            type="tel"
+            type="number"
             value={formData.phone}
             onChange={handleChange}
             className="w-full border-b border-black focus:outline-none h-10 text-[20px]"
