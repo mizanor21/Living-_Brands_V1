@@ -187,11 +187,11 @@ const Nav = () => {
 
                 {/* Side Menu Links  */}
                 <ul>
-                  <li>
+                  <li className="ml-4 mb-2">
                     <Link
                       href="/works"
                       onClick={() => handleNavigations("/works")}
-                      className={`mb-4 ${
+                      className={` text-[14px] text-black font-medium ${
                         pathname === "/works" && "text-[#ee4580]"
                       }`}
                     >
@@ -199,16 +199,12 @@ const Nav = () => {
                     </Link>
                   </li>
 
-                  <li>
-                    <div className="ss" onClick={toggleSolutions}>
+                  <div className="collapse collapse-arrow border-y border-[#125b5c] rounded-none">
+                    <input type="radio" name="my-accordion-2" />
+                    <div className="collapse-title text-[14px] text-black font-medium">
                       Solutions
-                      <div className="sso">
-                        <IoMenu />
-                      </div>
                     </div>
-                  </li>
-                  {solutions && (
-                    <div className="itemHover">
+                    <div className="collapse-content">
                       <ul>
                         <li>
                           <Link
@@ -216,7 +212,7 @@ const Nav = () => {
                             onClick={() =>
                               handleNavigations("/brand-solutions")
                             }
-                            className={`mb-4 ${
+                            className={`text-[25px] ${
                               pathname === "/brand-solutions" &&
                               "text-[#ee4580]"
                             }`}
@@ -230,7 +226,7 @@ const Nav = () => {
                             onClick={() =>
                               handleNavigations("/media-solutions")
                             }
-                            className={`mb-4 ${
+                            className={`text-[25px] ${
                               pathname === "/media-solutions" &&
                               "text-[#ee4580]"
                             }`}
@@ -242,7 +238,7 @@ const Nav = () => {
                           <Link
                             href={"/tech-solutions"}
                             onClick={() => handleNavigations("/tech-solutions")}
-                            className={`mb-4 ${
+                            className={`text-[25px] ${
                               pathname === "/tech-solutions" && "text-[#ee4580]"
                             }`}
                           >
@@ -251,22 +247,17 @@ const Nav = () => {
                         </li>
                       </ul>
                     </div>
-                  )}
-
-                  <li>
-                    <div className="ss" onClick={toggleAbout}>
+                  </div>
+                  <div className="collapse collapse-arrow border-b border-[#125b5c] rounded-none">
+                    <input type="radio" name="my-accordion-2" />
+                    <div className="collapse-title text-[14px] text-black font-medium">
                       About
-                      <div className="sso">
-                        <IoMenu />
-                      </div>
                     </div>
-                  </li>
-                  {about && (
-                    <div className="itemHover">
+                    <div className="collapse-content">
                       <ul>
                         <li
                           onClick={() => handleNavigations("/who-we-are")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/who-we-are" && "text-[#ee4580]"
                           }`}
                         >
@@ -274,7 +265,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/we-works")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/we-works" && "text-[#ee4580]"
                           }`}
                         >
@@ -282,7 +273,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/partnership")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/partnership" && "text-[#ee4580]"
                           }`}
                         >
@@ -290,7 +281,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/achievements")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/achievements" && "text-[#ee4580]"
                           }`}
                         >
@@ -298,7 +289,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/news-center")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/news-center" && "text-[#ee4580]"
                           }`}
                         >
@@ -309,7 +300,7 @@ const Nav = () => {
                           onClick={() =>
                             handleNavigations("/living-brands-networks")
                           }
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/living-brands-networks" &&
                             "text-[#ee4580]"
                           }`}
@@ -320,7 +311,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/csr")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/csr" && "text-[#ee4580]"
                           }`}
                         >
@@ -329,7 +320,7 @@ const Nav = () => {
 
                         <li
                           onClick={() => handleNavigations("/meet-our-team")}
-                          className={`mb-4 ${
+                          className={`text-[25px] ${
                             pathname === "/meet-our-team" && "text-[#ee4580]"
                           }`}
                         >
@@ -337,23 +328,19 @@ const Nav = () => {
                         </li>
                       </ul>
                     </div>
-                  )}
-                  <li>
-                    <div className="ss" onClick={toggleResources}>
+                  </div>
+                  <div className="collapse collapse-arrow border-b border-[#125b5c] rounded-none">
+                    <input type="radio" name="my-accordion-2" />
+                    <div className="collapse-title text-[14px] text-black font-medium">
                       Resources
-                      <div className="sso">
-                        <IoMenu />
-                      </div>
                     </div>
-                  </li>
-                  {resources && (
-                    <div className="itemHover">
+                    <div className="collapse-content">
                       <ul>
                         <li>
                           <Link
                             href={"/blogs"}
                             onClick={() => handleNavigations("/blogs")}
-                            className={`mb-4 ${
+                            className={`text-[25px] ${
                               pathname === "/blogs" && "text-[#ee4580]"
                             }`}
                           >
@@ -364,7 +351,7 @@ const Nav = () => {
                           <Link
                             href={"/the-edge"}
                             onClick={() => handleNavigations("/the-edge")}
-                            className={`mb-4 ${
+                            className={`text-[25px] ${
                               pathname === "/the-edge" && "text-[#ee4580]"
                             }`}
                           >
@@ -373,13 +360,13 @@ const Nav = () => {
                         </li>
                       </ul>
                     </div>
-                  )}
+                  </div>
 
-                  <li>
+                  <li className="ml-4 mt-2">
                     <Link
                       href="/careers"
                       onClick={() => handleNavigations("/careers")}
-                      className={` mb-4 ${
+                      className={` text-[14px] text-black font-medium ${
                         pathname === "/careers" && "text-[#ee4580]"
                       }`}
                     >
@@ -390,7 +377,7 @@ const Nav = () => {
                 <Link
                   href={"/contact"}
                   onClick={() => handleNavigations("/contact")}
-                  className={`mt-10 mb-4 ${
+                  className={`mt-10 text-[25px] mb-3 ${
                     pathname === "/contact" && "text-[#ee4580]"
                   }`}
                 >
