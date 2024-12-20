@@ -111,7 +111,7 @@ const Nav = () => {
 
   return (
     <>
-      <div className="md:sticky top-0 z-[990]">
+      <div className="md:sticky relative top-0 z-[9999]">
         <Popup />
       </div>
       <div className="font-sora  navber md:sticky md:top-0  px-[5%] z-[150] bg-white py-2 lg:py-3">
@@ -147,265 +147,259 @@ const Nav = () => {
               </div>
             </div>
             {on && (
-              <div className="side-menu ">
-                <div className="side-menu-2">
-                  <div className="side-menu-top">
-                    <div className="w-[100%]">
-                      <Link
-                        className=" flex items-end gap-1 text-[#125b5c]"
-                        href="/"
-                      >
-                        <Image
-                          src={logo}
-                          className="max-w-16"
-                          alt="Living Brands logo"
-                        ></Image>
-                        <h1 className="animate-pulse rounded-full bg-[#125b5c] w-[5px] h-[5px] mb-[14px]"></h1>
-                        <WordRotate
-                          className="text-sm md:text-lg  font-[600] p-0 m-0 w-full "
-                          words={[
-                            "Brands",
-                            "Tech",
-                            "Media",
-                            "Production",
-                            "Influencer",
-                            "Talent Management",
-                            "IT",
-                            "UI/UX",
-                            "SEO",
-                            "Chatbots",
-                          ]}
-                        />
-                      </Link>
-                    </div>
-                    <div
-                      className="side-menu-top-menu text-black"
-                      onClick={toggleOn}
+              <div className="side-menu-2 pt-10 md:pt-0">
+                <div className="side-menu-top pt-[53px] md:pt-0">
+                  <div className="w-[100%]">
+                    <Link
+                      className=" flex items-end gap-1 text-[#125b5c]"
+                      href="/"
                     >
-                      <ImCancelCircle className="text-black" />
-                    </div>
+                      <Image
+                        src={logo}
+                        className="w-[24px]"
+                        alt="Living Brands logo"
+                      ></Image>
+                      <h1 className="animate-pulse rounded-full bg-[#125b5c] w-[5px] h-[5px] mb-[14px]"></h1>
+                      <WordRotate
+                        className="text-sm md:text-lg  font-[600] p-0 m-0 w-full "
+                        words={[
+                          "Brands",
+                          "Tech",
+                          "Media",
+                          "Production",
+                          "Influencer",
+                          "Talent Management",
+                          "IT",
+                          "UI/UX",
+                          "SEO",
+                          "Chatbots",
+                        ]}
+                      />
+                    </Link>
                   </div>
+                  <div
+                    className="side-menu-top-menu text-black"
+                    onClick={toggleOn}
+                  >
+                    <ImCancelCircle className="text-black" />
+                  </div>
+                </div>
 
-                  {/* Side Menu Links */}
-                  <ul>
-                    <li>
-                      <Link
-                        href="/works"
-                        onClick={() => handleNavigations("/works")}
-                        className={`mb-4 ${
-                          pathname === "/works" && "text-[#ee4580]"
-                        }`}
-                      >
-                        Work
-                      </Link>
-                    </li>
+                {/* Side Menu Links  */}
+                <ul>
+                  <li>
+                    <Link
+                      href="/works"
+                      onClick={() => handleNavigations("/works")}
+                      className={`mb-4 ${
+                        pathname === "/works" && "text-[#ee4580]"
+                      }`}
+                    >
+                      Work
+                    </Link>
+                  </li>
 
-                    <li>
-                      <div className="ss" onClick={toggleSolutions}>
-                        Solutions
-                        <div className="sso">
-                          <IoMenu />
-                        </div>
+                  <li>
+                    <div className="ss" onClick={toggleSolutions}>
+                      Solutions
+                      <div className="sso">
+                        <IoMenu />
                       </div>
-                    </li>
-                    {solutions && (
-                      <div className="itemHover">
-                        <ul>
-                          <li>
-                            <Link
-                              href={"/brand-solutions"}
-                              onClick={() =>
-                                handleNavigations("/brand-solutions")
-                              }
-                              className={`mb-4 ${
-                                pathname === "/brand-solutions" &&
-                                "text-[#ee4580]"
-                              }`}
-                            >
-                              Brand Solutions
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href={"/media-solutions"}
-                              onClick={() =>
-                                handleNavigations("/media-solutions")
-                              }
-                              className={`mb-4 ${
-                                pathname === "/media-solutions" &&
-                                "text-[#ee4580]"
-                              }`}
-                            >
-                              Media Solutions
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href={"/tech-solutions"}
-                              onClick={() =>
-                                handleNavigations("/tech-solutions")
-                              }
-                              className={`mb-4 ${
-                                pathname === "/tech-solutions" &&
-                                "text-[#ee4580]"
-                              }`}
-                            >
-                              Tech Solutions
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-
-                    <li>
-                      <div className="ss" onClick={toggleAbout}>
-                        About
-                        <div className="sso">
-                          <IoMenu />
-                        </div>
-                      </div>
-                    </li>
-                    {about && (
-                      <div className="itemHover">
-                        <ul>
-                          <li
-                            onClick={() => handleNavigations("/who-we-are")}
-                            className={`mb-4 ${
-                              pathname === "/who-we-are" && "text-[#ee4580]"
-                            }`}
-                          >
-                            <Link href={"/who-we-are"}>Who We Are</Link>
-                          </li>
-                          <li
-                            onClick={() => handleNavigations("/we-works")}
-                            className={`mb-4 ${
-                              pathname === "/we-works" && "text-[#ee4580]"
-                            }`}
-                          >
-                            <Link href={"we-works"}>How We Work</Link>
-                          </li>
-                          <li
-                            onClick={() => handleNavigations("/partnership")}
-                            className={`mb-4 ${
-                              pathname === "/partnership" && "text-[#ee4580]"
-                            }`}
-                          >
-                            <Link href={"partnership"}>Our Partnership</Link>
-                          </li>
-                          <li
-                            onClick={() => handleNavigations("/achievements")}
-                            className={`mb-4 ${
-                              pathname === "/achievements" && "text-[#ee4580]"
-                            }`}
-                          >
-                            <Link href={"achievements"}>Achievements</Link>
-                          </li>
-                          <li
-                            onClick={() => handleNavigations("/news-center")}
-                            className={`mb-4 ${
-                              pathname === "/news-center" && "text-[#ee4580]"
-                            }`}
-                          >
-                            <Link href={"news-center"}>News Center</Link>
-                          </li>
-
-                          <li
+                    </div>
+                  </li>
+                  {solutions && (
+                    <div className="itemHover">
+                      <ul>
+                        <li>
+                          <Link
+                            href={"/brand-solutions"}
                             onClick={() =>
-                              handleNavigations("/living-brands-networks")
+                              handleNavigations("/brand-solutions")
                             }
                             className={`mb-4 ${
-                              pathname === "/living-brands-networks" &&
+                              pathname === "/brand-solutions" &&
                               "text-[#ee4580]"
                             }`}
                           >
-                            <Link href={"/living-brands-networks"}>
-                              Living Networks
-                            </Link>
-                          </li>
-                          <li
-                            onClick={() => handleNavigations("/csr")}
+                            Brand Solutions
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href={"/media-solutions"}
+                            onClick={() =>
+                              handleNavigations("/media-solutions")
+                            }
                             className={`mb-4 ${
-                              pathname === "/csr" && "text-[#ee4580]"
+                              pathname === "/media-solutions" &&
+                              "text-[#ee4580]"
                             }`}
                           >
-                            <Link href={"csr"}>CSR</Link>
-                          </li>
-
-                          <li
-                            onClick={() => handleNavigations("/meet-our-team")}
+                            Media Solutions
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href={"/tech-solutions"}
+                            onClick={() => handleNavigations("/tech-solutions")}
                             className={`mb-4 ${
-                              pathname === "/meet-our-team" && "text-[#ee4580]"
+                              pathname === "/tech-solutions" && "text-[#ee4580]"
                             }`}
                           >
-                            <Link href={"meet-our-team"}>Meet The Team</Link>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
-                    <li>
-                      <div className="ss" onClick={toggleResources}>
-                        Resources
-                        <div className="sso">
-                          <IoMenu />
-                        </div>
-                      </div>
-                    </li>
-                    {resources && (
-                      <div className="itemHover">
-                        <ul>
-                          <li>
-                            <Link
-                              href={"/blogs"}
-                              onClick={() => handleNavigations("/blogs")}
-                              className={`mb-4 ${
-                                pathname === "/blogs" && "text-[#ee4580]"
-                              }`}
-                            >
-                              Blogs
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              href={"/the-edge"}
-                              onClick={() => handleNavigations("/the-edge")}
-                              className={`mb-4 ${
-                                pathname === "/the-edge" && "text-[#ee4580]"
-                              }`}
-                            >
-                              The Edge
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    )}
+                            Tech Solutions
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
 
-                    <li>
-                      <Link
-                        href="/careers"
-                        onClick={() => handleNavigations("/careers")}
-                        className={` mb-4 ${
-                          pathname === "/careers" && "text-[#ee4580]"
-                        }`}
-                      >
-                        Careers
-                      </Link>
-                    </li>
-                  </ul>
-                  <Link
-                    href={"/contact"}
-                    onClick={() => handleNavigations("/contact")}
-                    className={`mt-10 mb-4 ${
-                      pathname === "/contact" && "text-[#ee4580]"
-                    }`}
-                  >
-                    <ButtonEffect>
-                      <span className="flex gap-[6px]">
-                        Contact Us{" "}
-                        <MdOutlineArrowRightAlt className="text-xl" />
-                      </span>
-                    </ButtonEffect>
-                  </Link>
-                </div>
+                  <li>
+                    <div className="ss" onClick={toggleAbout}>
+                      About
+                      <div className="sso">
+                        <IoMenu />
+                      </div>
+                    </div>
+                  </li>
+                  {about && (
+                    <div className="itemHover">
+                      <ul>
+                        <li
+                          onClick={() => handleNavigations("/who-we-are")}
+                          className={`mb-4 ${
+                            pathname === "/who-we-are" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"/who-we-are"}>Who We Are</Link>
+                        </li>
+                        <li
+                          onClick={() => handleNavigations("/we-works")}
+                          className={`mb-4 ${
+                            pathname === "/we-works" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"we-works"}>How We Work</Link>
+                        </li>
+                        <li
+                          onClick={() => handleNavigations("/partnership")}
+                          className={`mb-4 ${
+                            pathname === "/partnership" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"partnership"}>Our Partnership</Link>
+                        </li>
+                        <li
+                          onClick={() => handleNavigations("/achievements")}
+                          className={`mb-4 ${
+                            pathname === "/achievements" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"achievements"}>Achievements</Link>
+                        </li>
+                        <li
+                          onClick={() => handleNavigations("/news-center")}
+                          className={`mb-4 ${
+                            pathname === "/news-center" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"news-center"}>News Center</Link>
+                        </li>
+
+                        <li
+                          onClick={() =>
+                            handleNavigations("/living-brands-networks")
+                          }
+                          className={`mb-4 ${
+                            pathname === "/living-brands-networks" &&
+                            "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"/living-brands-networks"}>
+                            Living Networks
+                          </Link>
+                        </li>
+                        <li
+                          onClick={() => handleNavigations("/csr")}
+                          className={`mb-4 ${
+                            pathname === "/csr" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"csr"}>CSR</Link>
+                        </li>
+
+                        <li
+                          onClick={() => handleNavigations("/meet-our-team")}
+                          className={`mb-4 ${
+                            pathname === "/meet-our-team" && "text-[#ee4580]"
+                          }`}
+                        >
+                          <Link href={"meet-our-team"}>Meet The Team</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                  <li>
+                    <div className="ss" onClick={toggleResources}>
+                      Resources
+                      <div className="sso">
+                        <IoMenu />
+                      </div>
+                    </div>
+                  </li>
+                  {resources && (
+                    <div className="itemHover">
+                      <ul>
+                        <li>
+                          <Link
+                            href={"/blogs"}
+                            onClick={() => handleNavigations("/blogs")}
+                            className={`mb-4 ${
+                              pathname === "/blogs" && "text-[#ee4580]"
+                            }`}
+                          >
+                            Blogs
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href={"/the-edge"}
+                            onClick={() => handleNavigations("/the-edge")}
+                            className={`mb-4 ${
+                              pathname === "/the-edge" && "text-[#ee4580]"
+                            }`}
+                          >
+                            The Edge
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+
+                  <li>
+                    <Link
+                      href="/careers"
+                      onClick={() => handleNavigations("/careers")}
+                      className={` mb-4 ${
+                        pathname === "/careers" && "text-[#ee4580]"
+                      }`}
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                </ul>
+                <Link
+                  href={"/contact"}
+                  onClick={() => handleNavigations("/contact")}
+                  className={`mt-10 mb-4 ${
+                    pathname === "/contact" && "text-[#ee4580]"
+                  }`}
+                >
+                  <ButtonEffect>
+                    <span className="flex gap-[6px]">
+                      Contact Us <MdOutlineArrowRightAlt className="text-xl" />
+                    </span>
+                  </ButtonEffect>
+                </Link>
               </div>
             )}
           </div>
