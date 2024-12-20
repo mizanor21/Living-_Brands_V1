@@ -60,7 +60,7 @@ const ButtonEffect = ({ children }) => {
         }}
       ></span>
       <span className="relative z-20 font-[500] flex items-center gap-2">
-        <span className="text-sm">{children}</span>
+        <span className="text-sm px-5 lg:px-0">{children}</span>
       </span>
     </div>
   );
