@@ -61,9 +61,20 @@
   background-color: #2d8fab;
 }
 
-@media (min-width: 1300px) and (max-width: 1450px) {
+/* @media (min-width: 1401px) and (max-width: 1450px) {
   .solutionCard {
     width: 480px;
+  }
+
+  .solutionCard .arrowIcon {
+    width: 60px;
+    height: 60px;
+  }
+} */
+
+@media (min-width: 0px) and (max-width: 1800px) {
+  .solutionCard {
+    width: 400px;
   }
 
   .solutionCard .arrowIcon {

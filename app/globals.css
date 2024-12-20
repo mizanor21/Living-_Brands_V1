@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 * {
   scrollbar-width: none;
@@ -15,7 +14,7 @@
 
 body {
   cursor: url(/assets/cursor/cursor.png), auto;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 Link,
@@ -54,4 +53,8 @@ video {
   to {
     transform: rotate(360deg);
   }
+}
+
+.sectionTitle {
+  @apply text-[50px] font-[600] leading-[60px] text-gray-300 group-hover:text-white transition-colors duration-300 mb-5;
 }

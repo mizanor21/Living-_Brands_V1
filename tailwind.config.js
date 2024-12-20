@@ -29,6 +29,7 @@ module.exports = {
       // Keyframes for custom animations
       keyframes: {
         // Regular marquee (horizontal)
+
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
@@ -56,6 +57,8 @@ module.exports = {
       },
       // Defining animations based on keyframes
       animation: {
+        fadeInUp: "fadeInUp 0.5s ease-out",
+        fadeOutDown: "fadeOutDown 0.5s ease-out",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-reverse": "marquee-reverse var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",

@@ -429,8 +429,8 @@ const Nav = () => {
               />
 
               <div
-                className={`absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible
-              } group-hover:h-[60vh] transition-all duration-500 border-b bg-white border-black w-screen h-[20vh]`}
+                className={`overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
+      transition-all duration-500 border-b border-black group-hover:visible`}
               >
                 <div className=" w-full h-full z-[115] ">
                   <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
@@ -528,7 +528,10 @@ const Nav = () => {
               <RiArrowDropDownLine
                 className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
               />
-              <div className=" absolute invisible opacity-0 top-full left-0 ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 bg-white w-screen h-[20vh] border-b border-black">
+              <div
+                className="overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
+      transition-all duration-500 border-b border-black group-hover:visible"
+              >
                 <div className=" w-full h-full   z-[115] ">
                   <div className="h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
                     <div className="min-w-72  solutions">
@@ -678,7 +681,10 @@ const Nav = () => {
               <RiArrowDropDownLine
                 className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
               />
-              <div className=" absolute invisible opacity-0 top-full left-0  ease-in-out group-hover:opacity-100 group-hover:visible group-hover:h-[60vh] transition-all duration-500 bg-white border-b border-black w-screen h-[20vh]">
+              <div
+                className="overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
+      transition-all duration-500 border-b border-black group-hover:visible"
+              >
                 <div className="  w-full h-full z-[115] ">
                   <div className=" h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                     <div className="min-w-72 ">
