@@ -148,7 +148,7 @@
     flex-direction: column;
     padding: 10px 20px;
     animation: anime2 0.7s;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(188, 185, 185);
   }
 
   .side-menu-2 ul li {
