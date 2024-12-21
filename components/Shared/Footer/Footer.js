@@ -120,7 +120,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="flex justify-center items-center text-[13px] gap-3 w-full py-3 lg:pt-0">
+        <div className="flex justify-center items-center text-[13px] gap-3 w-full pt-4 lg:pt-0">
           <Link href={"/we-works"}>About</Link>
           <Link href={"/contact"}>Contact</Link>
           <Link href={"/works"}>Case Study</Link>
@@ -128,20 +128,29 @@ const Footer = () => {
           <Link href={"/privacy-policy"}>Privacy</Link>
         </div>
 
+        <div className="flex justify-center lg:hidden items-center text-[13px] gap-3 w-full pt-4 lg:pt-0 pb-0">
+          <p className="text-center">Proudly created in Bangladesh</p>
+        </div>
         {/* Address */}
-        <div className="mb-3 md:my-0 flex justify-center items-center gap-3 w-full">
-          <div>
-            <Link
-              href="https://www.google.com/maps/place/Living+Brands,+House+230+Road+16,+Dhaka+1212"
-              target="_blank"
-              className="flex items-center gap-2"
-            >
-              <HiLocationMarker className="text-[40px] md:text-[26px]" />
-              House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
-            </Link>
-            <div className="flex items-center gap-2">
+        <div className="mb-3 md:my-0 flex justify-center items-center gap-2 w-full">
+          <div className="text-center">
+            <div className="flex justify-center gap-x-2">
+              <Link
+                href="https://www.google.com/maps/place/Living+Brands,+House+230+Road+16,+Dhaka+1212"
+                target="_blank"
+                className="flex items-start md:items-center gap-x-2"
+              >
+                <HiLocationMarker className="text-[33px] md:text-[26px] mb-1" />
+                <p className="text-[13px] mt-[5px] md:mt-0">
+                  House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
+                </p>
+              </Link>
+            </div>
+            <div className="flex justify-center items-center lg:justify-end gap-x-2">
               <RiCopyrightFill className="text-[22px] m-[2px]" />
-              <p>All Rights Reserved by Living Brands</p>
+              <p className="text-[13px] text-center">
+                All Rights Reserved by Living Brands
+              </p>
             </div>
           </div>
         </div>
