@@ -107,7 +107,7 @@
 
 /* -------------- For Mobile device------------- */
 
-@media (max-width: 1150px) {
+@media (min-width: 0px) and (max-width: 1400px) {
   .navber {
     padding: 20px !important;
   }
@@ -139,14 +139,14 @@
   .side-menu-2 {
     position: absolute;
     font-weight: 700;
-    height: 120%;
+    height: 120vh;
     width: 100%;
     top: 0px;
     left: 0px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 30px 20px;
     animation: anime2 0.7s;
     border-bottom: 1px solid rgb(188, 185, 185);
   }

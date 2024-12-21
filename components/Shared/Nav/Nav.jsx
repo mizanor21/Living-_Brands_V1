@@ -147,7 +147,7 @@ const Nav = () => {
               </div>
             </div>
             {on && (
-              <div className="block lg:hidden side-menu-2 pt-10 md:pt-0">
+              <div className="block lg:hidden side-menu-2 pt-20 lg:pt-0">
                 <div className="side-menu-top pt-[53px] md:pt-0">
                   <div className="w-[100%]">
                     <Link
