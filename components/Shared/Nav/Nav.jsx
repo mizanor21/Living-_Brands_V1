@@ -212,7 +212,7 @@ const Nav = () => {
                             onClick={() =>
                               handleNavigations("/brand-solutions")
                             }
-                            className={`text-[25px] ${
+                            className={`text-[14px] font-[500] ${
                               pathname === "/brand-solutions" &&
                               "text-[#ee4580]"
                             }`}
@@ -226,7 +226,7 @@ const Nav = () => {
                             onClick={() =>
                               handleNavigations("/media-solutions")
                             }
-                            className={`text-[25px] ${
+                            className={`text-[14px] font-[500] ${
                               pathname === "/media-solutions" &&
                               "text-[#ee4580]"
                             }`}
@@ -238,7 +238,7 @@ const Nav = () => {
                           <Link
                             href={"/tech-solutions"}
                             onClick={() => handleNavigations("/tech-solutions")}
-                            className={`text-[25px] ${
+                            className={`text-[14px] font-[500] ${
                               pathname === "/tech-solutions" && "text-[#ee4580]"
                             }`}
                           >
@@ -257,7 +257,7 @@ const Nav = () => {
                       <ul>
                         <li
                           onClick={() => handleNavigations("/who-we-are")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/who-we-are" && "text-[#ee4580]"
                           }`}
                         >
@@ -265,7 +265,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/we-works")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/we-works" && "text-[#ee4580]"
                           }`}
                         >
@@ -273,7 +273,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/partnership")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/partnership" && "text-[#ee4580]"
                           }`}
                         >
@@ -281,7 +281,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/achievements")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/achievements" && "text-[#ee4580]"
                           }`}
                         >
@@ -289,7 +289,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/news-center")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/news-center" && "text-[#ee4580]"
                           }`}
                         >
@@ -300,7 +300,7 @@ const Nav = () => {
                           onClick={() =>
                             handleNavigations("/living-brands-networks")
                           }
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/living-brands-networks" &&
                             "text-[#ee4580]"
                           }`}
@@ -311,7 +311,7 @@ const Nav = () => {
                         </li>
                         <li
                           onClick={() => handleNavigations("/csr")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/csr" && "text-[#ee4580]"
                           }`}
                         >
@@ -320,7 +320,7 @@ const Nav = () => {
 
                         <li
                           onClick={() => handleNavigations("/meet-our-team")}
-                          className={`text-[25px] ${
+                          className={`text-[14px] font-[500] ${
                             pathname === "/meet-our-team" && "text-[#ee4580]"
                           }`}
                         >
@@ -340,7 +340,7 @@ const Nav = () => {
                           <Link
                             href={"/blogs"}
                             onClick={() => handleNavigations("/blogs")}
-                            className={`text-[25px] ${
+                            className={`text-[14px] font-[500] ${
                               pathname === "/blogs" && "text-[#ee4580]"
                             }`}
                           >
@@ -351,7 +351,7 @@ const Nav = () => {
                           <Link
                             href={"/the-edge"}
                             onClick={() => handleNavigations("/the-edge")}
-                            className={`text-[25px] ${
+                            className={`text-[14px] font-[500] ${
                               pathname === "/the-edge" && "text-[#ee4580]"
                             }`}
                           >
