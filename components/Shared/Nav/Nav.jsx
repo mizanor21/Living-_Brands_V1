@@ -411,7 +411,7 @@ const Nav = () => {
 
               <div
                 className={`overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
-      transition-all duration-500 border-b border-black group-hover:visible`}
+      transition-all duration-1000 border-b border-black group-hover:visible`}
               >
                 <div className=" w-full h-full z-[115] ">
                   <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
