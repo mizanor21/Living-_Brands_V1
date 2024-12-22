@@ -30,7 +30,7 @@ const VideoSection = () => {
       <video
         ref={videoRef}
         className="absolute h-[100%] top-0 left-0 w-full md:h-full object-cover rounded-md"
-        autoPlay
+        // autoPlay
         loop
         // muted={isFirstPlay} // Muted during the first play
         onClick={handleVideoClick} // Toggle play/pause on click
