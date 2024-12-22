@@ -49,7 +49,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora">
+    <div className="bg-[#185C5D] sticky bottom-0 z-[105] font-sora pb-10">
       <style>{keyframes}</style>
 
       {/* Footer Image Section with Hover Visibility */}
@@ -82,7 +82,7 @@ const Footer = () => {
       </Link>
 
       {/* Footer Links and Info */}
-      <footer className="footer block lg:flex lg:justify-between border-t border-gray-400 px-10 py-4 text-white justify-center items-center">
+      <footer className="footer block lg:flex lg:justify-between border-t border-gray-400 px-5 py-4 text-white justify-center items-center">
         {/* Social Links */}
         <div className="flex justify-center items-center gap-3 text-3xl w-full">
           <Link
@@ -120,10 +120,10 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="flex justify-center items-center text-[13px] gap-3 w-full pt-4 lg:pt-0">
+        <div className="flex flex-wrap justify-center items-center text-[13px] gap-3 w-full pt-4 lg:pt-0">
           <Link href={"/we-works"}>About</Link>
           <Link href={"/contact"}>Contact</Link>
-          <Link href={"/works"}>Case Study</Link>
+          <Link href={"/works"}>Case Studies</Link>
           <Link href={"/blogs"}>Blog</Link>
           <Link href={"/privacy-policy"}>Privacy</Link>
         </div>
@@ -132,7 +132,7 @@ const Footer = () => {
           <p className="text-center">Proudly created in Bangladesh</p>
         </div>
         {/* Address */}
-        <div className="mb-3 md:my-0 flex justify-center items-center gap-2 w-full">
+        <div className="mb-3 md:my-0 flex justify-center items-center gap-2 w-full px-5">
           <div className="text-center">
             <div className="flex justify-center gap-x-2">
               <Link
