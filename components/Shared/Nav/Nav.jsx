@@ -147,7 +147,7 @@ const Nav = () => {
               </div>
             </div>
             {on && (
-              <div className="block lg:hidden side-menu-2 pt-20 lg:pt-0">
+              <div className="block md:hidden side-menu-2 pt-20 lg:pt-0">
                 <div className="side-menu-top pt-[53px] md:pt-0">
                   <div className="w-[100%]">
                     <Link
@@ -394,7 +394,7 @@ const Nav = () => {
 
         {/* Main Nav Links */}
         <div className=" navber-links text-[#125b5c] font-sora font-[500] text-[14px] h-full">
-          <ul className="">
+          <ul className="flex justify-center items-center gap-10">
             <li className={`${pathname === "/work" && "text-[#ee4580]"}`}>
               <Link href="/works" className="link">
                 Work

@@ -11,13 +11,12 @@
   justify-content: center;
 }
 
-.navber-links ul {
+/* .navber-links ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 60px;
-  color: var(--color-violet);
-}
+} */
 
 .navber-links ul:hover li {
   opacity: 0.4;
@@ -107,7 +106,7 @@
 
 /* -------------- For Mobile device------------- */
 
-@media (min-width: 0px) and (max-width: 1400px) {
+@media (min-width: 0px) and (max-width: 991px) {
   .navber {
     padding: 20px !important;
   }
