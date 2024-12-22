@@ -14,13 +14,6 @@ const Popup = () => {
         </Link>
         &quot;
       </p>
-      <style jsx>{`
-        @media (min-width: 1700px) and (max-width: 2000px) {
-          p {
-            font-size: 18px;
-          }
-        }
-      `}</style>
     </div>
   );
 };
