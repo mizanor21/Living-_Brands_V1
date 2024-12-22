@@ -473,7 +473,7 @@ const Nav = () => {
                               height={500}
                             />
                           </div>
-                          <p className="font-[400] text-[19px] mt-2">
+                          <p className="font-[400] md:text-[14px] min-[1500px]:text-[15px] min-[1600px]:text-[16px] min-[1700px]:text-[17px] min-[1800px]:text-[19px] mt-2">
                             {item?.title}
                           </p>
 
@@ -626,7 +626,7 @@ const Nav = () => {
                             />
                           </div>
 
-                          <p className="font-[400] text-[19px] mt-2">
+                          <p className="font-[400] md:text-[14px] min-[1500px]:text-[15px] min-[1600px]:text-[16px] min-[1700px]:text-[17px] min-[1800px]:text-[19px] mt-2">
                             {item?.title}
                           </p>
 
@@ -710,7 +710,7 @@ const Nav = () => {
                           />
                         </div>
 
-                        <p className="font-[400] text-[19px] mt-2">
+                        <p className="font-[400] md:text-[14px] min-[1500px]:text-[15px] min-[1600px]:text-[16px] min-[1700px]:text-[17px] min-[1800px]:text-[19px] mt-2">
                           {item?.title}
                         </p>
 
