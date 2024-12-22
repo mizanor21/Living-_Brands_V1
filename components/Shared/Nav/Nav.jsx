@@ -123,7 +123,7 @@ const Nav = () => {
                 <Link href="/" onClick={() => handleNavigations("/")}>
                   <Image
                     src={logo}
-                    className="w-10 lg:w-11 xl:w-14 2xl:w-16"
+                    className="w-10 lg:w-11 xl:w-14 "
                     alt="Living Brands logo"
                   ></Image>
                 </Link>
