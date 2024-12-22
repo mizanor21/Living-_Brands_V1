@@ -12,7 +12,7 @@ const Card = ({ section, index }) => {
         key={index}
         className={`hover-container ${section?.id} h-screen border-r-2 hover:text-white group`}
       >
-        <div className="text-center solutionCard w-[580px] h-full flex items-center justify-center">
+        <div className="text-center solutionCard w-[410px] min-[1000px]:w-[420px] min-[1400px]:w-[440px] 2xl:w-[580px] h-full flex items-center justify-center">
           <div className="px-5 lg:px-16">
             <h3 className="sectionTitle">{section?.title}</h3>
             <p className="carousel-p text-[16px] font-[500] leading-[22px] text-gray-50 hidden-on-hover">

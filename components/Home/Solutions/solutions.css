@@ -73,9 +73,9 @@
 } */
 
 @media (min-width: 0px) and (max-width: 1800px) {
-  .solutionCard {
+  /* .solutionCard {
     width: 470px;
-  }
+  } */
 
   .solutionCard .arrowIcon {
     width: 60px;
