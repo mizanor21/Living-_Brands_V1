@@ -107,9 +107,9 @@
 /* -------------- For Mobile device------------- */
 
 @media (min-width: 0px) and (max-width: 991px) {
-  .navber {
-    padding: 20px !important;
-  }
+  /* .navber {
+    padding: 40px 20px;
+  } */
 
   .navber-logo img {
     width: 40px;
@@ -145,7 +145,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 30px 23px;
     animation: anime2 0.7s;
     border-bottom: 1px solid rgb(188, 185, 185);
   }

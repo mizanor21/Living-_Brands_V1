@@ -114,7 +114,7 @@ const Nav = () => {
       <div className="md:sticky relative top-0 z-[9999]">
         <Popup />
       </div>
-      <div className="font-sora  navber md:sticky md:top-0  px-[5%] z-[150] bg-white py-2 lg:py-3">
+      <div className="font-sora  navber md:sticky md:top-0  px-[5%] py-5 md:py-8 lg:py-3 z-[150] bg-white ">
         {/* Logo and side menu */}
         <div className="navber-logo z-[210] pt-10 md:pt-0">
           <div className="">
@@ -123,14 +123,14 @@ const Nav = () => {
                 <Link href="/" onClick={() => handleNavigations("/")}>
                   <Image
                     src={logo}
-                    className="w-16"
+                    className="w-10 lg:w-11 xl:w-14 2xl:w-16"
                     alt="Living Brands logo"
                   ></Image>
                 </Link>
-                <h1 className="rounded-full bg-[#125b5c] w-[5px] h-[5px] lg:w-[7px] lg:h-[7px] animate-pulse font-bold mb-[16px]"></h1>
+                <h1 className="rounded-full bg-[#125b5c] w-[5px] h-[5px] lg:w-[7px] lg:h-[7px] animate-pulse font-bold mb-[14px] 2xl:mb-[17px]"></h1>
 
                 <WordRotate
-                  className="text-sm md:text-lg  font-[600] p-0 m-0 w-full"
+                  className="text-[11px] xl:text-[13px] 2xl:text-lg  font-[600] p-0 m-0 w-full"
                   words={[
                     "Brands",
                     "Tech",
@@ -148,7 +148,7 @@ const Nav = () => {
             </div>
             {on && (
               <div className="block md:hidden side-menu-2 pt-20 lg:pt-0">
-                <div className="side-menu-top pt-[53px] md:pt-0">
+                <div className="side-menu-top pt-[35px] lg:pt-0">
                   <div className="w-[100%]">
                     <Link
                       className=" flex items-end gap-1 text-[#125b5c]"
@@ -394,7 +394,7 @@ const Nav = () => {
 
         {/* Main Nav Links */}
         <div className=" navber-links text-[#125b5c] font-sora font-[500] text-[14px] h-full">
-          <ul className="flex justify-center items-center gap-10">
+          <ul className="flex justify-center items-center gap-5 lg:gap-8 xl:gap-14 2xl:gap-16">
             <li className={`${pathname === "/work" && "text-[#ee4580]"}`}>
               <Link href="/works" className="link">
                 Work
