@@ -78,7 +78,7 @@ const Define = ({ data }) => {
                 <div className="my-5 lg:py-16 text-justify text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px]">
                   <FlipText word={data?.shortDescription} />
                 </div>
-                <div className="max-w-[280px] lg:max-w-[395px]">
+                <div className="max-w-[280px] lg:max-w-[291px]">
                   <Link href="/careers">
                     <ButtonEffect>
                       <span className="flex gap-2">
