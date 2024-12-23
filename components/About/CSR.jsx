@@ -2,7 +2,7 @@ import React from "react";
 
 const CSR = () => {
   return (
-    <div className="flex flex-col justify-center items-center px-[5%] py-10 lg:py-20 bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
+    <div className="flex flex-col justify-center items-center px-[5%] py-10 bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
       <div className="video-container w-full h-screen">
         <iframe
           width="100%"
@@ -15,8 +15,10 @@ const CSR = () => {
       </div>
 
       <div className="p-6 w-[100%] mx-auto">
-        <h1 className=" font-bold mb-4">1. Preface</h1>
-        <p className="mb-4 ml-6">
+        <h1>
+          1. <span className=" font-bold mb-4">Preface</span>{" "}
+        </h1>
+        <p className="my-4 ml-6">
           Corporate Social Responsibility (CSR) defines the commitment of a
           Company to social and economical upliftment of the society. The
           activities taken up as part of CSR reflect the intent to create a
@@ -32,8 +34,10 @@ const CSR = () => {
           technological growth of India.
         </p>
 
-        <h1 className=" font-bold mb-4">2. Scope</h1>
-        <p className="mb-4 ml-6">
+        <h1>
+          2. <span className=" font-bold">Scope</span>{" "}
+        </h1>
+        <p className="my-4 ml-6">
           The Corporate Social Responsibility Policy (CSR Policy) outlines the
           framework to guide the Company’s CSR activities and guides the Company
           to exercise its responsibilities towards the society and environment
@@ -45,8 +49,10 @@ const CSR = () => {
           Responsibility Policy) Rules, 2014 (“Rules”).
         </p>
 
-        <h1 className=" font-bold mb-4">3. Objective</h1>
-        <p className="mb-4 ml-6">Living Brand’s CSR Policy intends to:</p>
+        <h1>
+          3. <span className=" font-bold ">Objective</span>{" "}
+        </h1>
+        <p className="my-4 ml-6">Living Brand’s CSR Policy intends to:</p>
         <div className=" ml-6 mb-4">
           <p className="mb-3">
             3.1&nbsp;&nbsp;&nbsp;&nbsp;Serve the education and technological
@@ -63,10 +69,13 @@ const CSR = () => {
           </p>
         </div>
 
-        <h1 className=" font-bold mb-4">
-          4. Corporate Social Responsibility Areas/Activities
+        <h1>
+          4.{" "}
+          <span className=" font-bold ">
+            Corporate Social Responsibility Areas/Activities
+          </span>
         </h1>
-        <p className="mb-4 ml-6">
+        <p className="my-4 ml-6">
           This Policy applies to all CSR projects that will be undertaken by
           Living Brand and shall fulfill all the requirements of Section 135 of
           the Companies Act, 2013. Living Brand shall ensure all these
@@ -187,7 +196,6 @@ const CSR = () => {
         </p>
 
         <p className="mb-4 ml-16">
-          {" "}
           <span className="mb-4 -ml-10">4.6</span>
           &nbsp;&nbsp;&nbsp;&nbsp;Living Brand can support any other activities
           that are conforming to Schedule VII of the Act as amended from time to
@@ -195,8 +203,10 @@ const CSR = () => {
           qualify for CSR.
         </p>
 
-        <h1 className=" font-bold mb-4">5. Undertaking CSR Activities</h1>
-        <p className="mb-4 ml-6">
+        <h1>
+          5. <span className=" font-bold ">Undertaking CSR Activities</span>
+        </h1>
+        <p className="my-4 ml-6">
           Living Brand will undertake CSR activities either in partnership with
           not-for-profit, registered trusts/societies/other body corporates
           (“hereinafter referred as “implementing Agency”) or through Living
@@ -205,17 +215,24 @@ const CSR = () => {
           the purview of Living Brand’s CSR Policy.
         </p>
 
-        <h1 className="font-bold mb-4">6. Governance Structure</h1>
-        <p className="mb-4 ml-6">
+        <h1>
+          6. <span className="font-bold ">Governance Structure</span>{" "}
+        </h1>
+        <p className="my-4 ml-6">
           A CSR Committee and the Board of Directors of the Company will monitor
           and ensure that the CSR projects undertaken by Living Brand in
           accordance with the policy and statutory requirements.
         </p>
-        <h1 className="font-bold mb-4">7. CSR Committee</h1>
+        <h1>
+          7. <span className="font-bold mb-4">CSR Committee</span>
+        </h1>
         <br />
 
-        <h2 className="ml-6 mb-4 font-bold">
-          7.1&nbsp;&nbsp;&nbsp;&nbsp;Constitution
+        <h2 className="ml-6 mb-4">
+          7.1
+          <span className="font-bold">
+            &nbsp;&nbsp;&nbsp;&nbsp;Constitution
+          </span>
         </h2>
         <p className="mb-4 ml-16">
           Living Brand has constituted a Corporate Social Responsibility
@@ -265,8 +282,11 @@ const CSR = () => {
           </table>
         </div>
 
-        <h2 className="ml-6 mb-4 font-bold">
-          7.2&nbsp;&nbsp;&nbsp;&nbsp;Functions of the CSR Committee
+        <h2 className="ml-6 mb-4 ">
+          7.2
+          <span className="font-bold">
+            &nbsp;&nbsp;&nbsp;&nbsp;Functions of the CSR Committee
+          </span>
         </h2>
         <p className="mb-4 ml-16">
           7.2.1&nbsp;&nbsp;&nbsp;&nbsp;Formulate CSR Policy and recommend the
@@ -322,8 +342,9 @@ const CSR = () => {
 
         {/* ------------------------------------- */}
 
-        <h2 className="ml-6 mb-4 font-bold">
-          7.3&nbsp;&nbsp;&nbsp;&nbsp;CSR Team
+        <h2 className="ml-6 mb-4">
+          7.3
+          <span className=" font-bold">&nbsp;&nbsp;&nbsp;&nbsp;CSR Team</span>
         </h2>
         <p className="mb-4 ml-16">
           Dedicated CSR team shall be constituted from among the employees at
@@ -368,8 +389,10 @@ const CSR = () => {
           achievement of CSR objectives.
         </p>
 
-        <h1 className=" font-bold mb-4">8. CSR Expenditure</h1>
-        <p className="mb-4 ml-6">
+        <h1>
+          8. <span className="font-bold">CSR Expenditure</span>
+        </h1>
+        <p className="my-4 ml-6">
           CSR expenditure shall include all expenditure including contribution
           to corpus, for projects or programmes relating to CSR activities
           approved by the Board on the recommendation of the CSR Committee, but
@@ -381,10 +404,15 @@ const CSR = () => {
           activities shall not form part of the business profit of the Company.
         </p>
 
-        <h1 className=" font-bold mb-4">9. Implementation Process</h1>
+        <h1 className="mb-4">
+          9. <span className=" font-bold">Implementation Process</span>{" "}
+        </h1>
 
-        <h2 className=" ml-6  mb-4 font-bold">
-          9.1&nbsp;&nbsp;&nbsp;&nbsp; CSR Contributions
+        <h2 className=" ml-6  mb-4 ">
+          9.1{" "}
+          <span className="font-bold">
+            &nbsp;&nbsp;&nbsp;&nbsp;CSR Contributions
+          </span>
         </h2>
         <p className="mb-4 ml-16">
           The Company will endeavour to contribute and spend at least 2% of the
@@ -393,8 +421,11 @@ const CSR = () => {
           CSR Committee from time to time in pursuance of this Policy.
         </p>
 
-        <h2 className=" ml-6  mb-4 font-bold">
-          9.2&nbsp;&nbsp;&nbsp;&nbsp; EXECUTION, MONITORING & REPORTING
+        <h2 className="ml-6  mb-4 ">
+          9.2{" "}
+          <span className="font-bold">
+            &nbsp;&nbsp;&nbsp;&nbsp;EXECUTION, MONITORING & REPORTING
+          </span>
         </h2>
 
         <p className="mb-4 ml-16 font-bold">&nbsp;The CSR Committee shall</p>
@@ -421,27 +452,29 @@ const CSR = () => {
           activities undertaken by the Company.
         </p>
 
-        <h2 className=" ml-6  mb-4 font-bold">
-          9.3&nbsp;&nbsp;&nbsp;&nbsp; CSR Contributions
+        <h2 className=" ml-6">
+          9.3{" "}
+          <span className="font-bold">
+            &nbsp;&nbsp;&nbsp;&nbsp;CSR Contributions
+          </span>
         </h2>
-        <p className="mb-4 ml-16">
+        <p className="my-4 ml-16">
           The Company will endeavour to contribute and spend at least 2% of the
           average net profits of the Company made during the three immediately
           preceding financial years or such amount as may be recommended by the
           CSR Committee from time to time in pursuance of this Policy.
         </p>
 
-        <h1 className=" font-bold mb-4">10. Treatment of Surplus</h1>
+        <h1>
+          10. <span className=" font-bold"> Treatment of Surplus</span>
+        </h1>
 
-        <p className="mb-4 ml-6">
+        <p className="my-4 ml-6">
           Any surplus arising out of CSR projects, programmes or activities
-          shall not form part of the business profit of the Company.
-        </p>
-
-        <p>
-          The Board of Directors may revise/ amend this CSR Policy based on the
-          recommendations of the CSR Committee or to bring the same in line with
-          the guidelines or amendments issued from time to time by the
+          shall not form part of the business profit of the Company. <br />{" "}
+          <br /> The Board of Directors may revise/ amend this CSR Policy based
+          on the recommendations of the CSR Committee or to bring the same in
+          line with the guidelines or amendments issued from time to time by the
           Government on the subject.
         </p>
       </div>
