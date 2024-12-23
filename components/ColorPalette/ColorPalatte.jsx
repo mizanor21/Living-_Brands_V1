@@ -57,15 +57,6 @@ const ColorPalette = () => {
           ref={targetRef}
           className="relative h-[600vh] bg-white py-10 lg:py-16 "
         >
-          {/* <div className="my-10 lg:my-20">
-            <h1 className="text-[24px] text-[#125b5c] font-[600] text-center ">
-              Have you got what it takes to #CreateALivingBrands?
-            </h1>
-            <p className="text-[19px] font-[400] text-center mt-2">
-              Check out our core principles. If they align with your values, do
-              apply.
-            </p>
-          </div> */}
           <div className="sticky -top-6 flex items-center overflow-hidden">
             <motion.div
               style={{ x }}
@@ -74,7 +65,7 @@ const ColorPalette = () => {
               {colors.map((color) => (
                 <div
                   key={color.id}
-                  className="w-[26rem] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
+                  className="group w-[26rem] overflow-hidden border hover:-translate-y-5 duration-500 mt-5 bg-white"
                 >
                   <div>
                     <Image
@@ -88,7 +79,7 @@ const ColorPalette = () => {
                       }}
                     />
                   </div>
-                  <div className="p-[25px] h-[300px] relative group">
+                  <div className="p-[25px] h-[300px] relative ">
                     <div className="text-center">
                       <h2 className="text-[22px] font-bold text-[#185C5D]">
                         {color.title}
