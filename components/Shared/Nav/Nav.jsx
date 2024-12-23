@@ -199,13 +199,13 @@ const Nav = () => {
                     </Link>
                   </li>
 
-                  <div className="collapse collapse-arrow border-y border-[#125b5c] rounded-none">
+                  <div className="collapse collapse-arrow rounded-none">
                     <input type="radio" name="my-accordion-2" />
-                    <div className="collapse-title text-[14px] text-black font-medium">
+                    <div className="collapse-title border-y text-[14px] text-black font-medium">
                       Solutions
                     </div>
-                    <div className="collapse-content">
-                      <ul>
+                    <div className="collapse-content ml-3 ">
+                      <ul className="pt-3">
                         <li>
                           <Link
                             href={"/brand-solutions"}
@@ -248,13 +248,13 @@ const Nav = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="collapse collapse-arrow border-b border-[#125b5c] rounded-none">
+                  <div className="collapse collapse-arrow  rounded-none">
                     <input type="radio" name="my-accordion-2" />
-                    <div className="collapse-title text-[14px] text-black font-medium">
+                    <div className="collapse-title  text-[14px] text-black font-medium">
                       About
                     </div>
-                    <div className="collapse-content">
-                      <ul>
+                    <div className="collapse-content ml-3 border-t ">
+                      <ul className="pt-3">
                         <li
                           onClick={() => handleNavigations("/who-we-are")}
                           className={`text-[14px] font-[500] ${
@@ -329,13 +329,13 @@ const Nav = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="collapse collapse-arrow border-b border-[#125b5c] rounded-none">
+                  <div className="collapse collapse-arrow rounded-none">
                     <input type="radio" name="my-accordion-2" />
-                    <div className="collapse-title text-[14px] text-black font-medium">
+                    <div className="collapse-title border-y text-[14px] text-black font-medium">
                       Resources
                     </div>
-                    <div className="collapse-content">
-                      <ul>
+                    <div className="collapse-content ml-3">
+                      <ul className="pt-3">
                         <li>
                           <Link
                             href={"/blogs"}
