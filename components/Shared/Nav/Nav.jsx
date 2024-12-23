@@ -120,7 +120,7 @@ const Nav = () => {
       <div className="md:sticky relative top-0 z-[9999]">
         <Popup />
       </div>
-      <div className="font-sora  navber md:sticky md:top-0  px-[5%] py-5 md:py-8 lg:py-3 z-[150] bg-white ">
+      <div className="font-sora relative z-[150] navber md:sticky md:top-0  px-[5%] py-5 md:py-8 lg:py-3 bg-white ">
         {/* Logo and side menu */}
         <div className="navber-logo z-[210] pt-10 md:pt-0">
           <div className="">
