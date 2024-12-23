@@ -52,6 +52,12 @@ const Nav = () => {
     setHoveredId(null);
   };
 
+  const [activeAccordion, setActiveAccordion] = useState(false);
+
+  const handleAccordionToggle = (index) => {
+    setActiveAccordion(index === activeAccordion ? null : index);
+  };
+
   const scrollAnimation = {
     position: "absolute",
     whiteSpace: "nowrap",
@@ -187,11 +193,12 @@ const Nav = () => {
 
                 {/* Side Menu Links  */}
                 <ul>
+                  {/* Work */}
                   <li className="ml-4 mb-2">
                     <Link
                       href="/works"
                       onClick={() => handleNavigations("/works")}
-                      className={` text-[14px] text-black font-medium ${
+                      className={`text-[14px] text-black font-medium ${
                         pathname === "/works" && "text-[#ee4580]"
                       }`}
                     >
@@ -199,16 +206,27 @@ const Nav = () => {
                     </Link>
                   </li>
 
-                  <div className="collapse collapse-arrow rounded-none">
-                    <input type="radio" name="my-accordion-2" />
+                  {/* Solutions Accordion */}
+                  <div
+                    className={`collapse collapse-arrow rounded-none ${
+                      activeAccordion !== 0 && "opacity-50"
+                    }`}
+                    onClick={() => handleAccordionToggle(0)}
+                  >
+                    <input
+                      type="radio"
+                      name="my-accordion-2"
+                      checked={activeAccordion === 0}
+                      readOnly
+                    />
                     <div className="collapse-title border-y text-[14px] text-black font-medium">
                       Solutions
                     </div>
-                    <div className="collapse-content ml-3 ">
+                    <div className="collapse-content ml-3">
                       <ul className="pt-3">
                         <li>
                           <Link
-                            href={"/brand-solutions"}
+                            href="/brand-solutions"
                             onClick={() =>
                               handleNavigations("/brand-solutions")
                             }
@@ -222,7 +240,7 @@ const Nav = () => {
                         </li>
                         <li>
                           <Link
-                            href={"/media-solutions"}
+                            href="/media-solutions"
                             onClick={() =>
                               handleNavigations("/media-solutions")
                             }
@@ -236,7 +254,7 @@ const Nav = () => {
                         </li>
                         <li>
                           <Link
-                            href={"/tech-solutions"}
+                            href="/tech-solutions"
                             onClick={() => handleNavigations("/tech-solutions")}
                             className={`text-[14px] font-[500] ${
                               pathname === "/tech-solutions" && "text-[#ee4580]"
@@ -248,89 +266,133 @@ const Nav = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="collapse collapse-arrow  rounded-none">
-                    <input type="radio" name="my-accordion-2" />
-                    <div className="collapse-title  text-[14px] text-black font-medium">
+
+                  {/* About Accordion */}
+                  <div
+                    className={`collapse collapse-arrow rounded-none ${
+                      activeAccordion !== 1 && "opacity-50"
+                    }`}
+                    onClick={() => handleAccordionToggle(1)}
+                  >
+                    <input
+                      type="radio"
+                      name="my-accordion-2"
+                      checked={activeAccordion === 1}
+                      readOnly
+                    />
+                    <div className="collapse-title text-[14px] text-black font-medium">
                       About
                     </div>
-                    <div className="collapse-content ml-3 border-t ">
+                    <div className="collapse-content ml-3 border-t">
                       <ul className="pt-3">
-                        <li
-                          onClick={() => handleNavigations("/who-we-are")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/who-we-are" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"/who-we-are"}>Who We Are</Link>
+                        <li>
+                          <Link
+                            href="/who-we-are"
+                            onClick={() => handleNavigations("/who-we-are")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/who-we-are" && "text-[#ee4580]"
+                            }`}
+                          >
+                            Who We Are
+                          </Link>
                         </li>
-                        <li
-                          onClick={() => handleNavigations("/we-works")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/we-works" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"we-works"}>How We Work</Link>
+                        <li>
+                          <Link
+                            href="/we-works"
+                            onClick={() => handleNavigations("/we-works")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/we-works" && "text-[#ee4580]"
+                            }`}
+                          >
+                            How We Work
+                          </Link>
                         </li>
-                        <li
-                          onClick={() => handleNavigations("/partnership")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/partnership" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"partnership"}>Our Partnership</Link>
+                        <li>
+                          <Link
+                            href="/partnership"
+                            onClick={() => handleNavigations("/partnership")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/partnership" && "text-[#ee4580]"
+                            }`}
+                          >
+                            Our Partnership
+                          </Link>
                         </li>
-                        <li
-                          onClick={() => handleNavigations("/achievements")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/achievements" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"achievements"}>Achievements</Link>
+                        <li>
+                          <Link
+                            href="/achievements"
+                            onClick={() => handleNavigations("/achievements")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/achievements" && "text-[#ee4580]"
+                            }`}
+                          >
+                            Achievements
+                          </Link>
                         </li>
-                        <li
-                          onClick={() => handleNavigations("/news-center")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/news-center" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"news-center"}>News Center</Link>
+                        <li>
+                          <Link
+                            href="/news-center"
+                            onClick={() => handleNavigations("/news-center")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/news-center" && "text-[#ee4580]"
+                            }`}
+                          >
+                            News Center
+                          </Link>
                         </li>
-
-                        <li
-                          onClick={() =>
-                            handleNavigations("/living-brands-networks")
-                          }
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/living-brands-networks" &&
-                            "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"/living-brands-networks"}>
+                        <li>
+                          <Link
+                            href="/living-brands-networks"
+                            onClick={() =>
+                              handleNavigations("/living-brands-networks")
+                            }
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/living-brands-networks" &&
+                              "text-[#ee4580]"
+                            }`}
+                          >
                             Living Networks
                           </Link>
                         </li>
-                        <li
-                          onClick={() => handleNavigations("/csr")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/csr" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"csr"}>CSR</Link>
+                        <li>
+                          <Link
+                            href="/csr"
+                            onClick={() => handleNavigations("/csr")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/csr" && "text-[#ee4580]"
+                            }`}
+                          >
+                            CSR
+                          </Link>
                         </li>
-
-                        <li
-                          onClick={() => handleNavigations("/meet-our-team")}
-                          className={`text-[14px] font-[500] ${
-                            pathname === "/meet-our-team" && "text-[#ee4580]"
-                          }`}
-                        >
-                          <Link href={"meet-our-team"}>Meet The Team</Link>
+                        <li>
+                          <Link
+                            href="/meet-our-team"
+                            onClick={() => handleNavigations("/meet-our-team")}
+                            className={`text-[14px] font-[500] ${
+                              pathname === "/meet-our-team" && "text-[#ee4580]"
+                            }`}
+                          >
+                            Meet The Team
+                          </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div className="collapse collapse-arrow rounded-none">
-                    <input type="radio" name="my-accordion-2" />
+
+                  {/* Resources Accordion */}
+                  <div
+                    className={`collapse collapse-arrow rounded-none ${
+                      activeAccordion !== 2 && "opacity-50"
+                    }`}
+                    onClick={() => handleAccordionToggle(2)}
+                  >
+                    <input
+                      type="radio"
+                      name="my-accordion-2"
+                      checked={activeAccordion === 2}
+                      readOnly
+                    />
                     <div className="collapse-title border-y text-[14px] text-black font-medium">
                       Resources
                     </div>
@@ -338,7 +400,7 @@ const Nav = () => {
                       <ul className="pt-3">
                         <li>
                           <Link
-                            href={"/blogs"}
+                            href="/blogs"
                             onClick={() => handleNavigations("/blogs")}
                             className={`text-[14px] font-[500] ${
                               pathname === "/blogs" && "text-[#ee4580]"
@@ -349,7 +411,7 @@ const Nav = () => {
                         </li>
                         <li>
                           <Link
-                            href={"/the-edge"}
+                            href="/the-edge"
                             onClick={() => handleNavigations("/the-edge")}
                             className={`text-[14px] font-[500] ${
                               pathname === "/the-edge" && "text-[#ee4580]"
@@ -362,11 +424,12 @@ const Nav = () => {
                     </div>
                   </div>
 
+                  {/* Careers */}
                   <li className="ml-4 mt-2">
                     <Link
                       href="/careers"
                       onClick={() => handleNavigations("/careers")}
-                      className={` text-[14px] text-black font-medium ${
+                      className={`text-[14px] text-black font-medium ${
                         pathname === "/careers" && "text-[#ee4580]"
                       }`}
                     >
