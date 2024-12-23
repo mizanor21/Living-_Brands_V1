@@ -13,7 +13,7 @@ const CareerDetails = () => {
       <div className="relative z-[110] font-sora bg-white rounded-b-[20px] lg:rounded-b-[50px] ">
         <div className="career-details py-12">
           <div className="flex items-center gap-5 text-white font-sora text-[16px] px-[5%]">
-            <Link href="/" className="bg-white px-4 py-1 mr-5">
+            <Link target="_blank" href="/" className="bg-white px-4 py-1 mr-5">
               <Image
                 src={logo}
                 className="w-12 "
@@ -22,7 +22,7 @@ const CareerDetails = () => {
                 alt="Living Brands Logo"
               ></Image>
             </Link>
-            <Link href="/" className="text-[16px] font-[500]">
+            <Link href="/career-details" className="text-[16px] font-[500]">
               HOME
             </Link>
             <Link
