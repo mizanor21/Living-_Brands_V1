@@ -52,10 +52,10 @@ const Nav = () => {
     setHoveredId(null);
   };
 
-  const [activeAccordion, setActiveAccordion] = useState(false);
+  const [activeItem, setActiveItem] = useState(null);
 
-  const handleAccordionToggle = (index) => {
-    setActiveAccordion(index === activeAccordion ? null : index);
+  const handleItemClick = (index) => {
+    setActiveItem(index === activeItem ? null : index);
   };
 
   const scrollAnimation = {
@@ -194,7 +194,14 @@ const Nav = () => {
                 {/* Side Menu Links  */}
                 <ul>
                   {/* Work */}
-                  <li className="ml-4 mb-2">
+                  <li
+                    className={`ml-4 mb-2 ${
+                      activeItem !== null &&
+                      activeItem !== "work" &&
+                      "opacity-50"
+                    }`}
+                    onClick={() => handleItemClick("work")}
+                  >
                     <Link
                       href="/works"
                       onClick={() => handleNavigations("/works")}
@@ -209,16 +216,16 @@ const Nav = () => {
                   {/* Solutions Accordion */}
                   <div
                     className={`collapse collapse-arrow rounded-none ${
-                      activeAccordion !== null &&
-                      activeAccordion !== 0 &&
+                      activeItem !== null &&
+                      activeItem !== "solutions" &&
                       "opacity-50"
                     }`}
-                    onClick={() => handleAccordionToggle(0)}
+                    onClick={() => handleItemClick("solutions")}
                   >
                     <input
                       type="radio"
                       name="my-accordion-2"
-                      checked={activeAccordion === 0}
+                      checked={activeItem === "solutions"}
                       readOnly
                     />
                     <div className="collapse-title border-y text-[14px] text-black font-medium">
@@ -272,16 +279,16 @@ const Nav = () => {
                   {/* About Accordion */}
                   <div
                     className={`collapse collapse-arrow rounded-none ${
-                      activeAccordion !== null &&
-                      activeAccordion !== 1 &&
+                      activeItem !== null &&
+                      activeItem !== "about" &&
                       "opacity-50"
                     }`}
-                    onClick={() => handleAccordionToggle(1)}
+                    onClick={() => handleItemClick("about")}
                   >
                     <input
                       type="radio"
                       name="my-accordion-2"
-                      checked={activeAccordion === 1}
+                      checked={activeItem === "about"}
                       readOnly
                     />
                     <div className="collapse-title text-[14px] text-black font-medium">
@@ -387,16 +394,16 @@ const Nav = () => {
                   {/* Resources Accordion */}
                   <div
                     className={`collapse collapse-arrow rounded-none ${
-                      activeAccordion !== null &&
-                      activeAccordion !== 2 &&
+                      activeItem !== null &&
+                      activeItem !== "resources" &&
                       "opacity-50"
                     }`}
-                    onClick={() => handleAccordionToggle(2)}
+                    onClick={() => handleItemClick("resources")}
                   >
                     <input
                       type="radio"
                       name="my-accordion-2"
-                      checked={activeAccordion === 2}
+                      checked={activeItem === "resources"}
                       readOnly
                     />
                     <div className="collapse-title border-y text-[14px] text-black font-medium">
@@ -431,7 +438,14 @@ const Nav = () => {
                   </div>
 
                   {/* Careers */}
-                  <li className="ml-4 mt-2">
+                  <li
+                    className={`ml-4 mt-2 ${
+                      activeItem !== null &&
+                      activeItem !== "careers" &&
+                      "opacity-50"
+                    }`}
+                    onClick={() => handleItemClick("careers")}
+                  >
                     <Link
                       href="/careers"
                       onClick={() => handleNavigations("/careers")}
