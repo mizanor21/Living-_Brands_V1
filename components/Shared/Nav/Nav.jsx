@@ -209,7 +209,9 @@ const Nav = () => {
                   {/* Solutions Accordion */}
                   <div
                     className={`collapse collapse-arrow rounded-none ${
-                      activeAccordion !== 0 && "opacity-50"
+                      activeAccordion !== null &&
+                      activeAccordion !== 0 &&
+                      "opacity-50"
                     }`}
                     onClick={() => handleAccordionToggle(0)}
                   >
@@ -270,7 +272,9 @@ const Nav = () => {
                   {/* About Accordion */}
                   <div
                     className={`collapse collapse-arrow rounded-none ${
-                      activeAccordion !== 1 && "opacity-50"
+                      activeAccordion !== null &&
+                      activeAccordion !== 1 &&
+                      "opacity-50"
                     }`}
                     onClick={() => handleAccordionToggle(1)}
                   >
@@ -383,7 +387,9 @@ const Nav = () => {
                   {/* Resources Accordion */}
                   <div
                     className={`collapse collapse-arrow rounded-none ${
-                      activeAccordion !== 2 && "opacity-50"
+                      activeAccordion !== null &&
+                      activeAccordion !== 2 &&
+                      "opacity-50"
                     }`}
                     onClick={() => handleAccordionToggle(2)}
                   >
