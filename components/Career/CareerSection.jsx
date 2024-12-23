@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Button from "../Custom/Button";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
 
@@ -13,7 +12,7 @@ const CareerSection = () => {
       <p className="text-[18px] font-[400] text-black mb-8">
         Showcasing the innovative spirit of Bangladesh on a global stage.
       </p>
-      <Link href="/career-details">
+      <Link target="_black" href="/career-details">
         <div className="max-w-sm">
           <ButtonEffect>
             <span className="flex gap-2">
