@@ -16,15 +16,15 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 lg:mb-20">
         {/* Left Side */}
         <div>
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] text-[#125b5c] font-bold mb-7 md:mb-10 transition duration-300 ease-in-out transform">
+          <h2 className="text-[24px] md:text-4xl lg:text-[48px] text-[#125b5c] font-bold mb-5 md:mb-10 transition duration-300 ease-in-out transform">
             Brand Solutions
           </h2>
 
-          <p className="text-[18px] font-normal text-gray-800 mb-5 text-justify transition duration-300 ease-in-out">
+          <p className="text-[16px] xl:text-[18px] font-normal text-gray-800 mb-5 transition duration-300 ease-in-out">
             {shortDescription}
           </p>
 
-          <hr className="h-[3px] bg-gray-500 mb-5 max-w-52" />
+          <hr className="h-[3px] bg-gray-500 mb-5 max-w-[70px] lg:max-w-52" />
           <p className="font-semibold text-[18px] text-[#125b5c] mb-10 transition-opacity duration-300 ease-in-out">
             Proud to work with the biggest brands in Bangladesh & Abroad
           </p>
@@ -53,7 +53,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
           {items?.map((item, index) => (
             <div key={item._id} className="border-b border-gray-300">
               <button
-                className="w-full flex justify-between items-center py-4 text-[16px] font-semibold text-[#125b5c] text-left transition duration-300 ease-in-out transform hover:text-[#0d4a4c]"
+                className="w-full flex justify-between items-center py-4 text-[18px] lg:text-[16px] font-[700] text-[#125b5c] text-left transition duration-300 ease-in-out transform hover:text-[#0d4a4c]"
                 onClick={() => toggle(index)}
               >
                 {item.title}
@@ -65,7 +65,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
               </button>
 
               <div
-                className={`overflow-hidden transition-[max-height] text-[14px] font-normal duration-1000 ease-in-out ${
+                className={`overflow-hidden transition-[max-height] text-[16px] lg:text-[14px] font-normal duration-1000 ease-in-out ${
                   open === index ? "max-h-96" : "max-h-0"
                 }`}
               >
