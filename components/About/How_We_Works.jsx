@@ -4,19 +4,19 @@ const HowWeWorks = () => {
   return (
     <div className="relative z-[110] bg-white font-sora">
       <div className="">
-        <h1 className="text-3xl font-bold text-[#125B5C] py-[5%] lg:pt-[80px] lg:pb-[60px] md:text-3xl lg:text-[48px]">
+        <h1 className="text-[24px] lg:text-3xl font-bold text-[#125B5C] py-[5%] lg:pt-[80px] lg:pb-[60px] md:text-3xl lg:text-[48px]">
           Let&apos;s Make Your Brand Live. Choose Living Brands.
         </h1>
         <hr className="w-full text-gray-400" />
         <div>
           <div className="lg:flex ">
-            <div className="mt-5 lg:mt-16">
+            <div className="mt-5 lg:mt-16 hidden md:block">
               <p className="text-xl lg:text-[24px] font-bold md:leading-[1.5] text-[#125B5C]">
                 On A Mission to Showcase The Finest of Bangladeshi Creative
                 Talent to The World!
               </p>
             </div>
-            <div className="mt-5 lg:mt-16 lg:pl-24">
+            <div className="mt-10 lg:mt-16 lg:pl-24">
               <p className="text-[16px] mb-8">
                 Living Brands embodies brands that evolve and grow, continuously
                 connecting with people. Just like life, a brand must adapt and
