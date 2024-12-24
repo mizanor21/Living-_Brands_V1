@@ -20,7 +20,7 @@ const WorkDetails = ({ params }) => {
       <div className="w-full flex flex-col gap-3 text-[#125b5c] justify-start mt-16">
         <p className="text-[19px]">Case study</p>
         <h1 className="font-bold text-[24px] lg:text-[48px]">{title}</h1>
-        <p className="text-lg text-gray-600">{detailsTitle}</p>
+        {/* <p className="text-lg text-gray-600">{detailsTitle}</p> */}
       </div>
 
       {/* Image Section */}
