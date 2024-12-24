@@ -38,7 +38,7 @@ const TrendingItems = () => {
               {item?.category}
             </p>
             <div className="lg:grid grid-cols-4 justify-between items-center">
-              <h3 className="font-[700] text-[14px] lg:text-[18px] py-2 md:py-10 col-span-3">
+              <h3 className="font-[600] lg:font-[700] text-[14px] lg:text-[18px] py-2 md:py-10 col-span-3">
                 {item?.title}
               </h3>
               <small className="text-end hidden lg:flex">
