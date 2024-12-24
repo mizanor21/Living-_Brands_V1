@@ -20,10 +20,10 @@ const TechSolutions = ({ shortDescription, items, brands }) => {
             Tech Solutions
           </h2>
 
-          <p className="text-[18px] font-normal text-black mb-5 text-justify transition duration-300 ease-in-out">
+          <p className="text-[18px] font-normal text-black mb-5 transition duration-300 ease-in-out">
             {shortDescription}
           </p>
-          <hr className="h-[3px] bg-gray-400 mb-5 max-w-52" />
+          <hr className="h-[3px] bg-gray-500 mb-5 max-w-[70px] lg:max-w-52" />
           <p className="font-bold text-[18px] text-[#125b5c] mb-10">
             Proud to work with the biggest brands in India & Abroad
           </p>
@@ -52,7 +52,7 @@ const TechSolutions = ({ shortDescription, items, brands }) => {
           {items?.map((item, index) => (
             <div key={item._id} className="border-b border-gray-300">
               <button
-                className="w-full flex justify-between items-center py-4 text-[17px] font-semibold text-[#125b5c] text-left transition duration-300 ease-in-out hover:text-[#0d4a4c]"
+                className="w-full flex justify-between items-center py-4 text-[18px] lg:text-[16px] font-[700] text-[#125b5c] text-left transition duration-300 ease-in-out transform hover:text-[#0d4a4c]"
                 onClick={() => toggle(index)}
               >
                 {item.title}
@@ -64,7 +64,7 @@ const TechSolutions = ({ shortDescription, items, brands }) => {
               </button>
 
               <div
-                className={`overflow-hidden transition-[max-height] duration-1000 ease-in-out ${
+                className={`overflow-hidden transition-[max-height] text-[16px] lg:text-[14px] font-normal duration-1000 ease-in-out ${
                   open === index ? "max-h-96" : "max-h-0"
                 }`}
               >
