@@ -46,7 +46,7 @@ const Define = ({ data }) => {
           <div className="flex justify-center items-center rounded-badge">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h2 className="defineHeading text-2xl mx-3 md:mx-0 lg:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1]">
+                <h2 className="defineHeading  mx-3 md:mx-0 text-[30px] md:text-[25px] lg:text-[30px] xl:text-[40px] 2xl:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1]">
                   {data?.heading}
                 </h2>
                 <div className="hidden lg:flex mt-7">
@@ -75,7 +75,7 @@ const Define = ({ data }) => {
                 <div className="text-xl lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
                   <FlipText word={data?.title} />
                 </div>
-                <div className="my-5 lg:py-16 text-justify text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px]">
+                <div className="my-5 lg:py-16 text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px]">
                   <FlipText word={data?.shortDescription} />
                 </div>
                 <div className="max-w-[280px] lg:max-w-[291px]">
