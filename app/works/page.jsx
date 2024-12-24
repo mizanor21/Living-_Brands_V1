@@ -45,22 +45,18 @@ const Works = () => {
         </h2>
         <hr />
         <div className="md:flex justify-end my-5 space-y-1 md:space-y-0">
-          {/* <ButtonEffect onClick={() => handleCategoryChange("Case study")}>
-            Case Study
-          </ButtonEffect>
+          <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5 md:mr-0">
+            <button onClick={() => handleCategoryChange("Casestudy")}>
+              <ButtonEffect>Case Study</ButtonEffect>
+            </button>
+            <div className="text-black border border-black md:hidden " />
+          </div>
           <span className="divider divider-horizontal divider-start divider-neutral"></span>
-          <ButtonEffect
-            onClick={() => handleCategoryChange("Daily Creativity")}
-          >
-            Daily Creativity
-          </ButtonEffect> */}
-          <button onClick={() => handleCategoryChange("Casestudy")}>
-            <ButtonEffect>Case Study</ButtonEffect>
-          </button>
-          <span className="divider divider-horizontal divider-start divider-neutral"></span>
-          <button onClick={() => handleCategoryChange("Daily Creativity")}>
-            <ButtonEffect>Daily Creativity</ButtonEffect>
-          </button>
+          <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5">
+            <button onClick={() => handleCategoryChange("Daily Creativity")}>
+              <ButtonEffect>Daily Creativity</ButtonEffect>
+            </button>
+          </div>
         </div>
 
         {/* Pass the filtered data to Items component */}
