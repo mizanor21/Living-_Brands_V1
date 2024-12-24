@@ -24,7 +24,7 @@ const WorkDetails = ({ params }) => {
       </div>
 
       {/* Image Section */}
-      <div className="lg:my-20 mt-10 lg:mt-20 mb-10 lg:mb-20 lg:min-h-screen">
+      <div className="lg:my-20 mt-10 lg:mt-20 mb-10 lg:mb-20 ">
         <Image
           width={800}
           height={600}
@@ -41,7 +41,9 @@ const WorkDetails = ({ params }) => {
         {/* Services List */}
         <div className="w-full lg:w-[30%] flex flex-col gap-10 lg:mb-0 mb-5">
           <div className="flex flex-col gap-4">
-            <h1 className="font-bold text-3xl text-[#125b5c]">Services</h1>
+            <h1 className="font-bold text-[20px] xl:text-[30px] text-[#125b5c]">
+              Services
+            </h1>
             <ul className="list-none space-y-4 text-[15px]">
               {services.map((service) => (
                 <li key={service._id} className="cursor-pointer">
