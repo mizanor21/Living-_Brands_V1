@@ -1,6 +1,5 @@
 "use client";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { IoMenu } from "react-icons/io5";
 import { ImCancelCircle } from "react-icons/im";
 import React, { useState } from "react";
 import "./Nav.css";
@@ -12,19 +11,13 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import ButtonEffect from "@/app/button/page";
 import { usePathname } from "next/navigation";
 import Popup from "@/components/Popup/Popup";
+import { FiMenu } from "react-icons/fi";
 
 const Nav = () => {
   // State declarations
   const [on, setOn] = useState(false);
-  const [solutions, setSolutions] = useState(false);
-  const [about, setAbout] = useState(false);
-  const [resources, setResources] = useState(false);
 
   const pathname = usePathname();
-  // Toggle functions
-  const toggleSolutions = () => setSolutions(!solutions);
-  const toggleAbout = () => setAbout(!about);
-  const toggleResources = () => setResources(!resources);
   const toggleOn = () => setOn(!on);
 
   const handleNavigations = (path) => {
@@ -54,8 +47,8 @@ const Nav = () => {
 
   const [activeItem, setActiveItem] = useState(null);
 
-  const handleItemClick = (index) => {
-    setActiveItem(index === activeItem ? null : index);
+  const handleItemClick = (item) => {
+    setActiveItem((prev) => (prev === item ? null : item));
   };
 
   const scrollAnimation = {
@@ -120,9 +113,319 @@ const Nav = () => {
       <div className="md:sticky relative top-0 z-[9999]">
         <Popup />
       </div>
-      <div className="font-sora relative z-[150] navber md:sticky md:top-0  px-[5%] py-5 md:py-8 lg:py-3 bg-white ">
-        {/* Logo and side menu */}
-        <div className="navber-logo z-[210] pt-10 md:pt-0">
+      <div className="font-sora relative z-[150] navber md:sticky md:top-0  min-[991px]:px-[5%] py-5 md:py-8 lg:py-3 bg-white ">
+        <div
+          className={`min-[991px]:hidden collapse rounded-none pt-2`}
+          style={{ position: "relative", overflow: "visible" }}
+        >
+          <input
+            type="radio"
+            name="my-accordion-2"
+            checked={activeItem === "menu"}
+            readOnly
+          />
+          <div
+            className="collapse-title pl-[22px] text-[14px] text-black font-medium flex justify-between items-center"
+            style={{ zIndex: 9999, position: "relative", paddingInlineEnd: 0 }}
+          >
+            {/* Logo Section */}
+            <Link href="/" className="w-[100%] flex items-center gap-2">
+              <Image
+                src={logo}
+                className="w-[40px]"
+                alt="Living Brands logo"
+              ></Image>
+              <h1 className="animate-pulse rounded-full bg-[#125b5c] w-[5px] h-[5px]"></h1>
+              <WordRotate
+                className="text-sm md:text-lg font-[600] p-0 m-0 w-full"
+                words={[
+                  "Brands",
+                  "Tech",
+                  "Media",
+                  "Production",
+                  "Influencer",
+                  "Talent Management",
+                  "IT",
+                  "UI/UX",
+                  "SEO",
+                  "Chatbots",
+                ]}
+              />
+            </Link>
+
+            {/* Hamburger Icon */}
+            <button
+              onClick={() =>
+                handleItemClick(activeItem === "menu" ? null : "menu")
+              }
+              className="text-black p-2"
+            >
+              {activeItem === "menu" ? (
+                // Close Icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7 mr-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                // Hamburger Icon
+                <div className="text-[27px] mr-3">
+                  <FiMenu />
+                </div>
+              )}
+            </button>
+          </div>
+
+          {/* Collapsible Content */}
+          <div
+            className={`absolute top-full left-0 w-full bg-white z-[9999] transition-[max-height] duration-500 ease-in-out ${
+              activeItem === "menu" ? "max-h-[700px]" : "max-h-0"
+            }`}
+            style={{
+              overflow: "hidden",
+            }}
+          >
+            {/* Side Menu Links  */}
+            <ul className="pt-3">
+              {/* Work */}
+              <li
+                className={`ml-4 mb-2`}
+                onClick={() => handleItemClick("works")}
+              >
+                <Link
+                  href="/works"
+                  onClick={() => handleNavigations("/works")}
+                  className={`pl-1 text-[14px] text-black font-medium ${
+                    pathname === "/works" && "text-[#ee4580]"
+                  }`}
+                >
+                  Work
+                </Link>
+              </li>
+
+              <div className="join join-vertical w-full relative z-[200]">
+                <div className="collapse collapse-arrow join-item rounded-none">
+                  <input type="radio" name="my-accordion-4" />
+                  <div className="px-5 collapse-title text-[14px] border-y text-black font-medium">
+                    Solutions
+                  </div>
+                  <div className="collapse-content border-b ">
+                    <ul className="pt-3 ml-3 ">
+                      <li>
+                        <Link
+                          href="/brand-solutions"
+                          onClick={() => handleItemClick("/brand-solutions")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/brand-solutions" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Brand Solutions
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/media-solutions"
+                          onClick={() => handleItemClick("/media-solutions")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/media-solutions" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Media Solutions
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/tech-solutions"
+                          onClick={() => handleItemClick("/tech-solutions")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/tech-solutions" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Tech Solutions
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="collapse collapse-arrow join-item">
+                  <input type="radio" name="my-accordion-4" />
+                  <div className="px-5 collapse-title text-[14px] text-black font-medium">
+                    About
+                  </div>
+                  <div className="collapse-content border-t ">
+                    <ul className="pt-3 ml-3">
+                      <li>
+                        <Link
+                          href="/who-we-are"
+                          onClick={() => handleItemClick("/who-we-are")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/who-we-are" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Who We Are
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/we-works"
+                          onClick={() => handleItemClick("/we-works")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/we-works" && "text-[#ee4580]"
+                          }`}
+                        >
+                          How We Work
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/partnership"
+                          onClick={() => handleItemClick("/partnership")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/partnership" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Our Partnership
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/achievements"
+                          onClick={() => handleItemClick("/achievements")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/achievements" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Achievements
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/news-center"
+                          onClick={() => handleItemClick("/news-center")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/news-center" && "text-[#ee4580]"
+                          }`}
+                        >
+                          News Center
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/living-brands-networks"
+                          onClick={() =>
+                            handleItemClick("/living-brands-networks")
+                          }
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/living-brands-networks" &&
+                            "text-[#ee4580]"
+                          }`}
+                        >
+                          Living Networks
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/csr"
+                          onClick={() => handleItemClick("/csr")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/csr" && "text-[#ee4580]"
+                          }`}
+                        >
+                          CSR
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/meet-our-team"
+                          onClick={() => handleItemClick("/meet-our-team")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/meet-our-team" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Meet The Team
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="collapse collapse-arrow join-item rounded-none">
+                  <input type="radio" name="my-accordion-4" />
+                  <div className="px-5 collapse-title border-y text-[14px] text-black font-medium">
+                    Resources
+                  </div>
+                  <div className="collapse-content border-b ">
+                    <ul className="pt-3 ml-3">
+                      <li>
+                        <Link
+                          href="/blogs"
+                          onClick={() => handleItemClick("/blogs")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/blogs" && "text-[#ee4580]"
+                          }`}
+                        >
+                          Blogs
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/the-edge"
+                          onClick={() => handleItemClick("/the-edge")}
+                          className={`text-[14px] font-[500] ${
+                            pathname === "/the-edge" && "text-[#ee4580]"
+                          }`}
+                        >
+                          The Edge
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Careers */}
+              <li
+                className={`ml-4 mt-2`}
+                onClick={() => handleItemClick("careers")}
+              >
+                <Link
+                  href="/careers"
+                  onClick={() => handleItemClick("/careers")}
+                  className={`pl-1 text-[14px] text-black font-medium ${
+                    pathname === "/careers" && "text-[#ee4580]"
+                  }`}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li className="py-10 border-b border-gray-400 px-[5%]">
+                <Link
+                  href={"/contact"}
+                  onClick={() => handleItemClick("/contact")}
+                  className={`py-10 text-[25px] mb-3 ${
+                    pathname === "/contact" && "text-[#ee4580]"
+                  }`}
+                >
+                  <ButtonEffect>
+                    <span className="flex gap-[6px]">
+                      Contact Us <MdOutlineArrowRightAlt className="text-xl" />
+                    </span>
+                  </ButtonEffect>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* Logo */}
+        <div className="navber-logo z-[210] pt-10 md:pt-0 max-[991px]:hidden">
           <div className="">
             <div className="w-[100%]">
               <div className={`flex items-end gap-[5px] text-[#125b5c]`}>
@@ -152,326 +455,6 @@ const Nav = () => {
                 />
               </div>
             </div>
-            {on && (
-              <div className="block md:hidden side-menu-2 pt-20 lg:pt-0">
-                <div className="side-menu-top pt-[35px] lg:pt-0">
-                  <div className="w-[100%]">
-                    <Link
-                      className=" flex items-end gap-1 text-[#125b5c]"
-                      href="/"
-                    >
-                      <Image
-                        src={logo}
-                        className="w-[24px]"
-                        alt="Living Brands logo"
-                      ></Image>
-                      <h1 className="animate-pulse rounded-full bg-[#125b5c] w-[5px] h-[5px] mb-[14px]"></h1>
-                      <WordRotate
-                        className="text-sm md:text-lg  font-[600] p-0 m-0 w-full "
-                        words={[
-                          "Brands",
-                          "Tech",
-                          "Media",
-                          "Production",
-                          "Influencer",
-                          "Talent Management",
-                          "IT",
-                          "UI/UX",
-                          "SEO",
-                          "Chatbots",
-                        ]}
-                      />
-                    </Link>
-                  </div>
-                  <div
-                    className="side-menu-top-menu text-black"
-                    onClick={toggleOn}
-                  >
-                    <ImCancelCircle className="text-black" />
-                  </div>
-                </div>
-
-                {/* Side Menu Links  */}
-                <ul>
-                  {/* Work */}
-                  <li
-                    className={`ml-4 mb-2 ${
-                      activeItem !== null &&
-                      activeItem !== "work" &&
-                      "opacity-50"
-                    }`}
-                    onClick={() => handleItemClick("work")}
-                  >
-                    <Link
-                      href="/works"
-                      onClick={() => handleNavigations("/works")}
-                      className={`text-[14px] text-black font-medium ${
-                        pathname === "/works" && "text-[#ee4580]"
-                      }`}
-                    >
-                      Work
-                    </Link>
-                  </li>
-
-                  {/* Solutions Accordion */}
-                  <div
-                    className={`collapse collapse-arrow rounded-none ${
-                      activeItem !== null &&
-                      activeItem !== "solutions" &&
-                      "opacity-50"
-                    }`}
-                    onClick={() => handleItemClick("solutions")}
-                  >
-                    <input
-                      type="radio"
-                      name="my-accordion-2"
-                      checked={activeItem === "solutions"}
-                      readOnly
-                    />
-                    <div className="collapse-title border-y text-[14px] text-black font-medium">
-                      Solutions
-                    </div>
-                    <div className="collapse-content ml-3">
-                      <ul className="pt-3">
-                        <li>
-                          <Link
-                            href="/brand-solutions"
-                            onClick={() =>
-                              handleNavigations("/brand-solutions")
-                            }
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/brand-solutions" &&
-                              "text-[#ee4580]"
-                            }`}
-                          >
-                            Brand Solutions
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/media-solutions"
-                            onClick={() =>
-                              handleNavigations("/media-solutions")
-                            }
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/media-solutions" &&
-                              "text-[#ee4580]"
-                            }`}
-                          >
-                            Media Solutions
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/tech-solutions"
-                            onClick={() => handleNavigations("/tech-solutions")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/tech-solutions" && "text-[#ee4580]"
-                            }`}
-                          >
-                            Tech Solutions
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* About Accordion */}
-                  <div
-                    className={`collapse collapse-arrow rounded-none ${
-                      activeItem !== null &&
-                      activeItem !== "about" &&
-                      "opacity-50"
-                    }`}
-                    onClick={() => handleItemClick("about")}
-                  >
-                    <input
-                      type="radio"
-                      name="my-accordion-2"
-                      checked={activeItem === "about"}
-                      readOnly
-                    />
-                    <div className="collapse-title text-[14px] text-black font-medium">
-                      About
-                    </div>
-                    <div className="collapse-content ml-3 border-t">
-                      <ul className="pt-3">
-                        <li>
-                          <Link
-                            href="/who-we-are"
-                            onClick={() => handleNavigations("/who-we-are")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/who-we-are" && "text-[#ee4580]"
-                            }`}
-                          >
-                            Who We Are
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/we-works"
-                            onClick={() => handleNavigations("/we-works")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/we-works" && "text-[#ee4580]"
-                            }`}
-                          >
-                            How We Work
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/partnership"
-                            onClick={() => handleNavigations("/partnership")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/partnership" && "text-[#ee4580]"
-                            }`}
-                          >
-                            Our Partnership
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/achievements"
-                            onClick={() => handleNavigations("/achievements")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/achievements" && "text-[#ee4580]"
-                            }`}
-                          >
-                            Achievements
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/news-center"
-                            onClick={() => handleNavigations("/news-center")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/news-center" && "text-[#ee4580]"
-                            }`}
-                          >
-                            News Center
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/living-brands-networks"
-                            onClick={() =>
-                              handleNavigations("/living-brands-networks")
-                            }
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/living-brands-networks" &&
-                              "text-[#ee4580]"
-                            }`}
-                          >
-                            Living Networks
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/csr"
-                            onClick={() => handleNavigations("/csr")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/csr" && "text-[#ee4580]"
-                            }`}
-                          >
-                            CSR
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/meet-our-team"
-                            onClick={() => handleNavigations("/meet-our-team")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/meet-our-team" && "text-[#ee4580]"
-                            }`}
-                          >
-                            Meet The Team
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Resources Accordion */}
-                  <div
-                    className={`collapse collapse-arrow rounded-none ${
-                      activeItem !== null &&
-                      activeItem !== "resources" &&
-                      "opacity-50"
-                    }`}
-                    onClick={() => handleItemClick("resources")}
-                  >
-                    <input
-                      type="radio"
-                      name="my-accordion-2"
-                      checked={activeItem === "resources"}
-                      readOnly
-                    />
-                    <div className="collapse-title border-y text-[14px] text-black font-medium">
-                      Resources
-                    </div>
-                    <div className="collapse-content ml-3">
-                      <ul className="pt-3">
-                        <li>
-                          <Link
-                            href="/blogs"
-                            onClick={() => handleNavigations("/blogs")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/blogs" && "text-[#ee4580]"
-                            }`}
-                          >
-                            Blogs
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/the-edge"
-                            onClick={() => handleNavigations("/the-edge")}
-                            className={`text-[14px] font-[500] ${
-                              pathname === "/the-edge" && "text-[#ee4580]"
-                            }`}
-                          >
-                            The Edge
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Careers */}
-                  <li
-                    className={`ml-4 mt-2 ${
-                      activeItem !== null &&
-                      activeItem !== "careers" &&
-                      "opacity-50"
-                    }`}
-                    onClick={() => handleItemClick("careers")}
-                  >
-                    <Link
-                      href="/careers"
-                      onClick={() => handleNavigations("/careers")}
-                      className={`text-[14px] text-black font-medium ${
-                        pathname === "/careers" && "text-[#ee4580]"
-                      }`}
-                    >
-                      Careers
-                    </Link>
-                  </li>
-                </ul>
-                <Link
-                  href={"/contact"}
-                  onClick={() => handleNavigations("/contact")}
-                  className={`mt-10 text-[25px] mb-3 ${
-                    pathname === "/contact" && "text-[#ee4580]"
-                  }`}
-                >
-                  <ButtonEffect>
-                    <span className="flex gap-[6px]">
-                      Contact Us <MdOutlineArrowRightAlt className="text-xl" />
-                    </span>
-                  </ButtonEffect>
-                </Link>
-              </div>
-            )}
           </div>
         </div>
 
@@ -847,9 +830,9 @@ const Nav = () => {
         </div>
 
         {/* Mobile menu button */}
-        <div className="navber-menu pt-10 md:pt-0" onClick={toggleOn}>
+        {/* <div className="navber-menu pt-10 md:pt-0" onClick={toggleOn}>
           <IoMenu />
-        </div>
+        </div> */}
       </div>
     </>
   );
