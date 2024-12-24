@@ -97,7 +97,7 @@ const ColorPalette = () => {
         </section>
       </div>
       {/* Small device view */}
-      <div className="md:hidden mt-10">
+      <div className="md:hidden  font-sora px-[5%]">
         {colors.map((color) => (
           <div key={color.id}>
             <div>
@@ -109,11 +109,11 @@ const ColorPalette = () => {
                 alt={color.title}
               />
             </div>
-            <div className="mt-4 mb-5">
-              <h2 className="text-[22px] font-[600] text-[#185C5D]">
+            <div className="mt-6 mb-20">
+              <h2 className="text-[24px] font-[700] text-[#185C5D]">
                 {color.title}
               </h2>
-              <p className="text-[16px] py-4">{color.description}</p>
+              <p className="text-[16px] font-[500] py-4">{color.description}</p>
             </div>
           </div>
         ))}
