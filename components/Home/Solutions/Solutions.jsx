@@ -81,7 +81,7 @@ const Solutions = ({ data }) => {
         </div>
       </div>
       {/* Mobile */}
-      <div className="bg-white md:hidden">
+      <div className="bg-white md:hidden font-sora ">
         <div className=" bg-white px-[5%] relative z-[110]">
           {data?.solutions?.map((section, sectionIndex) => (
             <div
@@ -90,11 +90,11 @@ const Solutions = ({ data }) => {
             >
               <div className="h-full md:flex items-center justify-center border-b border-black">
                 <div className="px-4">
-                  <h3 className="text-xl font-[600] text-black  group-hover:text-white transition-colors duration-300 mb-5 mt-2">
+                  <h3 className="text-xl font-[600] text-black  group-hover:text-white transition-colors duration-300 mb-7 mt-2">
                     {section?.title}
                   </h3>
-                  <p className="text-justify">{section?.content}</p>
-                  <HiMiniArrowLongRight className="text-[40px] my-6 bg-[#125b5c] p-2 rounded-full text-white" />
+                  <p className="text-[14px] font-[500]">{section?.content}</p>
+                  <HiMiniArrowLongRight className="text-[40px] my-5 bg-[#125b5c] p-2 rounded-full text-white" />
                 </div>
               </div>
             </div>
