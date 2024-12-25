@@ -57,7 +57,7 @@ const ColorPalette = () => {
           ref={targetRef}
           className="relative h-[600vh] bg-white py-10 lg:py-16 "
         >
-          <div className="sticky -top-6 flex items-center overflow-hidden">
+          <div className="sticky top-[-36px] xl:top-[-30px] 2xl:top-[-22px] flex items-center overflow-hidden">
             <motion.div
               style={{ x }}
               className="flex gap-4 transition-transform duration-2000 ease-out"
