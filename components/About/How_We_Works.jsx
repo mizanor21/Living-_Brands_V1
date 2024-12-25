@@ -9,8 +9,8 @@ const HowWeWorks = () => {
         </h1>
         <hr className="w-full text-gray-400" />
         <div>
-          <div className="lg:flex ">
-            <div className="mt-5 lg:mt-16 hidden md:block">
+          <div className="md:flex gap-5">
+            <div className="mt-10 lg:mt-16 hidden md:block">
               <p className="text-xl lg:text-[24px] font-bold md:leading-[1.5] text-[#125B5C]">
                 On A Mission to Showcase The Finest of Bangladeshi Creative
                 Talent to The World!
