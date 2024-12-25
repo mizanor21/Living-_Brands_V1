@@ -51,8 +51,11 @@ const Works = () => {
             </button>
             <div className="text-black border border-black md:hidden " />
           </div>
-          <span className="divider divider-horizontal divider-start divider-neutral"></span>
-          <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5">
+          <span
+            className="divider divider-horizontal divider-start divider-neutral"
+            style={{ marginLeft: 3, marginRight: 3 }}
+          ></span>
+          <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5 md:mr-0">
             <button onClick={() => handleCategoryChange("Daily Creativity")}>
               <ButtonEffect>Daily Creativity</ButtonEffect>
             </button>
