@@ -12,7 +12,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
   };
 
   return (
-    <section className="px-[5%] py-5 md:pb-20 bg-white relative z-[110] rounded-b-[70px] font-sora">
+    <section className="px-[5%] xl:pt-5 md:pb-20 bg-white relative z-[110] rounded-b-[70px] font-sora">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 lg:mb-20">
         {/* Left Side */}
         <div>
@@ -24,7 +24,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
             {shortDescription}
           </p>
 
-          <hr className="h-[3px] bg-gray-500 mb-5 max-w-[70px] lg:max-w-52" />
+          <hr className="h-[3px] bg-gray-500 mb-5 max-w-[70px] md:max-w-[100px] lg:max-w-52" />
           <p className="font-semibold text-[18px] text-[#125b5c] mb-10 transition-opacity duration-300 ease-in-out">
             Proud to work with the biggest brands in Bangladesh & Abroad
           </p>
@@ -49,7 +49,7 @@ const BrandSolutions = ({ shortDescription, items, brand }) => {
         </div>
 
         {/* Right Side - Accordion with Skeleton Loader */}
-        <div className="space-y-4">
+        <div className="space-y-4 md:max-h-[600px] overflow-y-auto ">
           {items?.map((item, index) => (
             <div key={item._id} className="border-b border-gray-300">
               <button

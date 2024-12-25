@@ -64,7 +64,7 @@ const SolutionItems = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
       {workData?.map((item) => (
         <Link key={item._id} href={`works/${item._id}`}>
           <div
@@ -79,12 +79,10 @@ const SolutionItems = () => {
               height={100}
               className="rounded-xl"
             />
-            <h2 className="text-md lg:text-lg font-extrabold mt-3">
+            <h2 className="text-[14px] md:text-[16px] font-[700] mt-3">
               {item.title}
             </h2>
-            <p className="text-[16px] md:text-[20px] mt-3">
-              {item.detailsTitle}
-            </p>
+            <p className="text-[16px] font-[400] mt-3">{item.detailsTitle}</p>
             <style>{keyframes}</style>
 
             {hoveredId === item._id && (
