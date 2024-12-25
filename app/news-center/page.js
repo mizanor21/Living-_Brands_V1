@@ -8,7 +8,7 @@ const News = () => {
   // State for storing all data and filtered data
   const { data: allData, isLoading, error } = useItemsData();
   const [filteredData, setFilteredData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState(1);
 
   // Effect to load all items initially
   useEffect(() => {
@@ -29,7 +29,7 @@ const News = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="min-h-screen">Loading...</div>;
   }
 
   if (error) {
@@ -42,10 +42,10 @@ const News = () => {
         <h2 className="text-2xl text-center md:text-4xl lg:text-[48px] leading-10 text-[#125b5c] font-bold py-10 lg:pt-[80px] lg:pb-[103px]">
           Living Brands In The News
         </h2>
-        <div className="flex justify-center md:justify-end my-5 space-x-4 ">
+        <div className="flex justify-center md:justify-end my-5 space-x-4 px-[5%]">
           <button
             onClick={() => handleCategoryChange("Casestudy")}
-            className={`px-5 py-[10px] rounded-full text-sm font-semibold transition-all duration-300 ${
+            className={`px-5 py-[10px] rounded-full text-[12px] lg:text-sm font-[400] lg:font-semibold transition-all duration-300 ${
               selectedCategory === "Casestudy"
                 ? "bg-[#125b5c] text-white"
                 : "border-2 border-[#125b5c] text-[#125b5c] hover:bg-[#125b5c] hover:text-white"
@@ -55,7 +55,7 @@ const News = () => {
           </button>
           <button
             onClick={() => handleCategoryChange("Daily Creativity")}
-            className={`px-5 py-[10px] rounded-full text-sm font-semibold transition-all duration-300 ${
+            className={`px-5 py-[10px] rounded-full text-[12px] lg:text-sm font-[400] lg:font-semibold transition-all duration-300 ${
               selectedCategory === "Daily Creativity"
                 ? "bg-[#125b5c] text-white"
                 : "border-2 border-[#125b5c] text-[#125b5c] hover:bg-[#125b5c] hover:text-white"

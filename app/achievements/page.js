@@ -51,10 +51,7 @@ const Achievement = async () => {
             </h1>
             {award.description &&
               award.description.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-[18px] text-justify mb-2 leading-relaxed"
-                >
+                <p key={i} className="text-[18px] mb-2 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
