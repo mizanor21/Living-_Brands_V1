@@ -53,7 +53,7 @@ const Elevate = ({ data }) => {
     span.style.transition = "width 0.8s ease, height 0.8s ease"; // Smooth shrinking
   };
   return (
-    <div className="hidden md:block bg-white relative z-[110] pt-10 lg:pt-20 font-sora">
+    <div className="hidden xl:block bg-white relative z-[110] pt-10 lg:pt-20 font-sora">
       <div className="lg:max-w-[1200px] lg:container lg:mx-auto px-[5%] md:px-0 lg:pt-12">
         <div
           style={styles}

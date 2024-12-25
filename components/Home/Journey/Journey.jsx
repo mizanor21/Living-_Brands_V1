@@ -52,7 +52,7 @@ const Journey = ({ data }) => {
     span.style.transition = "width 0.7s ease, height 0.7s ease"; // Smooth shrinking
   };
   return (
-    <div className="hidden md:block bg-white relative z-[110] font-sora">
+    <div className="hidden xl:block bg-white relative z-[110] font-sora">
       <div className=" flex justify-center items-center px-[5%] py-10 lg:pt-36">
         <div
           style={styles}
