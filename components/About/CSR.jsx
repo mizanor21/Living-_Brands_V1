@@ -3,7 +3,7 @@ import React from "react";
 const CSR = () => {
   return (
     <div className="flex flex-col justify-center items-center px-[5%] py-10 bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
-      <div className="video-container w-full h-screen">
+      <div className="video-container w-full h-[220px] sm:h-[350px] md:h-[500px] lg:h-[700px] xl:h-screen">
         <iframe
           width="100%"
           height="100%"
@@ -14,10 +14,14 @@ const CSR = () => {
         ></iframe>
       </div>
 
-      <div className="p-6 w-[100%] mx-auto">
-        <h1>
+      <div className="py-5 w-[100%] mx-auto">
+        <h2 className="font-bold text-[20px] md:text-[34px] text-[#125b5c] my-5 lg:hidden">
+          LIVING BRANDS DIGITAL SOLUTIONS PRIVATE LIMITED (“LIVING BRANDS”) CSR
+          POLICY
+        </h2>
+        <h3>
           1. <span className=" font-bold mb-4">Preface</span>{" "}
-        </h1>
+        </h3>
         <p className="my-4 ml-6">
           Corporate Social Responsibility (CSR) defines the commitment of a
           Company to social and economical upliftment of the society. The

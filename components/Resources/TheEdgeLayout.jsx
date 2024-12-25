@@ -4,13 +4,13 @@ import ButtonEffect from "@/app/button/page";
 
 const TheEdgeLayout = ({ data }) => {
   return (
-    <div className="px-[5%] bg-white relative z-[110] py-10 lg:py-20 rounded-b-[20px] lg:rounded-b-[40px]">
-      <div className="text-justify mb-10 font-sora">
+    <div className="px-[5%] bg-white relative z-[110] py-10 lg:py-20 rounded-b-[20px] lg:rounded-b-[40px] text-black">
+      <div className=" mb-10 font-sora">
         <>
-          <h1 className="text-2xl md:text-4xl lg:text-[48px] text-[#125b5c] font-bold mb-8">
+          <h1 className="text-[24px] md:text-4xl lg:text-[48px] text-[#125b5c] font-bold mb-8">
             Welcome to the Edge!
           </h1>
-          <p className="text-[18px]">
+          <p className="text-[16px] lg:text-[18px] ">
             As creatives by nature, we love to push the boundaries of what we
             can create, experimenting with technology and art, uncover insights
             and build exciting new resources that help us take our work to the
