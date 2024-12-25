@@ -2,7 +2,7 @@ import React from "react";
 
 const CSR = () => {
   return (
-    <div className="flex flex-col justify-center items-center px-[5%] py-10 bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
+    <div className="flex flex-col justify-center items-center px-[5%] lg:py-10 bg-white relative z-[120] rounded-b-[20px] lg:rounded-b-[40px]">
       <div className="video-container w-full h-[220px] sm:h-[350px] md:h-[500px] lg:h-[700px] xl:h-screen">
         <iframe
           width="100%"
