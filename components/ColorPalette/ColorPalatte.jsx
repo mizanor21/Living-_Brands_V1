@@ -104,7 +104,7 @@ const ColorPalette = () => {
               <Image
                 width={350}
                 height={400}
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[330px] sm:h-[350px] object-cover"
                 src={color.imageUrl} // Assuming color data includes imageUrl
                 alt={color.title}
               />

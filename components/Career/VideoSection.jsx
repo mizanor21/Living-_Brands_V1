@@ -26,7 +26,7 @@ const VideoSection = () => {
     }
   };
   return (
-    <div className="w-full h-[200px] md:h-screen relative z-[110]">
+    <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[700px] xl:h-screen relative z-[110]">
       <video
         ref={videoRef}
         className="absolute h-[100%] top-0 left-0 w-full md:h-full object-cover rounded-md"
