@@ -12,7 +12,7 @@ const page = async () => {
           Our Team
         </h2>
       </div>
-      <div className="mx-4 lg:mx-72">
+      <div className="px-[10%] xl:px-[15%]">
         <MeetOurTeam teamsData={teamsData} />
       </div>
     </div>
