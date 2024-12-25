@@ -79,13 +79,13 @@ const ContactUsRightPart = () => {
         pauseOnHover
         style={{ top: "130px" }} // Custom position from top
       />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="font-sora text-black">
         {/* Form Fields */}
-        <p className="text-[17px] my-2 text-[#125b5c]">GOT AN IDEA?</p>
-        <h1 className="text-[30px] font-bold my-2 text-[#125b5c]">
+        <p className="text-[16px] my-2 text-[#125b5c]">GOT AN IDEA?</p>
+        <h1 className="text-[24px] lg:text-[30px] font-bold my-2 text-[#125b5c]">
           Drop us a message!
         </h1>
-        <p className="text-[20px] text-[#1f2937] my-2">
+        <p className="text-[16px] text-[#1f2937] my-2">
           We are looking forward to collaborating with you! Kindly send us an
           email with your details and requirements to
           <a
@@ -95,13 +95,13 @@ const ContactUsRightPart = () => {
             life@living-brands.co
           </a>
         </p>
-        <p className="text-[20px] text-[#1f2937] my-2">
+        <p className="text-[16px] text-[#1f2937] my-2">
           You can also fill this form & we&apos;ll get back in 2 business days.
         </p>
 
         {/* Name Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Your Name</p>
+          <p className="text-[18px] lg:text-[20px] mt-12 mb-8">Your Name</p>
           <input
             name="name"
             type="text"
@@ -114,7 +114,9 @@ const ContactUsRightPart = () => {
 
         {/* Organization Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Organization&apos;s Name</p>
+          <p className="text-[18px] lg:text-[20px] mt-12 mb-8">
+            Organization&apos;s Name
+          </p>
           <input
             name="organization"
             type="text"
@@ -127,7 +129,7 @@ const ContactUsRightPart = () => {
 
         {/* Email Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Email</p>
+          <p className="text-[18px] lg:text-[20px] mt-12 mb-8">Email</p>
           <input
             name="email"
             type="email"
@@ -140,7 +142,9 @@ const ContactUsRightPart = () => {
 
         {/* Phone Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Contact Number</p>
+          <p className="text-[18px] lg:text-[20px] mt-12 mb-8">
+            Contact Number
+          </p>
           <input
             name="phone"
             type="number"
@@ -153,7 +157,9 @@ const ContactUsRightPart = () => {
 
         {/* Website/Social Media Link */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">Website/Social Media Link</p>
+          <p className="text-[18px] lg:text-[20px] mt-12 mb-8">
+            Website/Social Media Link
+          </p>
           <input
             name="website"
             type="url"
@@ -164,7 +170,7 @@ const ContactUsRightPart = () => {
         </label>
 
         {/* Services Field */}
-        <p className="text-[20px] mt-12 mb-8">
+        <p className="text-[18px] lg:text-[20px] mt-12 mb-8">
           Which services are you interested in?
         </p>
         {[
@@ -200,7 +206,9 @@ const ContactUsRightPart = () => {
 
         {/* Message Field */}
         <label>
-          <p className="text-[20px] mt-12 mb-8">What&apos;s on your mind?</p>
+          <p className="text-[18px] lg:text-[20px] mt-12 mb-8">
+            What&apos;s on your mind?
+          </p>
           <textarea
             name="message"
             value={formData.message}
@@ -211,7 +219,9 @@ const ContactUsRightPart = () => {
         </label>
 
         {/* Referral Field */}
-        <p className="text-[20px] mt-12 mb-8">How did you hear about us?</p>
+        <p className="text-[18px] lg:text-[20px] mt-12 mb-8">
+          How did you hear about us?
+        </p>
         {[
           "Referral",
           "Media & News",
