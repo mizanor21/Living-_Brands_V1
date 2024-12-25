@@ -49,7 +49,7 @@ const OurPartnerships = () => {
   return (
     <div className="flex flex-col px-4 lg:px-[100px]">
       {/* Header Section */}
-      <div className="py-8 lg:py-[100px] mb-6">
+      <div className="py-8 md:py-[30px] lg:py-[70px] xl:py-[100px] mb-6">
         <h1 className="text-3xl lg:text-6xl font-bold text-center lg:text-left">
           Proudly Collaborating With The Most Cutting-Edge Platforms In The
           Industry

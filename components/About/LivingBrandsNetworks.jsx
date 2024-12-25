@@ -12,7 +12,7 @@ const LivingBrandsNetworks = ({ shortDescription, items, brand }) => {
   };
 
   return (
-    <section className="px-[5%] md:pb-20 bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora">
+    <section className="px-[5%] pb-10 md:pb-20 bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 lg:mb-20">
         {/* Left Side */}
         <div>
@@ -46,7 +46,7 @@ const LivingBrandsNetworks = ({ shortDescription, items, brand }) => {
         </div>
 
         {/* Right Side - Accordion with Skeleton Loader */}
-        <div className="space-y-4">
+        <div className="space-y-4 md:max-h-[500px] lg:max-h-[700px] overflow-auto">
           {items?.map((item, index) => (
             <div key={item._id} className="border-b border-gray-300">
               <button
