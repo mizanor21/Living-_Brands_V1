@@ -140,14 +140,14 @@ const Footer = () => {
                 target="_blank"
                 className="flex items-start md:items-center gap-x-2"
               >
-                <HiLocationMarker className="text-[33px] md:text-[26px] mb-1" />
+                <HiLocationMarker className="hidden sm:block text-[33px] md:text-[26px] mb-1" />
                 <p className="text-[13px] mt-[5px] md:mt-0">
                   House - 230, Lane -16, Lake Road, Mohakhali DOHS, Dhaka - 1206
                 </p>
               </Link>
             </div>
             <div className="flex justify-center items-center lg:justify-end gap-x-2">
-              <RiCopyrightFill className="text-[22px] m-[2px]" />
+              <RiCopyrightFill className="hidden sm:block text-[22px] m-[2px]" />
               <p className="text-[13px] text-center">
                 All Rights Reserved by Living Brands
               </p>

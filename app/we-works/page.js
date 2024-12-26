@@ -10,7 +10,7 @@ const WeWork = () => {
           Our Principles
         </p>
       </div>
-      <div className="pl-4">
+      <div className="px-4">
         <ColorPalette />
       </div>
     </div>
