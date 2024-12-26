@@ -38,7 +38,7 @@ const WhoWeAre = async () => {
             {heading}
           </h1>
           {descriptionText?.map((paragraph, index) => (
-            <p key={index} className="text-[16px] text-justify">
+            <p key={index} className="text-[16px]">
               {paragraph}
             </p>
           ))}
