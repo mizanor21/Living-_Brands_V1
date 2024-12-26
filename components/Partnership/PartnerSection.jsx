@@ -9,7 +9,7 @@ const PartnerSection = ({ partnersData }) => {
           Industry
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-12 items-center text-center  justify-center mt-28">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-12 xl:gap-[73px] items-center text-center  justify-center mt-28">
           {partnersData?.map((partner, index) => (
             <div key={index} className="text-center">
               <Image
