@@ -103,9 +103,9 @@ const TrendingItems = () => {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
-                <p style={scrollAnimation}>View Trending Story</p>
-                <p style={scrollAnimation1}>View Trending Story</p>
+              <div className="bg-[#125b5c] text-sm text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                <sm style={scrollAnimation}>View Trending Story</sm>
+                <sm style={scrollAnimation1}>View Trending Story</sm>
               </div>
             </div>
           )}
