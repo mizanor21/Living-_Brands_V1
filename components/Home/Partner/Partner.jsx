@@ -88,7 +88,7 @@ const Partner = () => {
 
   return (
     <div
-      className="bg-white pb-10 lg:pb-32 relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora"
+      className="bg-white py-20 lg:pb-32 relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
