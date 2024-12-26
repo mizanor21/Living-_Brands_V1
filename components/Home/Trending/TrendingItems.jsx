@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const TrendingItems = () => {
   const items = [
@@ -26,11 +26,51 @@ const TrendingItems = () => {
     },
   ];
 
+  const [hoveredId, setHoveredId] = useState(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event, id) => {
+    const offsetX = event.clientX;
+    const offsetY = event.clientY;
+
+    setPosition({ x: offsetX, y: offsetY });
+    setHoveredId(id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredId(null);
+  };
+
+  const scrollAnimation = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 2s linear infinite",
+  };
+
+  const scrollAnimation1 = {
+    position: "absolute",
+    whiteSpace: "nowrap",
+    animation: "scroll 1s linear infinite",
+  };
+
+  const keyframes = `
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  `;
+
   return (
     <div className="space-y-1">
       {items.map((item, index) => (
         <div
           key={index}
+          onMouseMove={(e) => handleMouseMove(e, item._id)}
+          onMouseLeave={handleMouseLeave}
           className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10 lg:gap-20 font-sora group relative hover:opacity-100 peer transition-opacity duration-500"
         >
           <div className="md:col-span-2 cursor-pointer">
@@ -51,6 +91,24 @@ const TrendingItems = () => {
             </div>
             <div className=" border-b border-black">{/* <hr /> */}</div>
           </div>
+          <style>{keyframes}</style>
+
+          {hoveredId === item._id && (
+            <div
+              className="w-44 h-10 fixed z-[100]"
+              style={{
+                top: `${position.y - 30}px`,
+                left: `${position.x}px`,
+                pointerEvents: "none",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <div className="bg-[#125b5c] text-white overflow-hidden w-full h-full rounded-full flex justify-center items-center relative">
+                <p style={scrollAnimation}>View Trending Story</p>
+                <p style={scrollAnimation1}>View Trending Story</p>
+              </div>
+            </div>
+          )}
           <div className="md:col-span-1 h-full flex justify-center items-center">
             <img
               src={item?.photo}
