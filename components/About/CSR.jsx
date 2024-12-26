@@ -245,42 +245,48 @@ const CSR = () => {
           following members of the Board:
         </p>
 
-        <div className="p-4 mb-5 ml-12">
-          <table className="w-[70%] border-collapse border border-gray-200">
+        <div className="p-4 mb-5 ml-12 ">
+          <table className="border-collapse border border-gray-200">
             <thead>
               <tr className="">
-                <th className="border border-black px-4 py-2 text-left">
+                <th className="border border-black px-2 md:px-4 py-2 text-left">
                   Sr. No.
                 </th>
-                <th className="border border-black px-4 py-2 text-left">
+                <th className="border border-black px-2 md:px-4 py-2 text-left">
                   Name of Member of Committee
                 </th>
-                <th className="border border-black px-4 py-2 text-left">
+                <th className="border border-black px-2 md:px-4 py-2 text-left">
                   Designation
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr className="">
-                <td className="border border-black px-4 py-2">1</td>
-                <td className="border border-black px-4 py-2">
+                <td className="border border-black px-2 md:px-4 py-2">1</td>
+                <td className="border border-black px-2 md:px-4 py-2">
                   Mr. Harshil Karia
                 </td>
-                <td className="border border-black px-4 py-2">Chairman</td>
+                <td className="border border-black px-2 md:px-4 py-2">
+                  Chairman
+                </td>
               </tr>
               <tr className="">
-                <td className="border border-black px-4 py-2">2</td>
-                <td className="border border-black px-4 py-2">
+                <td className="border border-black px-2 md:px-4 py-2">2</td>
+                <td className="border border-black px-2 md:px-4 py-2">
                   Mr. Sohil Karia
                 </td>
-                <td className="border border-black px-4 py-2">Member</td>
+                <td className="border border-black px-2 md:px-4 py-2">
+                  Member
+                </td>
               </tr>
               <tr className="">
-                <td className="border border-black px-4 py-2">3</td>
-                <td className="border border-black px-4 py-2">
+                <td className="border border-black px-2 md:px-4 py-2">3</td>
+                <td className="border border-black px-2 md:px-4 py-2">
                   Mr. Akshay Gurnani
                 </td>
-                <td className="border border-black px-4 py-2">Member</td>
+                <td className="border border-black px-2 md:px-4 py-2">
+                  Member
+                </td>
               </tr>
             </tbody>
           </table>
