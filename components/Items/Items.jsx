@@ -76,7 +76,7 @@ const Items = ({ data }) => {
             <h2 className="text-[14px] lg:text-[16px] font-[700] mt-2">
               {item.title}
             </h2>
-            <p className="text-[14px] font-[400] md:text-[22px] mt-1">
+            <p className="text-[14px] font-[400] min-[1440px]:text-[16px] 2xl:text-[22px] mt-1">
               {item.detailsTitle}
             </p>
             <style>{keyframes}</style>
