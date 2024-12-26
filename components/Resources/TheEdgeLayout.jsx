@@ -34,7 +34,7 @@ const TheEdgeLayout = ({ data }) => {
             {/* Text Content */}
             <div
               className={`flex flex-col justify-center ${
-                i % 2 === 0 ? "order-1" : "order-2"
+                i % 2 === 0 ? "order-1" : "md:order-2"
               }`}
             >
               <h1 className="text-2xl font-bold mt-1 md:text-3Xl lg:text-[48px] text-[#125b5c] mb-5 leading-[1.1]">
@@ -45,7 +45,7 @@ const TheEdgeLayout = ({ data }) => {
                   {desc}
                 </p>
               ))}
-              <div className="max-w-sm mt-10">
+              <div className="max-w-[330px] lg:max-w-[380px] mt-10">
                 <Link href={edge.buttonLink}>
                   <ButtonEffect>
                     <span className="flex gap-2">

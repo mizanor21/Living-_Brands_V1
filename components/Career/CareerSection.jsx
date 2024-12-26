@@ -13,7 +13,7 @@ const CareerSection = () => {
         Showcasing the innovative spirit of Bangladesh on a global stage.
       </p>
       <Link target="_black" href="/career-details">
-        <div className="max-w-sm">
+        <div className="max-w-[223px] 2xl:max-w-[400px]">
           <ButtonEffect>
             <span className="flex gap-2">
               See All Openings
