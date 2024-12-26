@@ -49,7 +49,7 @@ const MediaSolutions = ({ shortDescription, items, brands }) => {
         </div>
 
         {/* Right Side - Accordion with Skeleton Loader */}
-        <div className="space-y-4 md:max-h-[600px] overflow-y-auto">
+        <div className="space-y-4 md:max-h-[600px] overflow-y-auto scrollbar-none">
           {items?.map((item, index) => (
             <div key={item._id} className="border-b border-gray-300">
               <button
