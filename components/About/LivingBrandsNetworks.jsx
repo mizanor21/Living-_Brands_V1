@@ -16,11 +16,11 @@ const LivingBrandsNetworks = ({ shortDescription, items, brand }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 lg:mb-20">
         {/* Left Side */}
         <div>
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] text-[#125b5c] leading-[1] md:leading-[1.1] lg:leading-[1.2] font-bold mb-7 md:mb-10 transition duration-300 ease-in-out transform">
+          <h2 className="text-3xl md:text-4xl lg:text-[48px] text-[#125b5c] leading-[1.1] lg:leading-[1.2] font-bold mb-7 md:mb-10 transition duration-300 ease-in-out transform">
             Living Brands Network & Partnerships
           </h2>
 
-          <p className="text-[18px] font-normal text-gray-800 mb-5 text-justify transition duration-300 ease-in-out">
+          <p className="text-[18px] font-normal text-gray-800 mb-5 transition duration-300 ease-in-out">
             {shortDescription}
           </p>
 

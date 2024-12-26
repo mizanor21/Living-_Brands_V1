@@ -20,7 +20,7 @@ const Achievement = async () => {
           {/* Image Part */}
           <div
             className={`flex justify-center items-center ${
-              index % 2 === 0 ? "order-2" : "order-1"
+              index % 2 === 0 ? "md:order-2" : "md:order-1"
             }`}
           >
             {award.image ? (

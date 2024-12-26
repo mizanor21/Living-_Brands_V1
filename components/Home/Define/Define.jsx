@@ -72,10 +72,10 @@ const Define = ({ data }) => {
                 </div>
               </div>
               <div className="col-span-2 pb-5 mx-3 md:mx-0">
-                <div className="text-xl lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
+                <div className="text-[24px] lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
                   <FlipText word={data?.title} />
                 </div>
-                <div className="my-5 lg:py-16 text-black opacity-50 text-[18px] font-[500] leading-[25px] lg:leading-[30px]">
+                <div className="my-5 lg:py-16 text-black opacity-50 text-[16px] font-[600] leading-[25px] lg:leading-[30px]">
                   <FlipText word={data?.shortDescription} />
                 </div>
                 <div className="max-w-[280px] lg:max-w-[291px]">
