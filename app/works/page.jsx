@@ -47,7 +47,9 @@ const Works = () => {
         <div className="md:flex justify-end my-5 space-y-1 md:space-y-0">
           <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5 md:mr-0">
             <button onClick={() => handleCategoryChange("Casestudy")}>
-              <ButtonEffect>Case Study</ButtonEffect>
+              <ButtonEffect>
+                <p className="text-[10px] md:text-[14px]">Case Study</p>
+              </ButtonEffect>
             </button>
             <div className="text-black border border-black md:hidden " />
           </div>
@@ -57,7 +59,9 @@ const Works = () => {
           ></span>
           <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5 md:mr-0">
             <button onClick={() => handleCategoryChange("Daily Creativity")}>
-              <ButtonEffect>Daily Creativity</ButtonEffect>
+              <ButtonEffect>
+                <p className="text-[10px] md:text-[14px]">Daily Creativity</p>
+              </ButtonEffect>
             </button>
           </div>
         </div>
