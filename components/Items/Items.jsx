@@ -58,7 +58,7 @@ const Items = ({ data }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 md:gap-y-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-8 2xl:gap-y-20">
       {data.map((item) => (
         <Link key={item._id} href={`works/${item._id}`}>
           <div
