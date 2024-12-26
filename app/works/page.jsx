@@ -48,7 +48,7 @@ const Works = () => {
           <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5 md:mr-0">
             <button onClick={() => handleCategoryChange("Casestudy")}>
               <ButtonEffect>
-                <p className="text-[10px] md:text-[14px]">Case Study</p>
+                <p className="text-[10px] sm:text-[14px]">Case Study</p>
               </ButtonEffect>
             </button>
             <div className="text-black border border-black md:hidden " />
@@ -60,7 +60,7 @@ const Works = () => {
           <div className="grid grid-cols-2 md:block justify-center items-center space-x-3 mr-5 md:mr-0">
             <button onClick={() => handleCategoryChange("Daily Creativity")}>
               <ButtonEffect>
-                <p className="text-[10px] md:text-[14px]">Daily Creativity</p>
+                <p className="text-[10px] sm:text-[14px]">Daily Creativity</p>
               </ButtonEffect>
             </button>
           </div>
