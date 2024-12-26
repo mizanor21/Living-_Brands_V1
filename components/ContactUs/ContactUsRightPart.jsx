@@ -246,7 +246,7 @@ const ContactUsRightPart = () => {
         ))}
 
         {/* Submit Button */}
-        <div className="max-w-[346px] pt-10">
+        <div className="xl:max-w-[283px] 2xl:max-w-[346px] pt-10">
           <ButtonEffect>
             <button
               type="submit"
