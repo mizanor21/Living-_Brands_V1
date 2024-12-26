@@ -6,14 +6,13 @@
 /* Add horizontal scrolling changes */
 body {
   overflow-x: hidden;
-  scroll-behavior: smooth; /* Smooth scrolling behavior */
   cursor: url(/assets/cursor/cursor.png), auto;
   font-family: "Sora", sans-serif;
 }
 
 @layer utilities {
   .scrollbar {
-    @apply scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-gray-900;
+    @apply scrollbar-thin scrollbar-thumb-[#125b5c] scrollbar-track-gray-100 border border-[#125b5c];
   }
 }
 
