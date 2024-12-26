@@ -3,18 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scrollbar-width: none;
+/* Add horizontal scrolling changes */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  cursor: url(/assets/cursor/cursor.png), auto;
+  font-family: "Sora", sans-serif;
+}
+
+@layer utilities {
+  .scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-red-600 scrollbar-track-gray-900;
+  }
 }
 
 ::selection {
   background-color: #125b5c;
   color: white;
-}
-
-body {
-  cursor: url(/assets/cursor/cursor.png), auto;
-  font-family: "Sora", sans-serif;
 }
 
 Link,

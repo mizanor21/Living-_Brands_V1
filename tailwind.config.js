@@ -77,5 +77,9 @@ module.exports = {
     themes: ["light"], // Enable light and dark themes
   },
   // Plugins: DaisyUI and TailwindCSS Animate plugin
-  plugins: [require("daisyui"), require("tailwindcss-animate")],
+  plugins: [
+    require("daisyui"),
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar"),
+  ],
 };
