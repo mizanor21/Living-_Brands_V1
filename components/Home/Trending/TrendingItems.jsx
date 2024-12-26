@@ -1,9 +1,11 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const TrendingItems = () => {
   const items = [
     {
+      link: "works/6738ac74167e8afc78d608d0",
       category: "Technology",
       title:
         "The Future Trajectory of Marketing to Drive Positive Brand Growth",
@@ -11,6 +13,7 @@ const TrendingItems = () => {
       date: "2024-12-09T10:00:00Z",
     },
     {
+      link: "works/6738ac74167e8afc78d608d1",
       category: "Business",
       title:
         "Living Brands, Bangladesh Largest Independent Agency, Cements Its Status as a Global Challenger with European Expansion and Acquisition of Amsterdam’s Hottest Design Agency, Addikt",
@@ -18,6 +21,7 @@ const TrendingItems = () => {
       date: "2024-12-09T12:00:00Z",
     },
     {
+      link: "works/6738ac74167e8afc78d608db",
       category: "Health",
       title:
         "Dabur Chyawanprash's 'Anti-Medicine Campaign’ Returns with a Festive Twist",
@@ -73,7 +77,7 @@ const TrendingItems = () => {
           onMouseLeave={handleMouseLeave}
           className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-10 lg:gap-20 font-sora group relative hover:opacity-100 peer transition-opacity duration-500"
         >
-          <div className="md:col-span-2 cursor-pointer">
+          <Link href={item?.link} className="md:col-span-2 cursor-pointer">
             <p className="border border-black rounded-full px-3 inline-block my-2">
               {item?.category}
             </p>
@@ -90,7 +94,7 @@ const TrendingItems = () => {
               </small>
             </div>
             <div className=" border-b border-black">{/* <hr /> */}</div>
-          </div>
+          </Link>
           <style>{keyframes}</style>
 
           {hoveredId === item._id && (

@@ -406,7 +406,7 @@ const Nav = () => {
                   Careers
                 </Link>
               </li>
-              <li className="py-10 border-b border-gray-400 px-[5%]">
+              <li className="pt-5 pb-12 border-b border-gray-400 px-[5%]">
                 <Link
                   href={"/contact"}
                   onClick={() => handleItemClick("/contact")}
@@ -812,27 +812,20 @@ const Nav = () => {
                 Careers
               </Link>
             </li>
-            <li>
-              <Link
-                href={"/contact"}
-                className={` ${
-                  pathname === "/contact" ? "text-[#ee4580]" : ""
-                }`}
-              >
-                <ButtonEffect>
-                  <span className="flex gap-[6px]">
-                    Contact Us <MdOutlineArrowRightAlt className="text-xl" />
-                  </span>
-                </ButtonEffect>
-              </Link>
-            </li>
           </ul>
+          <li className="pt-7 ml-1 2xl:ml-3 list-none">
+            <Link
+              href={"/contact"}
+              className={`${pathname === "/contact" ? "text-[#ee4580]" : ""}`}
+            >
+              <ButtonEffect>
+                <span className="flex gap-[6px]">
+                  Contact Us <MdOutlineArrowRightAlt className="text-xl" />
+                </span>
+              </ButtonEffect>
+            </Link>
+          </li>
         </div>
-
-        {/* Mobile menu button */}
-        {/* <div className="navber-menu pt-10 md:pt-0" onClick={toggleOn}>
-          <IoMenu />
-        </div> */}
       </div>
     </>
   );

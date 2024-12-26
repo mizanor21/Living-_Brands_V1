@@ -70,7 +70,7 @@ const TimeSchbang = () => {
               <Image
                 src={TimeImg}
                 alt="star images"
-                className="w-10 animate-spin"
+                className="w-8 2xl:w-10 animate-spin"
               />
               <h1
                 className="font-sans"
