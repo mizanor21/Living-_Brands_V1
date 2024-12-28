@@ -36,7 +36,7 @@ const Partner = () => {
     },
     desktop: {
       breakpoint: { max: 1920, min: 1024 },
-      items: 4,
+      items: 4.5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 768 },
@@ -88,11 +88,11 @@ const Partner = () => {
 
   return (
     <div
-      className="bg-white py-20 lg:pb-32 relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora"
+      className="bg-white py-20 lg:pb-32 relative z-[110] rounded-b-[20px] lg:rounded-b-[40px] font-sora px-[2%] 2xl:px-[5%]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="px-[5%] relative">
+      <div className=" relative">
         <Carousel
           responsive={responsive}
           swipeable
@@ -130,7 +130,7 @@ const Partner = () => {
           {partnershipData?.map((partner, index) => (
             <div
               key={index}
-              className={`text-center mr-2 ${
+              className={`text-center mr-2 xl:mr-10 ${
                 index === boundaryItems.leftIndex ||
                 index === boundaryItems.rightIndex
                   ? "opacity-70" // Apply opacity 70% to boundary items
