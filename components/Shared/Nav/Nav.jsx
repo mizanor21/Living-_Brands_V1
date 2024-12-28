@@ -599,9 +599,7 @@ const Nav = () => {
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item?.id)}
                           onMouseLeave={handleMouseLeave}
-                          className={`card cursor-pointer ${
-                            pathname === "" ? "text-[#ee4580]" : ""
-                          }`}
+                          className={`card cursor-pointer`}
                         >
                           <div className="card_image">
                             <Image
@@ -751,9 +749,7 @@ const Nav = () => {
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item.id)}
                           onMouseLeave={handleMouseLeave}
-                          className={`card cursor-pointer text-lg ${
-                            pathname === "" ? "text-[#ee4580]" : ""
-                          }`}
+                          className={`card cursor-pointer text-lg`}
                         >
                           <div className="card_image ">
                             <Image
@@ -835,9 +831,7 @@ const Nav = () => {
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
-                        className={`card cursor-pointer text-lg ${
-                          pathname === "/blogs" ? "text-[#ee4580]" : ""
-                        }`}
+                        className={`card cursor-pointer text-lg`}
                       >
                         <div className="card_image">
                           <Image
