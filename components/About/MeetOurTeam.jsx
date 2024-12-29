@@ -58,7 +58,7 @@ const MeetOurTeam = ({ teamsData }) => {
             <Image
               width={400}
               height={600}
-              className=" rounded-2xl hover:scale-105 transition duration-300"
+              className=" rounded-2xl hover:scale-105 transition duration-300 max-h-[400px] 2xl:max-h-[500px] object-cover"
               src={team?.image}
               alt={team?.name}
             />

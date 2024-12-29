@@ -55,7 +55,7 @@ const ColorPalette = () => {
       <div className="hidden md:block font-sora">
         <section
           ref={targetRef}
-          className="relative h-[600vh] bg-white py-10 lg:py-16 "
+          className="relative h-[600vh] bg-white py-10 lg:py-16 rounded-b-full"
         >
           <div className="sticky top-[-36px] xl:top-[-30px] 2xl:top-[-22px] flex items-center overflow-hidden">
             <motion.div
