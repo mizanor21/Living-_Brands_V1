@@ -328,10 +328,10 @@ const Nav = () => {
                         </li>
                         <li>
                           <Link
-                            href="/how-we-work"
-                            onClick={() => handleItemClick("/how-we-work")}
+                            href="/we-works"
+                            onClick={() => handleItemClick("/we-works")}
                             className={`text-[14px] font-[500] ${
-                              pathname === "/how-we-work" && "text-[#ee4580]"
+                              pathname === "/we-works" && "text-[#ee4580]"
                             }`}
                           >
                             How We Work

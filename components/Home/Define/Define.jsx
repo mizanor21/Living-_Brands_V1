@@ -57,7 +57,7 @@ const Define = ({ data }) => {
                       className="bg-no-repeat flex justify-start items-center"
                     >
                       <div
-                        className="w-[150px] md:w-[265px] transform origin-center"
+                        className="w-[150px] xl:w-[195px] 2xl:w-[265px] transform origin-center"
                         style={{ transform: `rotate(${angle + 90}deg)` }}
                       >
                         <Image
