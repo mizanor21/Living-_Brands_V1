@@ -128,15 +128,7 @@ const Partner = () => {
           }
         >
           {partnershipData?.map((partner, index) => (
-            <div
-              key={index}
-              className={`text-center mr-2 ${
-                index === boundaryItems.leftIndex ||
-                index === boundaryItems.rightIndex
-                  ? "opacity-70" // Apply opacity 70% to boundary items
-                  : ""
-              }`}
-            >
+            <div key={index} className={`text-center mr-2`}>
               <img
                 width={200}
                 height={200}
