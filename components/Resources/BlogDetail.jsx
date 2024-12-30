@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-const BlogDetail = () => {
+const BlogDetail = ({ data }) => {
   return (
     <div className="font-sora px-[5%]">
       <div className="lg:px-[10%]">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold pt-10 lg:pt-28 pb-5 text-[#125b5c]">
-          Why Bother with Employer Branding?
+          {data.blog.title}
         </h1>
 
         <div>
@@ -66,7 +66,7 @@ const BlogDetail = () => {
             </div>
 
             <img
-              src="https://i.postimg.cc/K88zzWnM/1.jpg"
+              src={data.blog.img}
               className="object-cover  w-full h-60 md:h-[660px] justify-center rounded-3xl "
             ></img>
 

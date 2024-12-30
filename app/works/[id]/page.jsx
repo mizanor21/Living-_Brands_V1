@@ -6,7 +6,7 @@ import Image from "next/image";
 const WorkDetails = ({ params }) => {
   const { id } = params; // Extract `id` from params
   const { data, error, isLoading } = useItemDetailsData({ params: { id } }); // Fetch data using custom hook
-
+  console.log(data);
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: Unable to fetch work details.</div>;
 
