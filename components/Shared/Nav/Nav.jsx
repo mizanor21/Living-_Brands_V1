@@ -86,11 +86,13 @@ const Nav = () => {
       id: 1,
       src: "https://i.postimg.cc/8PDs8ccw/kgrit-U3-IYXE-HD-1.jpg",
       title: "DBL Ceramics Presents: An Emotional May Day Tribute",
+      link: "https://living-brands-v1.vercel.app/works/6738ac74167e8afc78d608cf",
     },
     {
       id: 2,
       src: "https://i.postimg.cc/K88zzWnM/1.jpg",
       title: "Pusti Chinigura Rice X Nusrat Faria",
+      link: "https://living-brands-v1.vercel.app/works/6738ac74167e8afc78d608da",
     },
   ];
 
@@ -99,11 +101,13 @@ const Nav = () => {
       id: 1,
       src: "https://i.postimg.cc/9Fkg9rMr/puma.png",
       title: "PUMA.com | Clothing, Shoes, Accessories | Forever Faster.",
+      link: "https://living-brands-v1.vercel.app/works/6738ac74167e8afc78d608cf",
     },
     {
       id: 2,
       src: "https://i.postimg.cc/J0c4bgRc/about2.jpg",
       title: "Introducing Outlander Black Edition",
+      link: "https://living-brands-v1.vercel.app/works/6738ac74167e8afc78d608cf",
     },
   ];
 
@@ -112,17 +116,19 @@ const Nav = () => {
       id: 1,
       src: "https://i.postimg.cc/1t3S7tTc/dt-BSuy7-OJd8-HD.jpg",
       title: "Ceramic Expo Bangladesh Highlight 01",
+      link: "https://living-brands-v1.vercel.app/works/6738ac74167e8afc78d608d0",
     },
     {
       id: 2,
       src: "https://i.postimg.cc/XNg2MVb3/ey-SLf-CX2-Vsk-HD.jpg",
       title: "Disruption on the Digital Strages",
+      link: "https://living-brands-v1.vercel.app/works/6738ac74167e8afc78d608d3",
     },
   ];
 
   return (
     <>
-      <div className="md:sticky relative top-0 z-[9999]">
+      <div className="md:sticky relative top-0 z-[9999] ">
         <Popup />
       </div>
       <div className="font-sora relative z-[150] navber md:sticky md:top-0  min-[991px]:px-[5%] py-5 md:py-8 lg:py-3 bg-white ">
@@ -595,7 +601,7 @@ const Nav = () => {
                     <React.Fragment>
                       {solutionsData.map((item, index) => (
                         <a
-                          href={"/works"}
+                          href={item.link}
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item?.id)}
                           onMouseLeave={handleMouseLeave}
@@ -827,7 +833,7 @@ const Nav = () => {
                     </div>
                     {ResourcesData.map((item, index) => (
                       <a
-                        href={"/blogs"}
+                        href={item.link}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
