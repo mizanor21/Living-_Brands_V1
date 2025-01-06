@@ -1,19 +1,18 @@
 .bgDefine {
-    background-image: url(../../../public/assets/define/about-bg.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url(../../../public/assets/define/about-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: -50px 20px;
 }
 
-/* Media query for small devices (e.g., screens smaller than 640px) */
 @media (max-width: 640px) {
-    .bgDefine {
-        background-image: none;
-    }
+  .bgDefine {
+    background-image: none;
+  }
 }
 
 @media (min-width: 1300px) and (max-width: 1450px) {
-    .defineHeading {
-        font-size: 40px;
-    }
+  .defineHeading {
+    font-size: 40px;
+  }
 }
