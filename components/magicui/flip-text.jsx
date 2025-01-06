@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export default function SlightFlip({
   word = "", // Default to an empty string to prevent errors
   duration = 0,
-  delayMultiple = 0.01,
+  delayMultiple = 0,
   framerProps = {
     hidden: { rotateX: -90, opacity: 0 },
     visible: { rotateX: 0, opacity: 1 },
