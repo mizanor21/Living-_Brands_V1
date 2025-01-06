@@ -49,7 +49,7 @@ const Define = ({ data }) => {
                 <h2 className="defineHeading text-[30px] md:text-[25px] lg:text-[30px] xl:text-[40px] 2xl:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1]">
                   {data?.heading}
                 </h2>
-                <div className="hidden lg:flex mt-7">
+                <div className="hidden lg:flex mt-5">
                   <div className="relative h-auto flex items-center">
                     <div
                       id="arrow-container"
