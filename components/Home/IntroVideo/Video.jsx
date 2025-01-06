@@ -82,7 +82,7 @@ const Video = ({ data }) => {
     <div className="relative z-[110] flex justify-center items-center bg-white">
       <div
         // className="relative bg-black z-[110] h-60 lg:h-screen overflow-hidden"
-        className={`relative h-[240px] sm:h-[350px] md:h-[600px] lg:h-[700px] xl:h-screen overflow-hidden  transition-all duration-500 ease-in-out ${
+        className={`relative h-[210px] sm:h-[350px] md:h-[600px] lg:h-[700px] xl:h-screen overflow-hidden  transition-all duration-500 ease-in-out ${
           isScrolledUp ? "w-[100%]" : "w-[90%]"
         }`}
         onMouseMove={handleMouseMove}
