@@ -73,16 +73,16 @@ const Define = ({ data }) => {
               </div>
               <div className="col-span-2 pb-5">
                 <div className="text-[24px] lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
-                  <div className="hidden md:block">
-                    <FlipText word={data?.title} />
+                  <FlipText word={data?.title} />
+                  {/* <div className="hidden md:block">
                   </div>
-                  <p className="md:hidden">{data?.title}</p>
+                  <p className="md:hidden">{data?.title}</p> */}
                 </div>
                 <div className="my-10 md:my-0 lg:py-14 text-black opacity-50 text-[16px] font-[600] leading-[25px] lg:leading-[30px]">
-                  <div className="hidden md:block">
-                    <FlipText word={data?.shortDescription} />
+                  <FlipText word={data?.shortDescription} />
+                  {/* <div className="hidden md:block">
                   </div>
-                  <p className="md:hidden">{data?.shortDescription} </p>
+                  <p className="md:hidden">{data?.shortDescription} </p> */}
                 </div>
                 <div className="max-w-[280px] lg:max-w-[291px]">
                   <Link href="/careers">

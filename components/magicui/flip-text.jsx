@@ -24,8 +24,8 @@ export default function SlightFlip({
         if (entry.isIntersecting) {
           setIsVisible(true); // Set visible when the component enters the viewport
         }
-      },
-      { threshold: 0.1 } // Trigger when at least 10% of the component is visible
+      }
+      // { threshold: 0.1 } // Trigger when at least 10% of the component is visible
     );
 
     if (ref.current) {
