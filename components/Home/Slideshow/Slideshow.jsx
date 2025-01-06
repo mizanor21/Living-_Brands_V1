@@ -264,7 +264,7 @@ const Slideshow = ({ data }) => {
       <div className="bg-white relative z-[110]">
         <div className="md:hidden">
           <Slider ref={sliderRef} {...smallSlider}>
-            <div className="relative item h-[450px]">
+            {/* <div className="relative item h-[450px]">
               <img
                 src="https://i.postimg.cc/fyNKNTPF/OMG-1.png"
                 className="h-full w-full object-cover"
@@ -275,7 +275,7 @@ const Slideshow = ({ data }) => {
                   Lorem ipsum dolor, sit amet consectetur 1.
                 </h2>
               </div>
-            </div>
+            </div> */}
 
             <div className="relative item h-[450px]">
               <img
