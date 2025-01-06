@@ -1,7 +1,7 @@
 "use client";
 import ButtonEffect from "@/app/button/page";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const Who_We_Are = ({ whoWeAreData }) => {
@@ -23,6 +23,17 @@ const Who_We_Are = ({ whoWeAreData }) => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const videoRef = useRef(null);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 5; // Set the initial starting point to 5 seconds
+    }
+  }, []);
+
+  useEffect(() => {
+    if (videoRef1.current) {
+      videoRef1.current.currentTime = 7; // Set the initial starting point to 5 seconds
+    }
+  }, []);
   // Function to toggle play/pause on click
   const handleVideoClick = () => {
     if (videoRef.current) {

@@ -8,6 +8,12 @@ const Video = ({ data }) => {
   const [isFirstVisit, setIsFirstVisit] = useState(true); // Track first visit
   const videoRef = useRef(null);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 5; // Set the initial starting point to 5 seconds
+    }
+  }, []);
+
   const [isScrolledUp, setIsScrolledUp] = useState(false);
 
   useEffect(() => {

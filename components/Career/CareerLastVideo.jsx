@@ -1,10 +1,15 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const CareerLastVideo = () => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const videoRef = useRef(null);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 7; // Set the initial starting point to 5 seconds
+    }
+  }, []);
   // Function to toggle play/pause on click
   const handleVideoClick = () => {
     if (videoRef.current) {

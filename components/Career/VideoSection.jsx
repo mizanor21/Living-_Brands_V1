@@ -1,9 +1,15 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const VideoSection = () => {
   const [isFirstPlay, setIsFirstPlay] = useState(true);
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 5; // Set the initial starting point to 5 seconds
+    }
+  }, []);
 
   // Function to toggle play/pause on click
   const handleVideoClick = () => {
@@ -25,6 +31,7 @@ const VideoSection = () => {
       videoRef.current.play(); // Play video with sound
     }
   };
+
   return (
     <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[700px] xl:h-screen relative z-[110]">
       <video
