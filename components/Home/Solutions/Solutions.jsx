@@ -82,15 +82,15 @@ const Solutions = ({ data }) => {
       </div>
       {/* Mobile */}
       <div className="bg-white md:hidden font-sora ">
-        <div className=" bg-white px-[5%] relative z-[110]">
+        <div className=" bg-white  relative z-[110]">
           {data?.solutions?.map((section, sectionIndex) => (
             <div
               key={sectionIndex}
-              className={`hover-container ${section?.id} hover:text-white group pt-10`}
+              className={`hover-container ${section?.id} hover:text-white group pt-3`}
             >
               <Link href={`${section?.path}`}>
                 <div className="h-full md:flex items-center justify-center border-b border-black">
-                  <div className="px-4">
+                  <div className="px-[5%]">
                     <h3 className="text-xl font-[600] text-black  group-hover:text-white transition-colors duration-300 mb-7 mt-2">
                       {section?.title}
                     </h3>
