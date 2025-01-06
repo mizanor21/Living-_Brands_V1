@@ -41,7 +41,7 @@ export default async function Home() {
       <Hero data={heroSection} />
       <Video data={videoSection} />
       <Elevate data={elevateSection} />
-      {/* <Define data={defineUsSection} /> */}
+      <Define data={defineUsSection} />
       <Slideshow data={slideshowSection} />
       <Solutions data={solutionSection} />
       <Journey data={journeySection} />

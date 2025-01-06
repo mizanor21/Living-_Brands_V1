@@ -10,9 +10,3 @@
     background-image: none;
   }
 }
-
-@media (min-width: 1300px) and (max-width: 1450px) {
-  .defineHeading {
-    font-size: 40px;
-  }
-}

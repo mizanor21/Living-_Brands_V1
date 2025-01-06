@@ -46,7 +46,7 @@ const Define = ({ data }) => {
           <div className="flex justify-center items-center rounded-badge">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h2 className="defineHeading text-[30px] md:text-[25px] lg:text-[30px] xl:text-[40px] 2xl:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1]">
+                <h2 className="text-[30px] md:text-[25px] lg:text-[30px] xl:text-[40px] 2xl:text-[54px] font-bold lg:pr-5 mb-2 text-[#185C5D] leading-[1.1]">
                   {data?.heading}
                 </h2>
                 <div className="hidden lg:flex mt-5">
@@ -71,7 +71,7 @@ const Define = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-span-2 pb-5">
+              {/* <div className="col-span-2 pb-5">
                 <div className="text-[24px] lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
                   <FlipText word={data?.title} />
                 </div>
@@ -88,7 +88,7 @@ const Define = ({ data }) => {
                     </ButtonEffect>
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
