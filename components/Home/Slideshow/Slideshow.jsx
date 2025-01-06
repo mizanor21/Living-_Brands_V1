@@ -264,53 +264,72 @@ const Slideshow = ({ data }) => {
       <div className="bg-white relative z-[110]">
         <div className="md:hidden">
           <Slider ref={sliderRef} {...smallSlider}>
-            <div className="item h-[450px]">
+            <div className="relative item h-[450px]">
               <img
                 src="https://i.postimg.cc/fyNKNTPF/OMG-1.png"
-                className="h-full w-full"
+                className="h-full w-full object-cover"
                 alt="slide-1"
               />
+              <div className="absolute bottom-[100px] left-5 z-[120] text-white max-w-[300px]">
+                <h2 className="font-[600] text-[22px] leading-[1]">
+                  Lorem ipsum dolor, sit amet consectetur 1.
+                </h2>
+              </div>
             </div>
 
-            <div className="item h-[450px]">
+            <div className="relative item h-[450px]">
               <img
                 src="https://i.postimg.cc/g2bv6z1C/4.jpg"
-                className="h-full w-full"
+                className="h-full w-full object-cover"
                 alt="slide-2"
               />
+              <div className="absolute bottom-[100px] left-5 z-[120] text-white max-w-[300px]">
+                <h2 className="font-[600] text-[22px] leading-[1]">
+                  Lorem ipsum dolor, sit amet consectetur 2.
+                </h2>
+              </div>
             </div>
 
-            <div className="item h-[450px]">
+            <div className="relative item h-[450px]">
               <img
                 src="https://i.postimg.cc/WzW1pVyH/chips.png"
-                className="h-full w-full"
+                className="h-full w-full object-cover"
                 alt="slide-3"
               />
+              <div className="absolute bottom-[100px] left-5 z-[120] text-white max-w-[300px]">
+                <h2 className="font-[600] text-[22px] leading-[1]">
+                  Lorem ipsum dolor, sit amet consectetur 3.
+                </h2>
+              </div>
             </div>
-            <div className="item h-[450px]">
+            <div className="relative item h-[450px]">
               <img
                 src="https://i.postimg.cc/RZ1w1rBN/6.png"
-                className="h-full w-full"
+                className="h-full w-full object-cover"
                 alt="slide-3"
               />
+              <div className="absolute bottom-[100px] left-5 z-[120] text-white max-w-[300px]">
+                <h2 className="font-[600] text-[22px] leading-[1]">
+                  Lorem ipsum dolor, sit amet consectetur 4.
+                </h2>
+              </div>
             </div>
-            <div className="item h-[450px]">
+            <div className="relative item h-[450px]">
               <img
                 src="https://i.postimg.cc/XvVdQ2jx/5.png"
-                className="h-full w-full"
+                className="h-full w-full object-cover"
                 alt="slide-3"
               />
+              <div className="absolute bottom-[100px] left-5 z-[120] text-white max-w-[300px]">
+                <h2 className="font-[600] text-[22px] leading-[1]">
+                  Lorem ipsum dolor, sit amet consectetur 5.
+                </h2>
+              </div>
             </div>
           </Slider>
 
-          <div className="absolute bottom-28 left-5 z-[120] text-white max-w-[300px]">
-            <h2 className="font-[600] text-[22px] leading-[1]">
-              This is writeup section!
-            </h2>
-          </div>
-
           <button
-            className="absolute bottom-10 left-5 z-[120] cursor-pointer"
+            className="absolute bottom-8 left-5 z-[120] cursor-pointer"
             onClick={handleClickMobile}
           >
             <BsArrowRight className="text-5xl text-[#125b5c] bg-white p-3 rounded-full " />
