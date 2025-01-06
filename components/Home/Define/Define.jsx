@@ -71,13 +71,13 @@ const Define = ({ data }) => {
                   </div>
                 </div>
               </div>
-              {/* <div className="col-span-2 pb-5">
-                <div className="text-[24px] lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
+              <div className="col-span-2 pb-5">
+                {/* <div className="text-[24px] lg:text-[30px] font-bold text-[#185C5D] leading-[30px] lg:leading-[42px]">
                   <FlipText word={data?.title} />
                 </div>
                 <div className="my-10 md:my-0 lg:py-14 text-black opacity-50 text-[16px] font-[600] leading-[25px] lg:leading-[30px]">
                   <FlipText word={data?.shortDescription} />
-                </div>
+                </div> */}
                 <div className="max-w-[280px] lg:max-w-[291px]">
                   <Link href="/careers">
                     <ButtonEffect>
@@ -88,7 +88,7 @@ const Define = ({ data }) => {
                     </ButtonEffect>
                   </Link>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
