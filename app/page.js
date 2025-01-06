@@ -39,7 +39,7 @@ export default async function Home() {
   return (
     <main className="bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px]">
       <Hero data={heroSection} />
-      <Video data={videoSection} />
+      {/* <Video data={videoSection} /> */}
       <Elevate data={elevateSection} />
       <Define data={defineUsSection} />
       <Slideshow data={slideshowSection} />
