@@ -53,11 +53,8 @@ const ContactUsRightPart = () => {
         }
       );
 
-      if (response.ok) {
-        toast.success("Message sent successfully!");
-      } else {
-        toast.error("Failed to send message.");
-      }
+      const data = await response.json();
+      toast.success(data.message || "Message sent successfully!");
     } catch (error) {
       toast.error("An error occurred.");
     } finally {
