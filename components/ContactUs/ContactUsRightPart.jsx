@@ -44,8 +44,7 @@ const ContactUsRightPart = () => {
       const response = await fetch(
         "https://living-brands-admin.vercel.app/api/contact",
         {
-          mode: "no-cors",
-          method: "POST",
+          method: "POST", // Removed "no-cors" to access response data
           headers: {
             "Content-Type": "application/json",
           },
@@ -53,10 +52,14 @@ const ContactUsRightPart = () => {
         }
       );
 
-      const data = await response.json();
-      toast.success(data.message || "Message sent successfully!");
+      if (response.ok && response.status === 201) {
+        toast.success("Message sent successfully!");
+      } else {
+        toast.error("Failed to send the message. Please try again.");
+      }
     } catch (error) {
-      toast.error("An error occurred.");
+      toast.error("An error occurred. Please try again later.");
+      console.error("Error submitting form:", error);
     } finally {
       setLoading(false); // Set loading to false after submission is complete
     }
