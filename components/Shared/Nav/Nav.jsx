@@ -19,6 +19,7 @@ const Nav = () => {
 
   const [caseStudyData, setCaseStudyData] = useState([]);
   const [dailyCreativityData, setDailyCreativityData] = useState([]);
+  const [resourcesData, setResourcesData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,11 +29,13 @@ const Nav = () => {
         );
         const data = await response.json();
         const caseStudy = data.filter((item) => item.category === "Casestudy");
+        const caseStudy1 = data.filter((item) => item.category === "Casestudy");
         const dailyCreativity = data.filter(
           (item) => item.category === "Daily Creativity"
         );
         setCaseStudyData(caseStudy.slice(0, 2));
-        setDailyCreativityData(dailyCreativity.slice(0, 2));
+        setDailyCreativityData(caseStudy1.slice(-2));
+        setResourcesData(dailyCreativity.slice(-2));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -122,35 +125,35 @@ const Nav = () => {
   //   },
   // ];
 
-  const AboutData = [
-    {
-      id: 1,
-      src: "https://i.postimg.cc/9Fkg9rMr/puma.png",
-      title: "PUMA.com | Clothing, Shoes, Accessories | Forever Faster.",
-      link: "https://living-brands.co/works/6738ac74167e8afc78d608cf",
-    },
-    {
-      id: 2,
-      src: "https://i.postimg.cc/J0c4bgRc/about2.jpg",
-      title: "Introducing Outlander Black Edition",
-      link: "https://living-brands.co/works/6738ac74167e8afc78d608cf",
-    },
-  ];
+  // const AboutData = [
+  //   {
+  //     id: 1,
+  //     src: "https://i.postimg.cc/9Fkg9rMr/puma.png",
+  //     title: "PUMA.com | Clothing, Shoes, Accessories | Forever Faster.",
+  //     link: "https://living-brands.co/works/6738ac74167e8afc78d608cf",
+  //   },
+  //   {
+  //     id: 2,
+  //     src: "https://i.postimg.cc/J0c4bgRc/about2.jpg",
+  //     title: "Introducing Outlander Black Edition",
+  //     link: "https://living-brands.co/works/6738ac74167e8afc78d608cf",
+  //   },
+  // ];
 
-  const ResourcesData = [
-    {
-      id: 1,
-      src: "https://i.postimg.cc/1t3S7tTc/dt-BSuy7-OJd8-HD.jpg",
-      title: "Ceramic Expo Bangladesh Highlight 01",
-      link: "https://living-brands.co/works/6738ac74167e8afc78d608d0",
-    },
-    {
-      id: 2,
-      src: "https://i.postimg.cc/XNg2MVb3/ey-SLf-CX2-Vsk-HD.jpg",
-      title: "Disruption on the Digital Strages",
-      link: "https://living-brands.co/works/6738ac74167e8afc78d608d3",
-    },
-  ];
+  // const ResourcesData = [
+  //   {
+  //     id: 1,
+  //     src: "https://i.postimg.cc/1t3S7tTc/dt-BSuy7-OJd8-HD.jpg",
+  //     title: "Ceramic Expo Bangladesh Highlight 01",
+  //     link: "https://living-brands.co/works/6738ac74167e8afc78d608d0",
+  //   },
+  //   {
+  //     id: 2,
+  //     src: "https://i.postimg.cc/XNg2MVb3/ey-SLf-CX2-Vsk-HD.jpg",
+  //     title: "Disruption on the Digital Strages",
+  //     link: "https://living-brands.co/works/6738ac74167e8afc78d608d3",
+  //   },
+  // ];
 
   return (
     <>
@@ -857,9 +860,9 @@ const Nav = () => {
                         </a>
                       </h2>
                     </div>
-                    {ResourcesData.map((item, index) => (
+                    {resourcesData.map((item, index) => (
                       <a
-                        href={item.link}
+                        href={`/works/${item._id}`}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
@@ -868,8 +871,8 @@ const Nav = () => {
                         <div className="card_image">
                           <Image
                             className="rounded-2xl "
-                            src={item?.src}
-                            alt={index}
+                            src={item?.img}
+                            alt={item?.title}
                             width={700}
                             height={500}
                           />
