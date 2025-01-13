@@ -12,9 +12,35 @@ import ButtonEffect from "@/app/button/page";
 import { usePathname } from "next/navigation";
 import Popup from "@/components/Popup/Popup";
 import { FiMenu } from "react-icons/fi";
+import { useEffect } from "react";
 
 const Nav = () => {
   // State declarations
+
+  const [caseStudyData, setCaseStudyData] = useState([]);
+  const [dailyCreativityData, setDailyCreativityData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://living-brands-admin.vercel.app/api/works"
+        );
+        const data = await response.json();
+        const caseStudy = data.filter((item) => item.category === "Casestudy");
+        const dailyCreativity = data.filter(
+          (item) => item.category === "Daily Creativity"
+        );
+        setCaseStudyData(caseStudy.slice(0, 2));
+        setDailyCreativityData(dailyCreativity.slice(0, 2));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const [on, setOn] = useState(false);
 
   const pathname = usePathname();
@@ -80,21 +106,21 @@ const Nav = () => {
     setOpenAccordion(openAccordion === accordionName ? null : accordionName);
   };
 
-  // Card data
-  const solutionsData = [
-    {
-      id: 1,
-      src: "https://i.postimg.cc/8PDs8ccw/kgrit-U3-IYXE-HD-1.jpg",
-      title: "DBL Ceramics Presents: An Emotional May Day Tribute",
-      link: "https://living-brands.co/works/6738ac74167e8afc78d608cf",
-    },
-    {
-      id: 2,
-      src: "https://i.postimg.cc/K88zzWnM/1.jpg",
-      title: "Pusti Chinigura Rice X Nusrat Faria",
-      link: "https://living-brands.co/works/6738ac74167e8afc78d608da",
-    },
-  ];
+  // // Card data
+  // const solutionsData = [
+  //   {
+  //     id: 1,
+  //     src: "https://i.postimg.cc/8PDs8ccw/kgrit-U3-IYXE-HD-1.jpg",
+  //     title: "DBL Ceramics Presents: An Emotional May Day Tribute",
+  //     link: "https://living-brands.co/works/6738ac74167e8afc78d608cf",
+  //   },
+  //   {
+  //     id: 2,
+  //     src: "https://i.postimg.cc/K88zzWnM/1.jpg",
+  //     title: "Pusti Chinigura Rice X Nusrat Faria",
+  //     link: "https://living-brands.co/works/6738ac74167e8afc78d608da",
+  //   },
+  // ];
 
   const AboutData = [
     {
@@ -230,7 +256,7 @@ const Nav = () => {
                     pathname === "/works" && "text-[#ee4580]"
                   }`}
                 >
-                  Work
+                  Works
                 </Link>
               </li>
 
@@ -542,7 +568,7 @@ const Nav = () => {
           <ul className="flex justify-center items-center gap-5 lg:gap-8 xl:gap-14 2xl:gap-16">
             <li className={`${pathname === "/work" && "text-[#ee4580]"}`}>
               <Link href="/works" className="link">
-                Work
+                Works
               </Link>
             </li>
             <li
@@ -599,9 +625,9 @@ const Nav = () => {
                       </h2>
                     </div>
                     <React.Fragment>
-                      {solutionsData.map((item, index) => (
+                      {caseStudyData.map((item, index) => (
                         <a
-                          href={item.link}
+                          href={`works/${item._id}`}
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item?.id)}
                           onMouseLeave={handleMouseLeave}
@@ -610,14 +636,14 @@ const Nav = () => {
                           <div className="card_image">
                             <Image
                               className="rounded-2xl "
-                              src={item?.src}
+                              src={item?.img}
                               alt={index}
                               width={700}
                               height={500}
                             />
                           </div>
                           <p className="font-[400] md:text-[14px] min-[1500px]:text-[15px] min-[1600px]:text-[16px] min-[1700px]:text-[17px] min-[1800px]:text-[19px] mt-2">
-                            {item?.title}
+                            {item?.detailsTitle}
                           </p>
 
                           <style>{keyframes}</style>
@@ -749,9 +775,9 @@ const Nav = () => {
                     </div>
 
                     <React.Fragment>
-                      {AboutData.map((item, index) => (
+                      {dailyCreativityData.map((item, index) => (
                         <a
-                          href={"/works"}
+                          href={`works/${item._id}`}
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item.id)}
                           onMouseLeave={handleMouseLeave}
@@ -760,8 +786,8 @@ const Nav = () => {
                           <div className="card_image ">
                             <Image
                               className="rounded-2xl "
-                              src={item?.src}
-                              alt="Puma"
+                              src={item?.img}
+                              alt={item?.title}
                               width={700}
                               height={300}
                             />
