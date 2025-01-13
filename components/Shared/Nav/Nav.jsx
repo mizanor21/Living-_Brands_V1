@@ -627,7 +627,7 @@ const Nav = () => {
                     <React.Fragment>
                       {caseStudyData.map((item, index) => (
                         <a
-                          href={`works/${item._id}`}
+                          href={`/works/${item._id}`}
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item?.id)}
                           onMouseLeave={handleMouseLeave}
@@ -777,7 +777,7 @@ const Nav = () => {
                     <React.Fragment>
                       {dailyCreativityData.map((item, index) => (
                         <a
-                          href={`works/${item._id}`}
+                          href={`/works/${item._id}`}
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item.id)}
                           onMouseLeave={handleMouseLeave}
