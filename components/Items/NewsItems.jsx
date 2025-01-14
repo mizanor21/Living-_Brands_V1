@@ -121,7 +121,7 @@ const NewsItems = ({ data }) => {
           }
           disabledClassName={"opacity-50 cursor-not-allowed"}
           activeClassName={
-            "text-white !important bg-gradient-to-r from-[#185c5d] to-indigo-500 rounded-full  shadow-md scale-110"
+            "text-white bg-gradient-to-r from-[#185c5d] to-indigo-500 rounded-full  shadow-md scale-110"
           }
           pageLinkClassName={
             "w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600  hover:bg-gradient-to-r hover:from-[#185c5d] hover:to-indigo-500 transition-all duration-300"
