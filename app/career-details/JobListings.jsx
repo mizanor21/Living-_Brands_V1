@@ -1,5 +1,6 @@
 "use client";
 import { useJobsData } from "@/components/Custom/DataFetch";
+import Link from "next/link";
 import { useState } from "react";
 import { BsBriefcase, BsGlobe } from "react-icons/bs";
 import { FiCalendar } from "react-icons/fi";
@@ -131,8 +132,10 @@ const JobListings = () => {
                     </p>
                   </div>
 
-                  <button className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold hover:bg-blue-200">
-                    Apply Now
+                  <button className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold hover:bg-blue-200 px-10">
+                    <Link href={"/job-apply"} target="_blank">
+                      Apply Now
+                    </Link>
                   </button>
                 </div>
               ))
