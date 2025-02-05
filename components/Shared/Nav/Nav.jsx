@@ -16,6 +16,29 @@ import { useEffect } from "react";
 
 const Nav = () => {
   // State declarations
+  const [isDropdownSolutionOpen, setIsDropdownSolutionOpen] = useState(false);
+  const toggleDropdownSolution = () => {
+    setIsDropdownSolutionOpen(!isDropdownSolutionOpen);
+  };
+  const closeDropdownSolution = () => {
+    setIsDropdownSolutionOpen(false);
+  };
+
+  const [isDropdownAboutOpen, setIsDropdownAboutOpen] = useState(false);
+  const toggleDropdownAbout = () => {
+    setIsDropdownAboutOpen(!isDropdownAboutOpen);
+  };
+  const closeDropdownAbout = () => {
+    setIsDropdownAboutOpen(false);
+  };
+
+  const [isDropdownResourcesOpen, setIsDropdownResourcesOpen] = useState(false);
+  const toggleDropdownResources = () => {
+    setIsDropdownResourcesOpen(!isDropdownResourcesOpen);
+  };
+  const closeDropdownResources = () => {
+    setIsDropdownResourcesOpen(false);
+  };
 
   const [caseStudyData, setCaseStudyData] = useState([]);
   const [dailyCreativityData, setDailyCreativityData] = useState([]);
@@ -575,24 +598,32 @@ const Nav = () => {
               </Link>
             </li>
             <li
+              onMouseEnter={() => setIsDropdownSolutionOpen(true)} // Open dropdown on hover
+              onMouseLeave={() => setIsDropdownSolutionOpen(false)} // Close dropdown when hover ends
+              onClick={toggleDropdownSolution}
               className={`group flex items-center justify-center cursor-pointer `}
             >
               <p className="link  ">Solutions</p>
               {/* Add transition and transform to the icon */}
               <RiArrowDropDownLine
-                className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
+                className={`text-2xl xl:text-3xl 2xl:text-4xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
+                  isDropdownSolutionOpen ? "rotate-180" : ""
+                }`}
               />
 
+              {/* Dropdown content */}
               <div
-                className={`overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
-      transition-all duration-700 border-b border-black group-hover:visible`}
+                className={`absolute top-full left-0 w-screen bg-white border-b border-black overflow-hidden transition-all duration-700 ${
+                  isDropdownSolutionOpen ? "h-[60vh] visible" : "h-0 invisible"
+                }`}
               >
                 <div className=" w-full h-full z-[115] ">
                   <div className="h-full flex justify-between  gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                     <div className="min-w-72  solutions">
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"/brand-solutions"}
+                          onClick={closeDropdownSolution} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/brand-solutions"
                               ? "text-[#ee4580]"
@@ -600,11 +631,12 @@ const Nav = () => {
                           }`}
                         >
                           Brand Solution
-                        </a>
+                        </Link>
                       </h2>
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"media-solutions"}
+                          onClick={closeDropdownSolution} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/media-solutions"
                               ? "text-[#ee4580]"
@@ -612,11 +644,12 @@ const Nav = () => {
                           }`}
                         >
                           Media Solution
-                        </a>
+                        </Link>
                       </h2>
                       <h2>
-                        <a
+                        <Link
                           href={"tech-solutions"}
+                          onClick={closeDropdownSolution} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/tech-solutions"
                               ? "text-[#ee4580]"
@@ -624,14 +657,15 @@ const Nav = () => {
                           }`}
                         >
                           Tech Solution
-                        </a>
+                        </Link>
                       </h2>
                     </div>
                     <React.Fragment>
                       {caseStudyData.map((item, index) => (
-                        <a
+                        <Link
                           href={`/works/${item._id}`}
                           key={index}
+                          onClick={closeDropdownSolution} // Close dropdown on click
                           onMouseMove={(e) => handleMouseMove(e, item?.id)}
                           onMouseLeave={handleMouseLeave}
                           className={`card cursor-pointer`}
@@ -666,7 +700,7 @@ const Nav = () => {
                               </div>
                             </div>
                           )}
-                        </a>
+                        </Link>
                       ))}
                     </React.Fragment>
                   </div>
@@ -676,72 +710,84 @@ const Nav = () => {
 
             <li
               className={` group flex items-center justify-center cursor-pointer`}
+              onMouseEnter={() => setIsDropdownAboutOpen(true)} // Open dropdown on hover
+              onMouseLeave={() => setIsDropdownAboutOpen(false)} // Close dropdown when hover ends
+              onClick={toggleDropdownAbout}
             >
               <p className="link">About</p>
               <RiArrowDropDownLine
-                className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
+                className={`text-2xl xl:text-3xl 2xl:text-4xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
+                  isDropdownAboutOpen ? "rotate-180" : ""
+                }`}
               />
               <div
-                className="overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
-      transition-all duration-700 border-b border-black group-hover:visible"
+                className={`absolute top-full left-0 w-screen bg-white border-b border-black overflow-hidden transition-all duration-700 ${
+                  isDropdownAboutOpen ? "h-[60vh] visible" : "h-0 invisible"
+                }`}
               >
                 <div className=" w-full h-full   z-[115] ">
                   <div className="h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64">
                     <div className="min-w-72  solutions">
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"/who-we-are"}
+                          onClick={closeDropdownAbout} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/who-we-are" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           Who We Are
-                        </a>
+                        </Link>
                       </h2>
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"we-works"}
+                          onClick={closeDropdownAbout} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/we-works" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           How We Work
-                        </a>
+                        </Link>
                       </h2>
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"partnership"}
+                          onClick={closeDropdownAbout}
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/partnership" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           Our Partnership
-                        </a>
+                        </Link>
                       </h2>
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"achievements"}
+                          onClick={closeDropdownAbout}
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/achievements" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           Achievements
-                        </a>
+                        </Link>
                       </h2>
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"/news-center"}
+                          onClick={closeDropdownAbout}
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/news-center" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           News Center
-                        </a>
+                        </Link>
                       </h2>
 
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"/living-brands-networks"}
+                          onClick={closeDropdownAbout}
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/living-brands-networks"
                               ? "text-[#ee4580]"
@@ -749,23 +795,25 @@ const Nav = () => {
                           }`}
                         >
                           Living Networks
-                        </a>
+                        </Link>
                       </h2>
 
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"/csr"}
+                          onClick={closeDropdownAbout}
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/csr" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           CSR
-                        </a>
+                        </Link>
                       </h2>
 
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"meet-our-team"}
+                          onClick={closeDropdownAbout}
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/meet-our-team"
                               ? "text-[#ee4580]"
@@ -773,14 +821,15 @@ const Nav = () => {
                           }`}
                         >
                           Meet The Team
-                        </a>
+                        </Link>
                       </h2>
                     </div>
 
                     <React.Fragment>
                       {dailyCreativityData.map((item, index) => (
-                        <a
+                        <Link
                           href={`/works/${item._id}`}
+                          onClick={closeDropdownAbout}
                           key={index}
                           onMouseMove={(e) => handleMouseMove(e, item.id)}
                           onMouseLeave={handleMouseLeave}
@@ -817,7 +866,7 @@ const Nav = () => {
                               </div>
                             </div>
                           )}
-                        </a>
+                        </Link>
                       ))}
                     </React.Fragment>
                   </div>
@@ -826,43 +875,52 @@ const Nav = () => {
             </li>
 
             <li
+              onMouseEnter={() => setIsDropdownResourcesOpen(true)} // Open dropdown on hover
+              onMouseLeave={() => setIsDropdownResourcesOpen(false)} // Close dropdown when hover ends
+              onClick={toggleDropdownResources}
               className={` group flex items-center justify-center cursor-pointer h-16`}
             >
               <p className="link">Resources</p>
               <RiArrowDropDownLine
-                className={`text-5xl dropdown-icon transform transition-transform duration-300 ease-in-out group-hover:rotate-180`}
+                className={`text-2xl xl:text-3xl 2xl:text-4xl dropdown-icon transform transition-transform duration-300 ease-in-out ${
+                  isDropdownResourcesOpen ? "rotate-180" : ""
+                }`}
               />
               <div
-                className="overflow-hidden absolute top-full left-0 h-0 group-hover:h-[60vh] bg-white w-screen invisible 
-      transition-all duration-700 border-b border-black group-hover:visible"
+                className={`absolute top-full left-0 w-screen bg-white border-b border-black overflow-hidden transition-all duration-700 ${
+                  isDropdownResourcesOpen ? "h-[60vh] visible" : "h-0 invisible"
+                }`}
               >
                 <div className="  w-full h-full z-[115] ">
                   <div className=" h-full flex justify-between gap-5 px-[5%] pt-5 pb-10 lg:pb-64 ">
                     <div className="min-w-72 ">
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"/blogs"}
+                          onClick={closeDropdownResources} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/blogs" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           Blogs
-                        </a>
+                        </Link>
                       </h2>
                       <h2 className="mb-4">
-                        <a
+                        <Link
                           href={"the-edge"}
+                          onClick={closeDropdownResources} // Close dropdown on click
                           className={`text-2xl lg:text-[30px] font-[600] ${
                             pathname === "/the-edge" ? "text-[#ee4580]" : ""
                           }`}
                         >
                           The Edge
-                        </a>
+                        </Link>
                       </h2>
                     </div>
                     {resourcesData.map((item, index) => (
-                      <a
+                      <Link
                         href={`/works/${item._id}`}
+                        onClick={closeDropdownResources}
                         key={index}
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
@@ -899,7 +957,7 @@ const Nav = () => {
                             </div>
                           </div>
                         )}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
