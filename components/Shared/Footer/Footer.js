@@ -146,7 +146,7 @@ const Footer = () => {
                 </p>
               </Link>
             </div>
-            <div className="flex justify-center items-center lg:justify-end gap-x-1 2xl:gap-x-2">
+            <div className="flex justify-center items-center lg:justify-start gap-x-1 2xl:gap-x-2">
               <RiCopyrightFill className="hidden sm:block text-[22px] m-[2px]" />
               <p className="text-[12px] 2xl:text-[13px] text-center">
                 All Rights Reserved by Living Brands
