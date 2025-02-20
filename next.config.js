@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const hostname = "i.postimg.cc";
+
 const nextConfig = {
   // images: { unoptimized: true }, // Disables Next.js built-in image optimization
   // output: "export", // Enables static export
@@ -7,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.postimg.cc",
+        hostname: "**",
       },
     ],
   },
