@@ -42,7 +42,7 @@ const ContactUsRightPart = () => {
 
     try {
       const response = await fetch(
-        "https://living-brands-admin.vercel.app/api/contact",
+        "https://admin.living-brands.co/api/contact",
         {
           method: "POST", // Removed "no-cors" to access response data
           headers: {

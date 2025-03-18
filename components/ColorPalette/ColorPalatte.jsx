@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 
 const fetchColorData = async () => {
   const res = await fetch(
-    "https://living-brands-admin.vercel.app/api/color-palette",
+    "https://admin.living-brands.co/api/color-palette",
     {
       next: { revalidate: 10 },
     }

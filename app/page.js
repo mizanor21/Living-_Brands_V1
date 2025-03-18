@@ -12,7 +12,7 @@ import Trending from "@/components/Home/Trending/Trending";
 import Partner from "@/components/Home/Partner/Partner";
 
 export default async function Home() {
-  const res = await fetch("https://living-brands-admin.vercel.app/api/home", {
+  const res = await fetch("https://admin.living-brands.co/api/home", {
     next: { revalidate },
   });
 
@@ -35,6 +35,18 @@ export default async function Home() {
     journeySection = {},
     brandSection = {},
   } = home[0] || {};
+  const res1 = await fetch("https://admin.living-brands.co/api/mouse-movement", {
+    next: { revalidate },
+  });
+
+  const mouseMovement = await res1.json();
+
+  const res2 = await fetch("https://admin.living-brands.co/api/slideshow", {
+    next: { revalidate },
+  });
+
+  const slideShow = await res2.json();
+
 
   return (
     <main className="bg-white relative z-[110] rounded-b-[20px] lg:rounded-b-[40px]">
@@ -42,8 +54,8 @@ export default async function Home() {
       <Video data={videoSection} />
       <Elevate data={elevateSection} />
       <Define data={defineUsSection} />
-      <Slideshow data={slideshowSection} />
-      <Solutions data={solutionSection} />
+      <Slideshow data={slideShow} />
+      <Solutions data={mouseMovement} />
       <Journey data={journeySection} />
       <Brands data={brandSection} />
       <Trending />

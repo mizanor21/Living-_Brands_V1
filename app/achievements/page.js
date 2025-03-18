@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Achievement = async () => {
   const res = await fetch(
-    "https://living-brands-admin.vercel.app/api/achievements",
+    "https://admin.living-brands.co/api/achievements",
     { next: { revalidate: 10 } }
   );
   const awards = await res.json();

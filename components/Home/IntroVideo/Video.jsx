@@ -93,7 +93,7 @@ const Video = ({ data }) => {
           className=" w-44 h-10 absolute z-[999] hidden md:flex border border-gray-700 rounded-full"
           style={{ top: position.y - 50, left: position.x - 90 }}
         >
-          <div className="bg-[#125b5c]   text-white overflow-hidden w-full h-full rounded-full md:flex justify-center items-center relative">
+          <div className="bg-[#0066B3]   text-white overflow-hidden w-full h-full rounded-full md:flex justify-center items-center relative">
             {/* Scrolling text with inline styles */}
             <Link href={""} className="" style={scrollAnimation}>
               Play Reel Play Reel
@@ -111,7 +111,7 @@ const Video = ({ data }) => {
             muted={isFirstVisit} // Muted only on the first visit
             onClick={handleVideoClick} // Toggle play/pause on click
           >
-            <source src="/videos/Intro.mp4" type="video/mp4" />
+            <source src={data?.videoURL} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

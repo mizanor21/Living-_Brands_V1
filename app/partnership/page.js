@@ -3,7 +3,7 @@ import React from "react";
 
 const Partnership = async () => {
   const res = await fetch(
-    "https://living-brands-admin.vercel.app/api/partnership",
+    "https://admin.living-brands.co/api/partnership",
     { next: { revalidate: 10 } }
   );
 
